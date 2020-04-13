@@ -1,0 +1,12 @@
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\bin\Debug\Prueba_Consulta.exe.config
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\bin\Debug\Prueba_Consulta.exe
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\bin\Debug\Prueba_Consulta.pdb
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\bin\Debug\SODA.dll
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prueba_Consulta.csprojAssemblyReference.cache
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prueba_Consulta.Properties.Resources.resources
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prueba_Consulta.csproj.GenerateResource.cache
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prueba_Consulta.csproj.CopyComplete
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prueba_Consulta.exe
+C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prueba_Consulta.pdb
