@@ -10,3 +10,16 @@ C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prue
 C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prueba_Consulta.csproj.CopyComplete
 C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prueba_Consulta.exe
 C:\Users\Luis Felipe\source\repos\Prueba_Consulta\Prueba_Consulta\obj\Debug\Prueba_Consulta.pdb
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\bin\Debug\Prueba_Consulta.exe.config
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\bin\Debug\Prueba_Consulta.exe
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\bin\Debug\Prueba_Consulta.pdb
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\bin\Debug\heat-map.dll
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\bin\Debug\heat-map.pdb
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\bin\Debug\Newtonsoft.Json.xml
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.csprojAssemblyReference.cache
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.Form1.resources
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.Properties.Resources.resources
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.csproj.GenerateResource.cache
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.csproj.CopyComplete
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.exe
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.pdb

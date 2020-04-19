@@ -41,7 +41,9 @@
             this.datasetId = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.heatMap = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heatMap)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -166,11 +168,21 @@
             this.textBox1.TabIndex = 18;
             this.textBox1.Text = "url repo:   https://www.datos.gov.co\r\nid dataset:   ysq6-ri4e\r\n\r\n";
             // 
+            // heatMap
+            // 
+            this.heatMap.Location = new System.Drawing.Point(824, 98);
+            this.heatMap.Name = "heatMap";
+            this.heatMap.Size = new System.Drawing.Size(182, 155);
+            this.heatMap.TabIndex = 19;
+            this.heatMap.TabStop = false;
+            this.heatMap.Click += new System.EventHandler(this.heatMap_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 618);
+            this.ClientSize = new System.Drawing.Size(1018, 618);
+            this.Controls.Add(this.heatMap);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.datasetId);
@@ -187,6 +199,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heatMap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,6 +220,7 @@
         private System.Windows.Forms.TextBox datasetId;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox heatMap;
     }
 }
 

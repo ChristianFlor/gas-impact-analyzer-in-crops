@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using SODA;
 using Newtonsoft.Json;
 using System.Web.Script.Serialization;
+using heat_map;
 
 namespace Prueba_Consulta
 {
@@ -19,13 +20,14 @@ namespace Prueba_Consulta
     {
 
         private Dictionary<string, string> mapa;
+        private HeatMap hm;
         string url = "";
         Medicion med;
 
         public Form1()
         {
             InitializeComponent();
-
+            hm = new HeatMap();
         }
 
         public void readInfo()
@@ -129,6 +131,11 @@ namespace Prueba_Consulta
         private void button2_Click(object sender, EventArgs e)
         {
             readInfo();
+        }
+
+        private void heatMap_Click(object sender, EventArgs e)
+        {
+            hm.example(heatMap);
         }
     }
 }
