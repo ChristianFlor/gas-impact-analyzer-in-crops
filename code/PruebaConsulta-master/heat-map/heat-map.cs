@@ -70,7 +70,7 @@ namespace heat_map
         {
             ColorMap[] OutputMap = new ColorMap[244];
             // Change this path to wherever you saved the palette image.
-            Bitmap Palette = (Bitmap)Bitmap.FromFile(@"D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\C# playground\heat-map\heat-map\intensity-mask.jpg");
+            Bitmap Palette = (Bitmap)Bitmap.FromFile(@"..\..\..\heat-map\intensity-mask.jpg");
             // Loop through each pixel and create a new color mapping
             for (int X = 0; X < OutputMap.Length; X++)
             {

@@ -136,6 +136,7 @@ namespace Prueba_Consulta
         private void heatMap_Click(object sender, EventArgs e)
         {
             hm.example(heatMap);
+            //textBoxValor.Text = $"Current directory is '{Environment.CurrentDirectory}'";
         }
     }
 }
