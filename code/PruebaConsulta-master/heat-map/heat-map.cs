@@ -16,7 +16,7 @@ namespace heat_map
     public class HeatMap
     {
         private List<HeatPoint> HeatPoints;
-
+        public const string INTENSITY_MASK = @"..\..\..\heat-map\intensity-mask.jpg";
         public HeatMap() {
             HeatPoints = new List<HeatPoint>();
         }
@@ -70,7 +70,7 @@ namespace heat_map
         {
             ColorMap[] OutputMap = new ColorMap[244];
             // Change this path to wherever you saved the palette image.
-            Bitmap Palette = (Bitmap)Bitmap.FromFile(@"..\..\..\heat-map\intensity-mask.jpg");
+            Bitmap Palette = (Bitmap)Bitmap.FromFile(INTENSITY_MASK);
             // Loop through each pixel and create a new color mapping
             for (int X = 0; X < OutputMap.Length; X++)
             {

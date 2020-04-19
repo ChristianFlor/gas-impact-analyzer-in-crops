@@ -107,7 +107,7 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(566, 98);
+            this.checkedListBox1.Location = new System.Drawing.Point(543, 104);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(225, 139);
             this.checkedListBox1.TabIndex = 11;
@@ -170,9 +170,9 @@
             // 
             // heatMap
             // 
-            this.heatMap.Location = new System.Drawing.Point(824, 98);
+            this.heatMap.Location = new System.Drawing.Point(785, 36);
             this.heatMap.Name = "heatMap";
-            this.heatMap.Size = new System.Drawing.Size(182, 155);
+            this.heatMap.Size = new System.Drawing.Size(232, 257);
             this.heatMap.TabIndex = 19;
             this.heatMap.TabStop = false;
             this.heatMap.Click += new System.EventHandler(this.heatMap_Click);
