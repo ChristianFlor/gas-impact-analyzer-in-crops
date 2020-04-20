@@ -1,4 +1,4 @@
-## Final Delivery
+<h1 align="center">Final Delivery</h1>
 
 Development and application of an information analysis algorithm. Evaluation and conclusions.
 
