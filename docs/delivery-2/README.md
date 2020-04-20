@@ -2,7 +2,7 @@
 
 Organizing the project. Refining the requeriments and design.
 
-- [Presentation Video describing the delivery](https://youtu.be/ZdY9bF3pAZo).
+- [Presentation Video describing the delivery](https://youtu.be/OB8WvwVN1js).
 - Report with documentation:
 1. [Functional requirements.](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/blob/master/docs/delivery-2/Requerimientos%20funcionales%20ERS.pdf)
 2. [Class diagram design](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/blob/master/docs/delivery-2/Class%20diagram%20design.png)
