@@ -8,6 +8,8 @@ Organizing the project. Refining the requeriments and design.
 2. [Class diagram design](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/blob/master/docs/delivery-2/Class%20diagram%20design.png)
 3. [Git model of the project.](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/blob/master/docs/delivery-2/Git%20model%20of%20the%20project.pdf)
 
+- Program source code in C#
+
 <h2> 5 reports will be made consisting of:</h2>
 
 * Heat map depending on the crop (an implementation example is ready)
@@ -33,4 +35,4 @@ There are various algorithms that search database association rules
 <h3>Eclat</h3>
 
 
-- Program source code in C#
+
