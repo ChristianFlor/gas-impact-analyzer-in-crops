@@ -22,6 +22,8 @@ Organizing the project. Refining the requeriments and design.
 * Visualization of each database in a Table
 * Filter by corresponding fields in a Table relating the data between the 3 databases.
 
+[View Mockups](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/tree/master/docs/delivery-2/sampleMockups)
+
 <h2> List of responsibilities: </h2>
 
 + UI GitHub: [Christian Flor](https://github.com/ChristianFlor)
