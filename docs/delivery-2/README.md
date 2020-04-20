@@ -10,11 +10,15 @@ Organizing the project. Refining the requeriments and design.
 
 - Program source code in C#
 
-<h2> 5 reports will be made consisting of:</h2>
+<h2> 9 reports will be made consisting of:</h2>
 
 * Heat map depending on the crop (an implementation example is ready)
 * Linear graphics
+* Radar
+* Polar Area
 * Circular graph with the percentage of contamination in each crop
+* Doughnut
+* Mulyiply charts
 * Visualization of each database in a Table
 * Filter by corresponding fields in a Table relating the data between the 3 databases.
 
