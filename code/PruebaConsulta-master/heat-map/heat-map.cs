@@ -21,7 +21,7 @@ namespace heat_map
             HeatPoints = new List<HeatPoint>();
         }
 
-        public void example(PictureBox pb)
+        public void PaintHeatMap(PictureBox pb)
         {
             // Create new memory bitmap the same size as the picture box
             Bitmap bMap = new Bitmap(pb.Width, pb.Height);
@@ -32,11 +32,18 @@ namespace heat_map
             int iY;
             byte iIntense;
             // Lets loop 500 times and create a random point each iteration
+            HeatPoints.Clear();
             for (int i = 0; i < 500; i++)
             {
+                /*
+                 * 
+                 * {TODO: Replace this with the data from the database}
+                 *
+                 *
+                 */
                 // Pick random locations and intensity
-                iX = rRand.Next(0, 200);
-                iY = rRand.Next(0, 200);
+                iX = rRand.Next(0, bMap.Width);
+                iY = rRand.Next(0, bMap.Height);
                 iIntense = (byte)rRand.Next(0, 120);
                 // Add heat point to heat points list
                 HeatPoints.Add(new HeatPoint(iX, iY, iIntense));
@@ -44,7 +51,8 @@ namespace heat_map
             // Call CreateIntensityMask, give it the memory bitmap, and store the result back in the memory bitmap
             bMap = CreateIntensityMask(bMap, HeatPoints);
             // Colorize the memory bitmap and assign it as the picture boxes image
-            pb.Image = Colorize(bMap, 255);
+            bMap = Colorize(bMap, 255); ;
+            pb.Image = ChangeAlpha(bMap, 100);
         }
 
         public static Bitmap Colorize(Bitmap Mask, byte Alpha)
@@ -94,6 +102,20 @@ namespace heat_map
                 DrawHeatPoint(DrawSurface, DataPoint, 25);
             }
             return bSurface;
+        }
+
+        private Bitmap ChangeAlpha(Bitmap bMap, int alpha)
+        {
+            Bitmap t = new Bitmap(bMap.Width, bMap.Height);
+            for (int i = 0; i < bMap.Width; i++)
+            {
+                for (int j = 0; j < bMap.Height; j++)
+                {
+                    Color c = bMap.GetPixel(i, j);
+                    t.SetPixel(i, j, Color.FromArgb(alpha, c.R, c.G, c.B));
+                }
+            }
+            return t;
         }
 
         private void DrawHeatPoint(Graphics Canvas, HeatPoint HeatPoint, int Radius)

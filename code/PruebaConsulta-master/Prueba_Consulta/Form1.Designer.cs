@@ -170,6 +170,7 @@
             // 
             // heatMap
             // 
+            this.heatMap.BackColor = System.Drawing.Color.Transparent;
             this.heatMap.Location = new System.Drawing.Point(785, 36);
             this.heatMap.Name = "heatMap";
             this.heatMap.Size = new System.Drawing.Size(232, 257);
@@ -181,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1018, 618);
+            this.ClientSize = new System.Drawing.Size(1033, 618);
             this.Controls.Add(this.heatMap);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button2);
