@@ -7,9 +7,9 @@ With the information obtained from the analysis of various records provided by t
 The academic objective of this project is to analyze a large amount of data obtained from [Colombia's Open Data.](https://www.datos.gov.co/)
 
 The databases used are:
-   a) [DATOS DE CALIDAD DEL AIRE EN COLOMBIA 2011-2017](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/DATOS-DE-CALIDAD-DEL-AIRE-EN-COLOMBIA-2011-2017/ysq6-ri4e)
-   b)[Superficie Cosechada en Hectáreas con Cultivos Transitorios en el Departamento del Valle del Cauca del Año 2000 al 2018](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Superficie-Cosechada-en-Hect-reas-con-Cultivos-Tra/3d2z-wkgw)
-   c)[Superficie Sembrada en Hectáreas con Cultivos Transitorios en el Valle del Cauca del año 2000 al 2018](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Superficie-Sembrada-en-Hect-reas-con-Cultivos-Tran/vs5v-e66i)
+   - [DATOS DE CALIDAD DEL AIRE EN COLOMBIA 2011-2017](https://www.datos.gov.co/Ambiente-y-Desarrollo-Sostenible/DATOS-DE-CALIDAD-DEL-AIRE-EN-COLOMBIA-2011-2017/ysq6-ri4e).
+   - [Superficie Cosechada en Hectáreas con Cultivos Transitorios en el Departamento del Valle del Cauca del Año 2000 al 2018](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Superficie-Cosechada-en-Hect-reas-con-Cultivos-Tra/3d2z-wkgw).
+   - [Superficie Sembrada en Hectáreas con Cultivos Transitorios en el Valle del Cauca del año 2000 al 2018](https://www.datos.gov.co/Agricultura-y-Desarrollo-Rural/Superficie-Sembrada-en-Hect-reas-con-Cultivos-Tran/vs5v-e66i).
 
 The stages of develop of this project are distributed in the follow deliveries:
 1. [First Delivery](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/tree/master/docs/delivery-1). First aproach to the problem and data. Exploring data using a Query API.
