@@ -33,6 +33,8 @@ There are various algorithms that search database association rules
   - Intuitive output
 <h3>Partition</h3>
 <h3>Eclat</h3>
+<h3>FP-Growth</h3>
+
 
 
 
