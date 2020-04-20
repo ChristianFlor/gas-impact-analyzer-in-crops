@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="702.0" prefWidth="1145.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.MainController">
+   <children>
+      <BorderPane>
+         <top>
+            <VBox BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="65.0" prefWidth="779.0" style="-fx-background-color: #4286f4;">
+                     <children>
+                        <ImageView fitHeight="85.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@icons/Monitoreo-y-Control.png" />
+                           </image>
+                        </ImageView>
+                        <Label text="GIAC-Valle del Cauca" textFill="WHITE">
+                           <font>
+                              <Font name="Verdana" size="50.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <TabPane prefHeight="384.0" prefWidth="779.0" styleClass="jfx-hamburger-icon" stylesheets="@CSS/dark-theme.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                  <Tab text="GRAPHICS">
+                     <content>
+                        <BorderPane prefHeight="452.0" prefWidth="805.0">
+                           <center>
+                              <VBox alignment="CENTER" fillWidth="false" prefHeight="535.0" prefWidth="600.0" spacing="10.0" style="-fx-border-color: #4285F4; -fx-border-width: 2; -fx-border-radius: 15;" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="HeatMap">
+                                       <font>
+                                          <Font name="Consolas Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="100.0" prefWidth="200.0">
+                                       <children>
+                                          <ImageView fx:id="photoStudent" fitHeight="503.0" fitWidth="513.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../../../../mockup/HeatMap2.jpeg" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </center>
+                           <bottom>
+                              <HBox alignment="CENTER" prefHeight="44.0" prefWidth="794.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label text="Select " translateX="-100.0">
+                                       <font>
+                                          <Font name="Consolas Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Button mnemonicParsing="false" text="1. HeatMap" translateX="-80.0" />
+                                    <Button mnemonicParsing="false" text="2. Linear" translateX="-70.0" />
+                                    <Button mnemonicParsing="false" text="3. Radar" translateX="-60.0" />
+                                    <Button layoutX="505.0" layoutY="13.0" mnemonicParsing="false" text="4. PolarArea" translateX="-50.0" />
+                                    <Button layoutX="526.0" layoutY="13.0" mnemonicParsing="false" text="5. Circle" translateX="-40.0" />
+                                    <Button mnemonicParsing="false" text="6. Doughnut" translateX="-30.0" />
+                                    <Button mnemonicParsing="false" text="7. MultiplyCharts" translateX="-20.0" />
+                                 </children>
+                              </HBox>
+                           </bottom>
+                        </BorderPane>
+                     </content>
+                  </Tab>
+                  <Tab text="VIEW">
+                     <content>
+                        <BorderPane prefHeight="452.0" prefWidth="805.0">
+                           <center>
+                              <VBox prefHeight="565.0" prefWidth="1002.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Separator orientation="VERTICAL" prefHeight="23.0" prefWidth="822.0" />
+                                    <Label text="General table">
+                                       <font>
+                                          <Font name="Consolas Bold" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox prefHeight="499.0" prefWidth="887.0">
+                                       <children>
+                                          <TableView fx:id="subjectsTable" prefHeight="499.0" prefWidth="1017.0">
+                                            <columns>
+                                              <TableColumn fx:id="subNameColumn" prefWidth="78.33332824707031" text="date" />
+                                              <TableColumn fx:id="nrcColumn" minWidth="0.0" prefWidth="79.66667175292969" text="authority" />
+                                                <TableColumn fx:id="facultyColumn" minWidth="2.0" prefWidth="121.66665649414062" text="stationName" />
+                                                <TableColumn fx:id="creditsColumn" prefWidth="87.66665649414062" text="latitude" />
+                                                <TableColumn fx:id="studentsColumn" prefWidth="91.33331298828125" text="longitude" />
+                                                <TableColumn fx:id="studentsColumn1" prefWidth="121.6666259765625" text="department" />
+                                                <TableColumn fx:id="studentsColumn11" prefWidth="100.3333740234375" text="municipality" />
+                                                <TableColumn fx:id="studentsColumn12" prefWidth="119.0" text="stationType" />
+                                                <TableColumn fx:id="studentsColumn121" prefWidth="88.3333740234375" text="variable" />
+                                                <TableColumn fx:id="studentsColumn1211" prefWidth="123.0" text="concentration" />
+                                            </columns>
+                                          </TableView>
+                                          <Separator prefHeight="243.0" prefWidth="7.0" visible="false" />
+                                          <ComboBox fx:id="optionsSearch1" prefHeight="25.0" prefWidth="97.0" promptText="Table by" style="-fx-background-color: #4285F4; -fx-background-radius: 15; -fx-text-fill: white;" visibleRowCount="5" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </center>
+                           <left>
+                              <Separator prefHeight="199.0" prefWidth="0.0" visible="false" BorderPane.alignment="CENTER" />
+                           </left>
+                           <right>
+                              <Separator prefHeight="120.0" prefWidth="16.0" visible="false" BorderPane.alignment="CENTER" />
+                           </right>
+                           <top>
+                              <Separator orientation="VERTICAL" prefHeight="12.0" prefWidth="207.0" visible="false" BorderPane.alignment="CENTER" />
+                           </top>
+                           <bottom>
+                              <Separator orientation="VERTICAL" prefHeight="11.0" prefWidth="251.0" visible="false" BorderPane.alignment="CENTER" />
+                           </bottom>
+                        </BorderPane>
+                     </content>
+                  </Tab>
+                  <Tab text="FILTER">
+                     <content>
+                        <BorderPane prefHeight="452.0" prefWidth="805.0">
+                           <right>
+                              <VBox fillWidth="false" focusTraversable="true" prefHeight="563.0" prefWidth="542.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <VBox alignment="CENTER" fillWidth="false" prefHeight="151.0" prefWidth="535.0" style="-fx-border-color: #4285F4; -fx-border-width: 2; -fx-border-radius: 15;">
+                                       <children>
+                                          <HBox prefHeight="38.0" prefWidth="269.0">
+                                             <children>
+                                                <ImageView fitHeight="38.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../../../../../../Documentos/projects/digital-agenda/src/uiImg/busqueda.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label prefHeight="30.0" prefWidth="244.0" text="Filter">
+                                                   <font>
+                                                      <Font name="Verdana Bold" size="24.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="47.0" prefWidth="358.0" spacing="8.0">
+                                             <padding>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </padding>
+                                             <children>
+                                                <ComboBox fx:id="optionsSearch" prefHeight="25.0" prefWidth="97.0" promptText="Search By" style="-fx-background-color: #4285F4; -fx-background-radius: 15; -fx-text-fill: white;" visibleRowCount="5" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" prefHeight="47.0" prefWidth="364.0" spacing="8.0">
+                                             <children>
+                                                <TextField fx:id="search" prefHeight="37.0" prefWidth="148.0" style="-fx-text-fill: black;" />
+                                                <Button mnemonicParsing="false" onAction="#search" prefHeight="39.0" prefWidth="75.0" text="Search" textFill="WHITE">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Button>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <Separator prefHeight="10.0" prefWidth="364.0" visible="false" />
+                                    <VBox alignment="CENTER" fillWidth="false" prefHeight="417.0" prefWidth="537.0" spacing="10.0" style="-fx-border-color: #4285F4; -fx-border-width: 2; -fx-border-radius: 15;">
+                                       <children>
+                                          <Label text="See Data">
+                                             <font>
+                                                <Font name="Consolas Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TableView fx:id="foundStudent1" prefHeight="487.0" prefWidth="586.0">
+                                             <columns>
+                                                <TableColumn fx:id="nameColumn1" prefWidth="111.00003051757812" text="department" />
+                                                <TableColumn fx:id="lastColumn1" prefWidth="103.99996948242188" text="municipality" />
+                                                <TableColumn fx:id="codeColumn1" prefWidth="105.0" text="stationType" />
+                                                <TableColumn fx:id="emailColumn1" prefWidth="85.6666259765625" text="variable" />
+                                                <TableColumn fx:id="numberColumn1" prefWidth="122.6666259765625" text="concentration" />
+                                             </columns>
+                                          </TableView>
+                                       </children>
+                                    </VBox>
+                                    <HBox alignment="CENTER" prefHeight="53.0" prefWidth="531.0">
+                                       <children>
+                                          <Separator prefHeight="42.0" prefWidth="50.0" visible="false" />
+                                          <Separator prefHeight="42.0" prefWidth="92.0" visible="false" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </right>
+                           <left>
+                              <HBox fillHeight="false" prefHeight="563.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <VBox fillWidth="false" focusTraversable="true" prefHeight="548.0" prefWidth="601.0" spacing="5.0">
+                                       <children>
+                                          <VBox fx:id="vBoxList" alignment="CENTER" prefHeight="545.0" prefWidth="590.0" style="-fx-border-color: #4285F4; -fx-border-width: 2;">
+                                             <children>
+                                                <TableView fx:id="foundStudent" prefHeight="487.0" prefWidth="586.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="nameColumn" prefWidth="90.66665935516357" text="date" />
+                                                    <TableColumn fx:id="lastColumn" prefWidth="120.9999771118164" text="authority" />
+                                                      <TableColumn fx:id="codeColumn" prefWidth="116.0" text="stationName" />
+                                                      <TableColumn fx:id="emailColumn" prefWidth="129.66665649414062" text="latitude" />
+                                                      <TableColumn fx:id="numberColumn" prefWidth="131.33334350585938" text="longitude" />
+                                                  </columns>
+                                                </TableView>
+                                             </children></VBox>
+                                       </children>
+                                       <padding>
+                                          <Insets left="8.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </left>
+                        </BorderPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>
