@@ -1,5 +1,5 @@
 
-<h1 align="center">Gas impact analyzer on crops in the valle of cauca</h1>
+<h1 align="center">Gas impact analyzer on crops in the Valle del Cauca</h1>
 
 Gas impact analyzer on crops in the Valle del Cauca, It is a software whose purpose is to determine if the concentration of various pollutants in the atmosphere is related to the difference between the hectares planted and the hectares cultivated with different typical crops of the department.
 
