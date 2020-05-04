@@ -13,6 +13,7 @@ using SODA;
 using Newtonsoft.Json;
 using System.Web.Script.Serialization;
 using heat_map;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Prueba_Consulta
 {
@@ -57,9 +58,10 @@ namespace Prueba_Consulta
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
+            chart1.Series.Clear();
 
             string url2 = url;
             string cadena;
@@ -78,14 +80,42 @@ namespace Prueba_Consulta
             JavaScriptSerializer js = new JavaScriptSerializer();
             Medicion[] mediciones = js.Deserialize<Medicion[]>(datosCrudos);
 
-          
-            
-            
+
+
+            int contador = 0;
             foreach (Medicion m in mediciones) {
 
                 dataGridView1.Rows.Add(m.fecha, m.autoridad_ambiental, m.nombre_de_la_estaci_n, m.tecnolog_a, m.latitud, m.longitud,
                     m.c_digo_del_departamento, m.departamento, m.c_digo_del_municipio, m.nombre_del_municipio, m.tipo_de_estaci_n, m.tiempo_de_exposici_n,
                     m.variable, m.unidades, m.concentraci_n);
+
+                Series ss = new Series(m.nombre_del_municipio);
+
+
+                if (!chart1.Series.Contains(ss) && contador < 21)
+                {
+                    try
+                    {
+
+
+                        ss = chart1.Series.Add(m.nombre_del_municipio);
+
+                        ss.Label = m.concentraci_n.ToString();
+
+                        ss.Points.Add(m.concentraci_n);
+
+                        contador++;
+
+                    }
+                    catch (ArgumentException ex)
+                    {
+
+                        Console.WriteLine("Error");
+
+                    }
+
+
+                }
 
             }
 
@@ -130,13 +160,53 @@ namespace Prueba_Consulta
 
         private void button2_Click(object sender, EventArgs e)
         {
-            readInfo();
+            
         }
 
         private void heatMap_Click(object sender, EventArgs e)
         {
             hm.PaintHeatMap(heatMap);
             //textBoxValor.Text = $"Current directory is '{Environment.CurrentDirectory}'";
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            readInfo();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bar_button_Click(object sender, EventArgs e)
+        {
+            foreach (Series s in chart1.Series)
+            {
+
+                s.ChartType = SeriesChartType.Bar;
+
+            }
+        }
+
+        private void linear_button_Click(object sender, EventArgs e)
+        {
+            foreach (Series s in chart1.Series)
+            {
+
+                s.ChartType = SeriesChartType.Line;
+
+            }
+        }
+
+        private void polar_button_Click(object sender, EventArgs e)
+        {
+            foreach (Series s in chart1.Series)
+            {
+
+                s.ChartType = SeriesChartType.Polar;
+
+            }
         }
     }
 }
