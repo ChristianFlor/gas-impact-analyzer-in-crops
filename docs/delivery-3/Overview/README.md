@@ -1,6 +1,5 @@
 <h1 align="center">Sequence diagrams. </h1>
 
-*******************************************************************************************************************************
 <h2 align="center">FE001</h2>
 <h3 align="center">Determinar si existe relación entre la concentración de distintos tipos de contaminantes y el crecimiento de diversos cultivos en diferentes municipios del Valle del Cauca.</h3>
 
