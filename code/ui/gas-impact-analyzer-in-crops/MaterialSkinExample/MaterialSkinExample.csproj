@@ -1,4 +1,4 @@
-﻿﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MaterialSkin, Version=2.1.2.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>packages\MaterialSkin.2.2.1.2\lib\net461\MaterialSkin.dll</HintPath>
+      <HintPath>..\packages\MaterialSkin.2.2.1.2\lib\net461\MaterialSkin.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -78,12 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MaterialSkin\MaterialSkin.csproj">
-      <Project>{8eb7611b-68cd-4b8b-987a-11717e2b250c}</Project>
-      <Name>MaterialSkin</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\plus.png" />

@@ -1,4 +1,4 @@
-﻿﻿using MaterialSkin;
+﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Text;
@@ -36,7 +36,7 @@ namespace MaterialSkinExample
             materialCheckedListBox1.Items.Add("Item6", false);
             materialCheckedListBox1.Items.Add("Item7", false);
 
-            materialComboBox6.SelectedIndex = 0;
+            
         }
 
         private void seedListView()
@@ -110,15 +110,9 @@ namespace MaterialSkinExample
             Invalidate();
         }
 
-        private void MaterialButton2_Click(object sender, EventArgs e)
-        {
-            materialProgressBar1.Value = Math.Min(materialProgressBar1.Value + 10, 100);
-        }
+      
 
-        private void materialFlatButton4_Click(object sender, EventArgs e)
-        {
-            materialProgressBar1.Value = Math.Max(materialProgressBar1.Value - 10, 0);
-        }
+       
 
         private void materialSwitch4_CheckedChanged(object sender, EventArgs e)
         {
@@ -162,7 +156,22 @@ namespace MaterialSkinExample
 
             var batchOperationResults = builder.ToString();
             var mresult = MaterialMessageBox.Show(batchOperationResults, "Batch Operation");
-            materialComboBox1.Items.Add("this is a very long string");
+            
+        }
+
+        private void materialButton9_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void materialButton2_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void materialButton5_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
