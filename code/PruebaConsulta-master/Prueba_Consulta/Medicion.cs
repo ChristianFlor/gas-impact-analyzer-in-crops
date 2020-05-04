@@ -31,10 +31,10 @@ namespace Prueba_Consulta
         public Medicion() {
         
         }
-        /*
+        
         public Medicion(string fecha, string autoridad, string nombre_estacion, string tecnologia, double latitud, double longitud,
             string codeDepartamento, string departamento, int codeMunicipio, string nombreMunicipio, string tipoEstacion,
-            double tiempoExposicion, string variable, string variables, string unidades, double concentracion)
+            double tiempoExposicion, string variable, string unidades, double concentracion)
         {
 
             this.fecha = fecha;
@@ -54,6 +54,6 @@ namespace Prueba_Consulta
             this.concentraci_n = concentracion;
 
         }
-        */
+        
     } 
 }

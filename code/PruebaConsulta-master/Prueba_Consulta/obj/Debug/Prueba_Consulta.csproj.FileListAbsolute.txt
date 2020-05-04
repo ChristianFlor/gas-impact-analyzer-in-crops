@@ -23,3 +23,4 @@ D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabaj
 D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.csproj.CopyComplete
 D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.exe
 D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.pdb
+D:\OneDrive\OneDrive - Universidad Icesi\Icesi\Quinto semestre\integrador\Trabajos\proyecto-final\gas-impact-analyzer-in-crops\code\PruebaConsulta-master\Prueba_Consulta\obj\Debug\Prueba_Consulta.csproj.CoreCompileInputs.cache
