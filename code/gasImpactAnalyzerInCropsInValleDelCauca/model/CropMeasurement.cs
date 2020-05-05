@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace model
+﻿namespace model
 {
-    class CropMeasurement
+    public class CropMeasurement
     {
         private string municipality;
         private int year;
@@ -26,7 +20,7 @@ namespace model
         private double tabacoB;
         private double maizTradicionalA;
         private double maizTradicionalB;
-        
+
         public CropMeasurement(string municipality, int year, double algodonA, double algodonB, double arrozA, double arrozB, double frijolA, double frijolB, double maizTecnificadoA, double maizTecnificadoB, double sorgoA, double sorgoB, double soyaA, double soyaB, double tabacoA, double tabacoB, double maizTradicionalA, double maizTradicionalB)
         {
             this.Municipality = municipality;

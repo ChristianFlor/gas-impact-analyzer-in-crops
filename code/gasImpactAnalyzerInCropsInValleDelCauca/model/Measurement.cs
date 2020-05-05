@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace model
+﻿namespace model
 {
-    class Measurement
+    public class Measurement
     {
         private string date;
         private string authority;
