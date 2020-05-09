@@ -19,6 +19,9 @@ The stages of develop of this project are distributed in the follow deliveries:
 4. [Final Delvery](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/tree/master/docs/final-delivery). Development and application of an information analysis algorithm. Evaluation and conclusions.
 
 
+## Dependencies
+There is a set of NuGet packages you will need to run the project, they are:
+* LiveCharts
 
 
 ## Made by
