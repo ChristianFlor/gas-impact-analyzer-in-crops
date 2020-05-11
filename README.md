@@ -21,7 +21,10 @@ The stages of develop of this project are distributed in the follow deliveries:
 
 ## Dependencies
 There is a set of NuGet packages you will need to run the project, they are:
-* LiveCharts
+* [LiveCharts](https://www.nuget.org/packages/LiveCharts.WinForms)
+* [MaterialSkin.2](https://www.nuget.org/packages/MaterialSkin.2)
+* [CSM.SodaDotNet](https://www.nuget.org/packages/CSM.SodaDotNet)
+* [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json)
 
 
 ## Made by
