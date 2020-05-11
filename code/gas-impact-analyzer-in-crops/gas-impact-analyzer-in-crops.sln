@@ -6,6 +6,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "model", "model\model.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "timeLine", "timeLine\timeLine.csproj", "{D737966B-C89A-49CF-B94A-321460843F18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prueba_Consulta", "Prueba_Consulta\Prueba_Consulta.csproj", "{9AA27984-2098-4626-88A1-E05A36FFC741}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "heat-map", "heat-map\heat-map.csproj", "{E82075B1-D799-4D3D-996D-5F975839BC9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitaryTests", "UnitaryTests\UnitaryTests.csproj", "{8556B3A2-3E38-4D1E-BC86-04335B32EC94}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,5 +26,11 @@ Global
 		{3222EF5A-7504-4520-ADC9-6717865FE6CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D737966B-C89A-49CF-B94A-321460843F18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D737966B-C89A-49CF-B94A-321460843F18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E82075B1-D799-4D3D-996D-5F975839BC9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E82075B1-D799-4D3D-996D-5F975839BC9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AA27984-2098-4626-88A1-E05A36FFC741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AA27984-2098-4626-88A1-E05A36FFC741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8556B3A2-3E38-4D1E-BC86-04335B32EC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8556B3A2-3E38-4D1E-BC86-04335B32EC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
