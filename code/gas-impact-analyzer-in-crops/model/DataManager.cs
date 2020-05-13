@@ -28,8 +28,10 @@ namespace model
             harvested = new List<CropMeasurement>();
             planted = new List<CropMeasurement>();
             readInfo(airQualityRepository, airQualityId);
-            List<string> list = new List<String>();
-            list.Add("Nombre del municipio");
+            List<string> list = new List<String>
+            {
+                "Nombre del municipio"
+            };
             string[] values = new string[1];
             values[0] = "BUENAVENTURA"; query(list, values, "measurements");
             values[0] = "GUADALAJARA%20DE%20BUGA"; query(list, values, "measurements");
@@ -37,6 +39,12 @@ namespace model
             values[0] = "CANDELARIA"; query(list, values, "measurements");
             values[0] = "JAMUNDÍ"; query(list, values, "measurements");
             values[0] = "PALMIRA"; query(list, values, "measurements");
+
+            /*
+            list.Add("Departamento");
+            values[0] = "VALLE%20DEL%20CAUCA"; query(list, values, "measurements");
+            */
+
             /*
             readInfo(harvestRepository, harvestId);
             list = new List<String>(); list.Add("municipios");
@@ -79,7 +87,6 @@ namespace model
                 url2 += str;
 
             }
-
             string rawData = new WebClient().DownloadString(url2);
             Console.WriteLine(url2);
             if (type.Equals("measurements"))
@@ -87,7 +94,8 @@ namespace model
                 string[] regs = rawData.Substring(1, rawData.Length - 2).Split('}');
                 foreach (string r in regs)
                 {
-                    string s = r.Replace("\n", "").Replace("\"", ""); ;
+                    string s = r.Replace("\n", "").Replace("\"", "");
+                    Console.WriteLine(s);
                     if (s.Length > 10)
                     {
                         string[] attrs = s.Substring(1).Split(',');
@@ -121,16 +129,8 @@ namespace model
                         {
                             concentration += double.Parse(num[1]) / Math.Pow(10, num[1].Length);
                         }
-                        if (variable.Contains("PM2"))
-                        {
-                            Console.WriteLine(variable);
-                        }
                         Measurement m = new Measurement(date, authority, stationName, technology, latitude, longitude, departmentCode, department, municipalityCode, municipality, stationType, exhibitionTime, variable, unit, concentration);
                         measurements.Add(m);
-                        if (department.ToLower().Contains("valle") && variable.ToLower().Equals("NO2"))
-                        {
-                            Console.WriteLine("yes");
-                        }
                     }
                 }
             }

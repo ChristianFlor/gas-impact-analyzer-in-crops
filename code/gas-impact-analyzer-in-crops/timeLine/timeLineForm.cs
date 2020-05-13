@@ -60,7 +60,6 @@ namespace timeLine
                     {
                         municipalities.Add(m.Municipality, new List<MeasurementModel>());
                     }
-                    Console.WriteLine(m.Variable);
                     string[] date = m.Date.Split('/');
                     municipalities[m.Municipality].Add(new MeasurementModel(new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0])), m.Concentration));
                 }
@@ -75,7 +74,6 @@ namespace timeLine
 
             foreach (string v in municipalities.Keys)
             {
-                municipalities[v].Sort();
                 sc.Add(new LineSeries() { Title = v, Values = new ChartValues<MeasurementModel>(municipalities[v])});
             }
             cartesianChart1.Series = sc;
@@ -83,7 +81,6 @@ namespace timeLine
 
         public class MeasurementModel : IComparable<MeasurementModel>
         {
-
             public MeasurementModel(DateTime dateTime, double concentration)
             {
                 Date = dateTime;
