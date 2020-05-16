@@ -37,7 +37,7 @@ namespace MaterialSkinExample
             materialCheckedListBox1.Items.Add("Item5", true);
             materialCheckedListBox1.Items.Add("Item6", false);
             materialCheckedListBox1.Items.Add("Item7", false);
-            
+            al();
         }
 
         private void seedListView()
@@ -110,7 +110,11 @@ namespace MaterialSkinExample
             }
             Invalidate();
         }
-
+        public void al()
+        {
+            DataManager dt = new DataManager();
+            dt.showClustering();
+        }
       
 
         private void materialSwitch4_CheckedChanged(object sender, EventArgs e)

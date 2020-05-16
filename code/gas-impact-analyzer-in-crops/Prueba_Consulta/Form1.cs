@@ -22,7 +22,9 @@ namespace Prueba_Consulta
         private Dictionary<string, string> mapa;
         private HeatMap hm;
         string url = "";
+#pragma warning disable CS0169 // El campo 'Form1.med' nunca se usa
         Medicion med;
+#pragma warning restore CS0169 // El campo 'Form1.med' nunca se usa
 
         public Form1()
         {
