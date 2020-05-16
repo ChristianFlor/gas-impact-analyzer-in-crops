@@ -79,15 +79,10 @@ namespace MaterialSkinExample
             this.materialSwitch5 = new MaterialSkin.Controls.MaterialSwitch();
             this.materialLabel9 = new MaterialSkin.Controls.MaterialLabel();
             this.materialSwitch4 = new MaterialSkin.Controls.MaterialSwitch();
-            this.materialTabControl1 = new MaterialSkin.Controls.MaterialTabControl();
+            this.TabAlgorithm = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
             this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
-            this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
-            this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.algo = new System.Windows.Forms.Label();
+            this.KmeansChart = new LiveCharts.WinForms.CartesianChart();
             this.materialContextMenuStrip1.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -97,9 +92,8 @@ namespace MaterialSkinExample
             this.tabPage4.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.materialTabControl1.SuspendLayout();
+            this.TabAlgorithm.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.materialCard2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuIconList
@@ -229,10 +223,10 @@ namespace MaterialSkinExample
             // 
             this.tabPage8.BackColor = System.Drawing.Color.White;
             this.tabPage8.Controls.Add(this.materialLabel45);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 24);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(1011, 294);
+            this.tabPage8.Size = new System.Drawing.Size(1011, 292);
             this.tabPage8.TabIndex = 0;
             this.tabPage8.Text = "Heat map";
             // 
@@ -254,10 +248,10 @@ namespace MaterialSkinExample
             // 
             this.tabPage9.BackColor = System.Drawing.Color.White;
             this.tabPage9.Controls.Add(this.materialLabel10);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Location = new System.Drawing.Point(4, 24);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1011, 294);
+            this.tabPage9.Size = new System.Drawing.Size(1011, 292);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "Linear";
             // 
@@ -281,10 +275,10 @@ namespace MaterialSkinExample
             // 
             this.tabPage3.BackColor = System.Drawing.Color.White;
             this.tabPage3.Controls.Add(this.materialLabel3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1011, 294);
+            this.tabPage3.Size = new System.Drawing.Size(1011, 292);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Bar";
             // 
@@ -308,10 +302,10 @@ namespace MaterialSkinExample
             // 
             this.tabPage4.BackColor = System.Drawing.Color.White;
             this.tabPage4.Controls.Add(this.materialLabel4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1011, 294);
+            this.tabPage4.Size = new System.Drawing.Size(1011, 292);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Circular graph";
             // 
@@ -702,29 +696,28 @@ namespace MaterialSkinExample
             this.materialSwitch4.UseVisualStyleBackColor = true;
             this.materialSwitch4.CheckedChanged += new System.EventHandler(this.materialSwitch4_CheckedChanged);
             // 
-            // materialTabControl1
+            // TabAlgorithm
             // 
-            this.materialTabControl1.Controls.Add(this.tabPage1);
-            this.materialTabControl1.Controls.Add(this.tabPage7);
-            this.materialTabControl1.Controls.Add(this.tabPage6);
-            this.materialTabControl1.Controls.Add(this.tabPage2);
-            this.materialTabControl1.Depth = 0;
-            this.materialTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.materialTabControl1.ImageList = this.menuIconList;
-            this.materialTabControl1.Location = new System.Drawing.Point(3, 64);
-            this.materialTabControl1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialTabControl1.Name = "materialTabControl1";
-            this.materialTabControl1.SelectedIndex = 0;
-            this.materialTabControl1.Size = new System.Drawing.Size(1023, 555);
-            this.materialTabControl1.TabIndex = 18;
+            this.TabAlgorithm.Controls.Add(this.tabPage1);
+            this.TabAlgorithm.Controls.Add(this.tabPage7);
+            this.TabAlgorithm.Controls.Add(this.tabPage6);
+            this.TabAlgorithm.Controls.Add(this.tabPage2);
+            this.TabAlgorithm.Depth = 0;
+            this.TabAlgorithm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabAlgorithm.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabAlgorithm.ImageList = this.menuIconList;
+            this.TabAlgorithm.Location = new System.Drawing.Point(3, 64);
+            this.TabAlgorithm.MouseState = MaterialSkin.MouseState.HOVER;
+            this.TabAlgorithm.Name = "TabAlgorithm";
+            this.TabAlgorithm.SelectedIndex = 0;
+            this.TabAlgorithm.Size = new System.Drawing.Size(1023, 555);
+            this.TabAlgorithm.TabIndex = 18;
             // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.algo);
-            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.KmeansChart);
             this.tabPage2.Controls.Add(this.materialDivider4);
-            this.tabPage2.Controls.Add(this.materialCard2);
             this.tabPage2.ImageKey = "round_assessment_white_24dp.png";
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(0);
@@ -732,14 +725,6 @@ namespace MaterialSkinExample
             this.tabPage2.Size = new System.Drawing.Size(1015, 520);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.Text = "Dashboard";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(444, 84);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 71;
             // 
             // materialDivider4
             // 
@@ -752,77 +737,13 @@ namespace MaterialSkinExample
             this.materialDivider4.TabIndex = 70;
             this.materialDivider4.Text = "materialDivider4";
             // 
-            // materialCard2
+            // KmeansChart
             // 
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialCard2.Controls.Add(this.materialLabel1);
-            this.materialCard2.Controls.Add(this.materialButton6);
-            this.materialCard2.Controls.Add(this.materialLabel2);
-            this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialCard2.Location = new System.Drawing.Point(17, 16);
-            this.materialCard2.Margin = new System.Windows.Forms.Padding(7);
-            this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialCard2.Name = "materialCard2";
-            this.materialCard2.Padding = new System.Windows.Forms.Padding(14);
-            this.materialCard2.Size = new System.Drawing.Size(301, 187);
-            this.materialCard2.TabIndex = 66;
-            // 
-            // materialLabel1
-            // 
-            this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(17, 52);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(267, 73);
-            this.materialLabel1.TabIndex = 3;
-            this.materialLabel1.Text = "These are simple containers, but with a very nice shadow under them";
-            // 
-            // materialButton6
-            // 
-            this.materialButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton6.Depth = 0;
-            this.materialButton6.DrawShadows = true;
-            this.materialButton6.HighEmphasis = true;
-            this.materialButton6.Icon = null;
-            this.materialButton6.Location = new System.Drawing.Point(226, 131);
-            this.materialButton6.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton6.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton6.Name = "materialButton6";
-            this.materialButton6.Size = new System.Drawing.Size(58, 36);
-            this.materialButton6.TabIndex = 1;
-            this.materialButton6.Text = "Nice!";
-            this.materialButton6.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Text;
-            this.materialButton6.UseAccentColor = false;
-            this.materialButton6.UseVisualStyleBackColor = true;
-            // 
-            // materialLabel2
-            // 
-            this.materialLabel2.AutoSize = true;
-            this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabel2.HighEmphasis = true;
-            this.materialLabel2.Location = new System.Drawing.Point(17, 14);
-            this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(229, 24);
-            this.materialLabel2.TabIndex = 0;
-            this.materialLabel2.Text = "Cards are also supported!";
-            // 
-            // algo
-            // 
-            this.algo.AutoSize = true;
-            this.algo.Location = new System.Drawing.Point(473, 40);
-            this.algo.Name = "algo";
-            this.algo.Size = new System.Drawing.Size(35, 13);
-            this.algo.TabIndex = 72;
-            this.algo.Text = "label2";
+            this.KmeansChart.Location = new System.Drawing.Point(68, 52);
+            this.KmeansChart.Name = "KmeansChart";
+            this.KmeansChart.Size = new System.Drawing.Size(589, 252);
+            this.KmeansChart.TabIndex = 71;
+            this.KmeansChart.Text = "cartesianChart1";
             // 
             // MainForm
             // 
@@ -831,9 +752,9 @@ namespace MaterialSkinExample
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1029, 622);
             this.ContextMenuStrip = this.materialContextMenuStrip1;
-            this.Controls.Add(this.materialTabControl1);
+            this.Controls.Add(this.TabAlgorithm);
             this.DrawerShowIconsWhenHidden = true;
-            this.DrawerTabControl = this.materialTabControl1;
+            this.DrawerTabControl = this.TabAlgorithm;
             this.MinimumSize = new System.Drawing.Size(300, 200);
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(3, 64, 3, 3);
@@ -853,11 +774,8 @@ namespace MaterialSkinExample
             this.tabPage7.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.materialTabControl1.ResumeLayout(false);
+            this.TabAlgorithm.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.materialCard2.ResumeLayout(false);
-            this.materialCard2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -892,7 +810,7 @@ namespace MaterialSkinExample
         private MaterialSkin.Controls.MaterialSwitch materialSwitch5;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch6;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch8;
-        private MaterialSkin.Controls.MaterialTabControl materialTabControl1;
+        private MaterialSkin.Controls.MaterialTabControl TabAlgorithm;
         private MaterialSkin.Controls.MaterialTabControl materialTabControl2;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private MaterialSkin.Controls.MaterialTextBox materialTextBox1;
@@ -912,11 +830,6 @@ namespace MaterialSkinExample
 
         #endregion
 
-        private MaterialCard materialCard2;
-        private MaterialLabel materialLabel1;
-        private MaterialButton materialButton6;
-        private MaterialLabel materialLabel2;
-        private Label label1;
-        private Label algo;
+        private LiveCharts.WinForms.CartesianChart KmeansChart;
     }
 }

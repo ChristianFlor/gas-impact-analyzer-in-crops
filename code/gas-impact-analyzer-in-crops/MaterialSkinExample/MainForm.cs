@@ -1,9 +1,15 @@
-﻿using MaterialSkin;
+﻿using LiveCharts;
+using LiveCharts.Defaults;
+using LiveCharts.Wpf;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using model;
 using System;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
+using System.Windows.Media;
+using System.Collections.Generic;
 
 namespace MaterialSkinExample
 {
@@ -37,7 +43,59 @@ namespace MaterialSkinExample
             materialCheckedListBox1.Items.Add("Item5", true);
             materialCheckedListBox1.Items.Add("Item6", false);
             materialCheckedListBox1.Items.Add("Item7", false);
-            al();
+
+            DataManager dt = new DataManager();
+            SeriesCollection sc= new SeriesCollection()
+            {
+                new ScatterSeries
+                {
+                    Title = "Series A",
+                    Values = new ChartValues<ObservablePoint>()
+                },
+                new ScatterSeries
+                {
+                    Title = "Series B",
+                    Values = new ChartValues<ObservablePoint>(),
+                    PointGeometry = DefaultGeometries.Diamond
+                },
+                new ScatterSeries
+                {
+                    Title = "Series C",
+                    Values = new ChartValues<ObservablePoint>(),
+                    PointGeometry = DefaultGeometries.Triangle,
+                    StrokeThickness = 2,
+                    Fill = Brushes.Transparent
+                },
+                new ScatterSeries
+                {
+                    Title = "Series D",
+                    Values = new ChartValues<ObservablePoint>(),
+                    PointGeometry = DefaultGeometries.Cross,
+                    StrokeThickness = 2,
+                    Fill = Brushes.Transparent
+
+                },
+                new ScatterSeries
+                {
+                    Title = "Series E",
+                    Values = new ChartValues<ObservablePoint>(),
+                    PointGeometry = DefaultGeometries.Square
+                }
+            };
+            int index = 0;
+            foreach (var series in sc)
+            {
+                List<Measurement> meas = dt.getClusterByID(index);
+                foreach(Measurement current in meas) 
+                {
+                    series.Values.Add(new ObservablePoint(index,current.Concentration));
+                }
+                index++;
+            }
+
+            KmeansChart.Series = sc;
+            KmeansChart.LegendLocation = LegendLocation.Bottom;
+
         }
 
         private void seedListView()
@@ -110,12 +168,6 @@ namespace MaterialSkinExample
             }
             Invalidate();
         }
-        public void al()
-        {
-            DataManager dt = new DataManager();
-            dt.showClustering();
-        }
-      
 
         private void materialSwitch4_CheckedChanged(object sender, EventArgs e)
         {

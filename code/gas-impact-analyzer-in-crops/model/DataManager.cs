@@ -22,6 +22,7 @@ namespace model
         private List<CropMeasurement> harvested;
         private List<CropMeasurement> planted;
         private Dictionary<string, string> columnDeserialize;
+        private Kmeans algorithm;
 
         public DataManager()
         {
@@ -63,6 +64,13 @@ namespace model
             values[0] = "Buga"; query(list, values, "planted");
             values[0] = "Buenaventura"; query(list, values, "planted");
             */
+            double[][] data = new double[measurements.Count][];
+            for (int i = 0; i < measurements.Count; i++)
+            {
+                data[i] = new double[] { measurements[i].Latitude, measurements[i].Concentration, measurements[i].Longitude };
+
+            }
+            algorithm = new Kmeans(data, 5);
         }
         public void addDataJustToTest_DeleteItAndAdaptTheChartToTheRealSituationAfterSeeingThisWorking()
         {
@@ -163,8 +171,17 @@ namespace model
                 data[i] = new double[] { measurements[i].Latitude, measurements[i].Longitude, measurements[i].Concentration };
 
             }
-            Kmeans algorithm = new Kmeans(data, 5);
+            algorithm = new Kmeans(data, 5);
             return algorithm.ShowClustered(data, algorithm.getClusteringID(), 5, 6);
+        }
+        public List<Measurement> getClusterByID(int id)
+        {
+            List<Measurement> cluster = new List<Measurement>();
+            int[] idCluster = algorithm.getClusteringID();
+            for(int i=0;i<idCluster.Length;i++){
+                if (idCluster[i] == id) cluster.Add(measurements[i]);
+            }
+            return cluster;
         }
 
             public void setUrl(string url)
