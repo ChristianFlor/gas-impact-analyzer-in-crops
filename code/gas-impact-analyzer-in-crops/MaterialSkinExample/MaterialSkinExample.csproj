@@ -127,6 +127,12 @@
   <ItemGroup>
     <None Include="Resources\baseline_favorite_border_black_24dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\model\model.csproj">
+      <Project>{3222ef5a-7504-4520-adc9-6717865fe6cd}</Project>
+      <Name>model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

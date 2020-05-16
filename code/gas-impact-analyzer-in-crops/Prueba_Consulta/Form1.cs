@@ -91,12 +91,8 @@ namespace Prueba_Consulta
 
         }
 
-  
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -137,6 +133,11 @@ namespace Prueba_Consulta
         {
             hm.PaintHeatMap(heatMap);
             //textBoxValor.Text = $"Current directory is '{Environment.CurrentDirectory}'";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

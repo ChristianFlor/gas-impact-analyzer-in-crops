@@ -1,5 +1,6 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using model;
 using System;
 using System.Text;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ namespace MaterialSkinExample
 
         public MainForm()
         {
+               
             InitializeComponent();
 
             // Initialize MaterialSkinManager
@@ -35,7 +37,6 @@ namespace MaterialSkinExample
             materialCheckedListBox1.Items.Add("Item5", true);
             materialCheckedListBox1.Items.Add("Item6", false);
             materialCheckedListBox1.Items.Add("Item7", false);
-
             
         }
 
@@ -112,8 +113,6 @@ namespace MaterialSkinExample
 
       
 
-       
-
         private void materialSwitch4_CheckedChanged(object sender, EventArgs e)
         {
             DrawerUseColors = materialSwitch4.Checked;
@@ -173,5 +172,6 @@ namespace MaterialSkinExample
         {
             throw new System.NotImplementedException();
         }
+
     }
 }

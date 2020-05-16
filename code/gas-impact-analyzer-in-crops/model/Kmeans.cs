@@ -185,26 +185,33 @@ namespace model
             if (newLine) Console.WriteLine("\n");
         }
 
-        static void ShowClustered(double[][] data, int[] clustering,
+        public string ShowClustered(double[][] data, int[] clustering,
           int numClusters, int decimals)
         {
+            string ans = "";
             for (int k = 0; k < numClusters; ++k)
             {
-                Console.WriteLine("===================");
+                ans+="===================\n";
                 for (int i = 0; i < data.Length; ++i)
                 {
                     int clusterID = clustering[i];
                     if (clusterID != k) continue;
-                    Console.Write(i.ToString().PadLeft(3) + " ");
+                    // Console.Write(i.ToString().PadLeft(3) + " ");
+                    ans += i.ToString().PadLeft(3) + " ";
                     for (int j = 0; j < data[i].Length; ++j)
                     {
                         if (data[i][j] >= 0.0) Console.Write(" ");
-                        Console.Write(data[i][j].ToString("F" + decimals) + " ");
+                        // Console.Write(data[i][j].ToString("F" + decimals) + " ");
+                        ans += data[i][j].ToString("F" + decimals) + " ";
                     }
-                    Console.WriteLine("");
+                   // Console.WriteLine("");
+                    ans += "\n";
                 }
-                Console.WriteLine("===================");
+                //Console.WriteLine("===================");
+                ans += "===================\n";
             } // k
+            return ans;
         }
+        public int[] getClusteringID() { return clusteringID; }
     }
 }
