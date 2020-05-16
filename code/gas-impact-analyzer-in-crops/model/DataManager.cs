@@ -39,6 +39,7 @@ namespace model
             values[0] = "CANDELARIA"; query(list, values, "measurements");
             values[0] = "JAMUNDÍ"; query(list, values, "measurements");
             values[0] = "PALMIRA"; query(list, values, "measurements");
+            values[0] = "YUMBO"; query(list, values, "measurements");
 
             /*
             list.Add("Departamento");
@@ -103,32 +104,17 @@ namespace model
                         string authority = attrs[1].Split(':')[1];
                         string stationName = attrs[2].Split(':')[1];
                         string technology = attrs[3].Split(':')[1];
-                        string[] num = attrs[4].Split(':')[1].Split('.');
-                        double latitude = double.Parse(num[0]);
-                        if (num.Length == 2)
-                        {
-                            latitude += double.Parse(num[1]) / Math.Pow(10, num[1].Length);
-                        }
-                        num = attrs[5].Split(':')[1].Split('.');
-                        double longitude = double.Parse(num[0]);
-                        if (num.Length == 2)
-                        {
-                            longitude += double.Parse(num[1]) / Math.Pow(10, num[1].Length);
-                        }
+                        double latitude = ParseDouble(attrs[4].Split(':')[1]);
+                        double longitude = ParseDouble(attrs[5].Split(':')[1]); ;
                         string departmentCode = attrs[6].Split(':')[1];
                         string department = attrs[7].Split(':')[1];
                         string municipalityCode = attrs[8].Split(':')[1];
                         string municipality = attrs[9].Split(':')[1];
                         string stationType = attrs[10].Split(':')[1];
-                        double exhibitionTime = Double.Parse(attrs[11].Split(':')[1]);
+                        double exhibitionTime = ParseDouble(attrs[11].Split(':')[1]);
                         string variable = attrs[12].Split(':')[1];
                         string unit = attrs[13].Split(':')[1];
-                        num = attrs[14].Split(':')[1].Split('.');
-                        double concentration = double.Parse(num[0]);
-                        if (num.Length == 2)
-                        {
-                            concentration += double.Parse(num[1]) / Math.Pow(10, num[1].Length);
-                        }
+                        double concentration = ParseDouble(attrs[14].Split(':')[1]);
                         Measurement m = new Measurement(date, authority, stationName, technology, latitude, longitude, departmentCode, department, municipalityCode, municipality, stationType, exhibitionTime, variable, unit, concentration);
                         measurements.Add(m);
                     }
@@ -180,6 +166,17 @@ namespace model
             {
                 return planted;
             }
+        }
+
+        public static double ParseDouble(string num)
+        {
+            string[] intDec = num.Split('.');
+            double dnum = double.Parse(intDec[0]);
+            if (intDec.Length == 2)
+            {
+                dnum += double.Parse(intDec[1]) / Math.Pow(10, intDec[1].Length);
+            }
+            return dnum;
         }
     }
 }
