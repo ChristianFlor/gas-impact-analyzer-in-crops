@@ -16,10 +16,10 @@ namespace MaterialSkinExample
     public partial class MainForm : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
-
+        private DataManager dataManager;
         public MainForm()
         {
-               
+
             InitializeComponent();
 
             // Initialize MaterialSkinManager
@@ -44,57 +44,6 @@ namespace MaterialSkinExample
             materialCheckedListBox1.Items.Add("Item6", false);
             materialCheckedListBox1.Items.Add("Item7", false);
 
-            DataManager dt = new DataManager();
-            SeriesCollection sc= new SeriesCollection()
-            {
-                new ScatterSeries
-                {
-                    Title = "Series A",
-                    Values = new ChartValues<ObservablePoint>()
-                },
-                new ScatterSeries
-                {
-                    Title = "Series B",
-                    Values = new ChartValues<ObservablePoint>(),
-                    PointGeometry = DefaultGeometries.Diamond
-                },
-                new ScatterSeries
-                {
-                    Title = "Series C",
-                    Values = new ChartValues<ObservablePoint>(),
-                    PointGeometry = DefaultGeometries.Triangle,
-                    StrokeThickness = 2,
-                    Fill = Brushes.Transparent
-                },
-                new ScatterSeries
-                {
-                    Title = "Series D",
-                    Values = new ChartValues<ObservablePoint>(),
-                    PointGeometry = DefaultGeometries.Cross,
-                    StrokeThickness = 2,
-                    Fill = Brushes.Transparent
-
-                },
-                new ScatterSeries
-                {
-                    Title = "Series E",
-                    Values = new ChartValues<ObservablePoint>(),
-                    PointGeometry = DefaultGeometries.Square
-                }
-            };
-            int index = 0;
-            foreach (var series in sc)
-            {
-                List<Measurement> meas = dt.getClusterByID(index);
-                foreach(Measurement current in meas) 
-                {
-                    series.Values.Add(new ObservablePoint(index,current.Concentration));
-                }
-                index++;
-            }
-
-            KmeansChart.Series = sc;
-            KmeansChart.LegendLocation = LegendLocation.Bottom;
 
         }
 
@@ -168,6 +117,100 @@ namespace MaterialSkinExample
             }
             Invalidate();
         }
+        public void initializeAlgorithm(string crop)
+        {
+            dataManager = new DataManager();
+            dataManager.initializeKmeans(crop);
+            SeriesCollection sc = new SeriesCollection()
+            {
+                new ScatterSeries
+                {
+                    Title = "Cluster A",
+                    Values = new ChartValues<ObservablePoint>(),
+
+                },
+                new ScatterSeries
+                {
+                    Title = "Cluster B",
+                    Values = new ChartValues<ObservablePoint>(),
+                    PointGeometry = DefaultGeometries.Diamond
+                },
+                new ScatterSeries
+                {
+                    Title = "Cluster C",
+                    Values = new ChartValues<ObservablePoint>(),
+                    PointGeometry = DefaultGeometries.Triangle,
+                    StrokeThickness = 2,
+                    Fill = Brushes.Transparent
+                },
+                new ScatterSeries
+                {
+                    Title = "Cluster D",
+                    Values = new ChartValues<ObservablePoint>(),
+                    PointGeometry = DefaultGeometries.Cross,
+                    StrokeThickness = 2,
+                    Fill = Brushes.Transparent
+
+                },
+                new ScatterSeries
+                {
+                    Title = "Cluster E",
+                    Values = new ChartValues<ObservablePoint>(),
+                    PointGeometry = DefaultGeometries.Square
+                }
+            };
+            int index = 0;
+            foreach (var series in sc)
+            {
+                List<Measurement> meas = dataManager.getClusterByID(index);
+                foreach (Measurement current in meas)
+                {
+                    ObservablePoint p = new ObservablePoint(index, current.Concentration);
+                    series.Values.Add(p);
+
+
+                }
+                index++;
+            }
+
+            KmeansChart.Series = sc;
+            KmeansChart.LegendLocation = LegendLocation.Bottom;
+        }
+        private void ChartOnDataClick(object sender, ChartPoint p)
+        {
+            var asPixels = KmeansChart.Base.ConvertToPixels(p.AsPoint());
+            /*
+             ObservablePoint point = new ObservablePoint(p.X, p.Y);
+             int index = p.SeriesView.Values.IndexOf(p.AsPoint());
+             string title = p.SeriesView.Title;
+
+             Console.WriteLine(index + "  " + dataManager.getClusterByID(0).Count + "   " + p.SeriesView.Values.Count);
+             Measurement meas;
+             if (title=="Cluster A")
+             {
+                meas = dataManager.getClusterByID(0)[index];
+             }
+             else if (title == "Cluster B")
+             {
+                  meas = dataManager.getClusterByID(1)[index];
+             }
+             else if (title == "Cluster C")
+             {
+                  meas = dataManager.getClusterByID(2)[index];
+             }
+            else  if (title == "Cluster D")
+             {
+                  meas = dataManager.getClusterByID(3)[index];
+             }
+             else
+             {
+                  meas = dataManager.getClusterByID(4)[index];
+             }
+             MessageBox.Show(meas.Municipality);
+             labelInfo.Text = meas.Municipality;*/
+
+        }
+
 
         private void materialSwitch4_CheckedChanged(object sender, EventArgs e)
         {
@@ -211,7 +254,7 @@ namespace MaterialSkinExample
 
             var batchOperationResults = builder.ToString();
             var mresult = MaterialMessageBox.Show(batchOperationResults, "Batch Operation");
-            
+
         }
 
         private void materialButton9_Click(object sender, EventArgs e)
@@ -229,5 +272,15 @@ namespace MaterialSkinExample
             throw new System.NotImplementedException();
         }
 
+        
+
+        private void viewClusters_Click(object sender, EventArgs e) { 
+
+            string item = cropsItems.SelectedItem.ToString();
+            if(item!=""){
+                 Console.WriteLine(item);
+                initializeAlgorithm(item);
+            }
+        }
     }
 }

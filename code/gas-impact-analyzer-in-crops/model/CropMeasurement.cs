@@ -42,7 +42,28 @@
             this.MaizTradicionalA = maizTradicionalA;
             this.MaizTradicionalB = maizTradicionalB;
         }
+        public double getTypeCrop(string crop)
+        {
+            double ans = 0.0;
+            if (crop == "AlgodonA") ans = this.AlgodonA;
+            else if (crop == "AlgodonB") ans = this.AlgodonB;
+            else if (crop == "ArrozA") ans = this.ArrozA;
+            else if (crop == "ArrozB") ans = this.ArrozB;
+            else if (crop == "FrijolA") ans = this.FrijolA;
+            else if (crop == "FrijolB") ans = this.FrijolB;
+            else if (crop == "MaizTecnificadoA") ans = this.MaizTecnificadoA;
+            else if (crop == "MaizTecnificadoB") ans = this.MaizTecnificadoB;
+            else if (crop == "SorgoA") ans = this.SorgoA;
+            else if (crop == "SorgoB") ans = this.SorgoB;
+            else if (crop == "SoyaA") ans = this.SoyaA;
+            else if (crop == "SoyaB") ans = this.SoyaB;
+            else if (crop == "TabacoA") ans = this.TabacoA;
+            else if (crop == "TabacoB") ans = this.TabacoB;
+            else if (crop == "MaizTradicionalA") ans = this.MaizTradicionalA;
+            else if (crop == "MaizTradicionalB") ans = this.MaizTradicionalB;
+            return ans;
 
+        }
         public string Municipality { get => municipality; set => municipality = value; }
         public int Year { get => year; set => year = value; }
         public double AlgodonA { get => algodonA; set => algodonA = value; }

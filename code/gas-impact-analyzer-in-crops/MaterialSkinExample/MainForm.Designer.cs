@@ -81,8 +81,13 @@ namespace MaterialSkinExample
             this.materialSwitch4 = new MaterialSkin.Controls.MaterialSwitch();
             this.TabAlgorithm = new MaterialSkin.Controls.MaterialTabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
+            this.viewClusters = new System.Windows.Forms.Button();
+            this.cropsItems = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelInfo = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.KmeansChart = new LiveCharts.WinForms.CartesianChart();
+            this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
             this.materialContextMenuStrip1.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
@@ -716,6 +721,11 @@ namespace MaterialSkinExample
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.viewClusters);
+            this.tabPage2.Controls.Add(this.cropsItems);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.labelInfo);
+            this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.KmeansChart);
             this.tabPage2.Controls.Add(this.materialDivider4);
             this.tabPage2.ImageKey = "round_assessment_white_24dp.png";
@@ -725,6 +735,75 @@ namespace MaterialSkinExample
             this.tabPage2.Size = new System.Drawing.Size(1015, 520);
             this.tabPage2.TabIndex = 7;
             this.tabPage2.Text = "Dashboard";
+            // 
+            // viewClusters
+            // 
+            this.viewClusters.Location = new System.Drawing.Point(355, 76);
+            this.viewClusters.Name = "viewClusters";
+            this.viewClusters.Size = new System.Drawing.Size(107, 23);
+            this.viewClusters.TabIndex = 76;
+            this.viewClusters.Text = "view clusters";
+            this.viewClusters.UseVisualStyleBackColor = true;
+            this.viewClusters.Click += new System.EventHandler(this.viewClusters_Click);
+            // 
+            // cropsItems
+            // 
+            this.cropsItems.FormattingEnabled = true;
+            this.cropsItems.Items.AddRange(new object[] {
+            "AlgodonA",
+            "AlgodonB",
+            "ArrozA",
+            "ArrozB",
+            "FrijolA",
+            "FrijolB",
+            "MaizTecnificadoA",
+            "MaizTecnificadoB",
+            "SorgoA",
+            "SorgoB",
+            "SoyaA",
+            "SoyaB",
+            "TabacoA",
+            "TabacoB",
+            "MaizTradicionalA",
+            "MaizTradicionalB"});
+            this.cropsItems.Location = new System.Drawing.Point(341, 34);
+            this.cropsItems.Name = "cropsItems";
+            this.cropsItems.Size = new System.Drawing.Size(121, 23);
+            this.cropsItems.TabIndex = 75;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(373, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 15);
+            this.label2.TabIndex = 74;
+            this.label2.Text = "Select crop";
+            // 
+            // labelInfo
+            // 
+            this.labelInfo.AutoSize = true;
+            this.labelInfo.Location = new System.Drawing.Point(373, 352);
+            this.labelInfo.Name = "labelInfo";
+            this.labelInfo.Size = new System.Drawing.Size(0, 15);
+            this.labelInfo.TabIndex = 73;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(358, 326);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 15);
+            this.label1.TabIndex = 72;
+            // 
+            // KmeansChart
+            // 
+            this.KmeansChart.Location = new System.Drawing.Point(146, 145);
+            this.KmeansChart.Name = "KmeansChart";
+            this.KmeansChart.Size = new System.Drawing.Size(589, 252);
+            this.KmeansChart.TabIndex = 71;
+            this.KmeansChart.Text = "cartesianChart1";
+            this.KmeansChart.DataClick += new LiveCharts.Events.DataClickHandler(this.ChartOnDataClick);
             // 
             // materialDivider4
             // 
@@ -736,14 +815,6 @@ namespace MaterialSkinExample
             this.materialDivider4.Size = new System.Drawing.Size(490, 1);
             this.materialDivider4.TabIndex = 70;
             this.materialDivider4.Text = "materialDivider4";
-            // 
-            // KmeansChart
-            // 
-            this.KmeansChart.Location = new System.Drawing.Point(68, 52);
-            this.KmeansChart.Name = "KmeansChart";
-            this.KmeansChart.Size = new System.Drawing.Size(589, 252);
-            this.KmeansChart.TabIndex = 71;
-            this.KmeansChart.Text = "cartesianChart1";
             // 
             // MainForm
             // 
@@ -776,6 +847,7 @@ namespace MaterialSkinExample
             this.tabPage1.PerformLayout();
             this.TabAlgorithm.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -831,5 +903,10 @@ namespace MaterialSkinExample
         #endregion
 
         private LiveCharts.WinForms.CartesianChart KmeansChart;
+        private Label label1;
+        private Label labelInfo;
+        private ComboBox cropsItems;
+        private Label label2;
+        private Button viewClusters;
     }
 }

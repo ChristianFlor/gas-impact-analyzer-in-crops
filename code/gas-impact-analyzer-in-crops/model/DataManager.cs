@@ -64,10 +64,15 @@ namespace model
             values[0] = "Buga"; query(list, values, "planted");
             values[0] = "Buenaventura"; query(list, values, "planted");
             */
-            double[][] data = new double[measurements.Count][];
-            for (int i = 0; i < measurements.Count; i++)
+            
+        }
+        public void initializeKmeans(string crop)
+        {
+            
+            double[][] data = new double[harvested.Count][];
+            for (int i = 0; i < harvested.Count; i++)
             {
-                data[i] = new double[] { measurements[i].Latitude, measurements[i].Concentration, measurements[i].Longitude };
+                data[i] = new double[] { measurements[i].Concentration, harvested[i].getTypeCrop(crop)};
 
             }
             algorithm = new Kmeans(data, 5);
@@ -163,17 +168,7 @@ namespace model
                 }
             }
         }
-        public string showClustering()
-        {
-            double[][] data = new double[measurements.Count][];
-            for (int i = 0; i < measurements.Count; i++)
-            {
-                data[i] = new double[] { measurements[i].Latitude, measurements[i].Longitude, measurements[i].Concentration };
-
-            }
-            algorithm = new Kmeans(data, 5);
-            return algorithm.ShowClustered(data, algorithm.getClusteringID(), 5, 6);
-        }
+      
         public List<Measurement> getClusterByID(int id)
         {
             List<Measurement> cluster = new List<Measurement>();
