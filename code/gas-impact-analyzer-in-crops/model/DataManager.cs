@@ -43,6 +43,20 @@ namespace model
             values[0] = "PALMIRA"; query(list, values, "measurements");
             values[0] = "YUMBO"; query(list, values, "measurements");
 
+            readInfo(harvestRepository, harvestId);
+            list = new List<String>(); list.Add("Municipios");
+            values[0] = "Cali"; query(list, values, "harvested");
+            values[0] = "Palmira"; query(list, values, "harvested");
+            values[0] = "Candelaria"; query(list, values, "harvested");
+            values[0] = "Buga"; query(list, values, "harvested");
+            values[0] = "Buenaventura"; query(list, values, "harvested");
+            readInfo(plantedRepository, plantedId);
+            list = new List<String>(); list.Add("Municipios");
+            values[0] = "Cali"; query(list, values, "planted");
+            values[0] = "Palmira"; query(list, values, "planted");
+            values[0] = "Candelaria"; query(list, values, "planted");
+            values[0] = "Buga"; query(list, values, "planted");
+            values[0] = "Buenaventura"; query(list, values, "planted");
             /*
             list.Add("Departamento");
             values[0] = "VALLE%20DEL%20CAUCA"; query(list, values, "measurements");
@@ -64,7 +78,7 @@ namespace model
             values[0] = "Buga"; query(list, values, "planted");
             values[0] = "Buenaventura"; query(list, values, "planted");
             */
-            
+
         }
         public void initializeKmeans(string crop)
         {
@@ -125,7 +139,7 @@ namespace model
                 foreach (string r in regs)
                 {
                     string s = r.Replace("\n", "").Replace("\"", "");
-                    Console.WriteLine(s);
+                   // Console.WriteLine(s);
                     if (s.Length > 10)
                     {
                         string[] attrs = s.Substring(1).Split(',');
@@ -169,7 +183,7 @@ namespace model
             }
         }
       
-        public List<Measurement> getClusterByID(int id)
+        public List<Measurement> getClusterMeasurementByID(int id)
         {
             List<Measurement> cluster = new List<Measurement>();
             int[] idCluster = algorithm.getClusteringID();
@@ -178,8 +192,18 @@ namespace model
             }
             return cluster;
         }
+        public List<CropMeasurement> getClusterCropsByID(int id)
+        {
+            List<CropMeasurement> cluster = new List<CropMeasurement>();
+            int[] idCluster = algorithm.getClusteringID();
+            for (int i = 0; i < idCluster.Length; i++)
+            {
+                if (idCluster[i] == id) cluster.Add(harvested[i]);
+            }
+            return cluster;
+        }
 
-            public void setUrl(string url)
+        public void setUrl(string url)
         {
             this.url = url;
         }

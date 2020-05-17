@@ -2,85 +2,90 @@
 {
     public class CropMeasurement
     {
-        private string municipality;
-        private int year;
-        private double algodonA;
-        private double algodonB;
-        private double arrozA;
-        private double arrozB;
-        private double frijolA;
-        private double frijolB;
-        private double maizTecnificadoA;
-        private double maizTecnificadoB;
-        private double sorgoA;
-        private double sorgoB;
-        private double soyaA;
-        private double soyaB;
-        private double tabacoA;
-        private double tabacoB;
-        private double maizTradicionalA;
-        private double maizTradicionalB;
+        private string municipios;
+        private int a_o;
+        private double algod_n_a;
+        private double algod_n_b;
+        private double arroz_a;
+        private double arroz;
+        private double frijol_a;
+        private double frijol_b;
+        private double ma_z_tecnificado_a;
+        private double ma_z_tecnificado_b   ;
+        private double sorgo_a;
+        private double sorgo_b;
+        private double soya_a;
+        private double soya_b;
+        private double tabaco_a;
+        private double tabaco_b;
+        private double ma_z_tradicional_a;
+        private double ma_z_tradicional_b;
 
+        public CropMeasurement() { }
         public CropMeasurement(string municipality, int year, double algodonA, double algodonB, double arrozA, double arrozB, double frijolA, double frijolB, double maizTecnificadoA, double maizTecnificadoB, double sorgoA, double sorgoB, double soyaA, double soyaB, double tabacoA, double tabacoB, double maizTradicionalA, double maizTradicionalB)
         {
-            this.Municipality = municipality;
-            this.Year = year;
-            this.AlgodonA = algodonA;
-            this.AlgodonB = algodonB;
-            this.ArrozA = arrozA;
-            this.ArrozB = arrozB;
-            this.FrijolA = frijolA;
-            this.FrijolB = frijolB;
-            this.MaizTecnificadoA = maizTecnificadoA;
-            this.MaizTecnificadoB = maizTecnificadoB;
-            this.SorgoA = sorgoA;
-            this.SorgoB = sorgoB;
-            this.SoyaA = soyaA;
-            this.SoyaB = soyaB;
-            this.TabacoA = tabacoA;
-            this.TabacoB = tabacoB;
-            this.MaizTradicionalA = maizTradicionalA;
-            this.MaizTradicionalB = maizTradicionalB;
+            this.Municipios = municipality;
+            this.A_o = year;
+            this.Algod_n_a = algodonA;
+            this.Algod_n_b = algodonB;
+            this.Arroz_a = arrozA;
+            this.Arroz = arrozB;
+            this.Frijol_a = frijolA;
+            this.Frijol_b = frijolB;
+            this.Ma_z_tecnificado_a = maizTecnificadoA;
+            this.Ma_z_tecnificado_b = maizTecnificadoB;
+            this.Sorgo_a = sorgoA;
+            this.Sorgo_b = sorgoB;
+            this.Soya_a = soyaA;
+            this.Soya_b = soyaB;
+            this.Tabaco_a = tabacoA;
+            this.Tabaco_b = tabacoB;
+            this.Ma_z_tradicional_a = maizTradicionalA;
+            this.Ma_z_tradicional_b = maizTradicionalB;
         }
+
+        
         public double getTypeCrop(string crop)
         {
             double ans = 0.0;
-            if (crop == "AlgodonA") ans = this.AlgodonA;
-            else if (crop == "AlgodonB") ans = this.AlgodonB;
-            else if (crop == "ArrozA") ans = this.ArrozA;
-            else if (crop == "ArrozB") ans = this.ArrozB;
-            else if (crop == "FrijolA") ans = this.FrijolA;
-            else if (crop == "FrijolB") ans = this.FrijolB;
-            else if (crop == "MaizTecnificadoA") ans = this.MaizTecnificadoA;
-            else if (crop == "MaizTecnificadoB") ans = this.MaizTecnificadoB;
-            else if (crop == "SorgoA") ans = this.SorgoA;
-            else if (crop == "SorgoB") ans = this.SorgoB;
-            else if (crop == "SoyaA") ans = this.SoyaA;
-            else if (crop == "SoyaB") ans = this.SoyaB;
-            else if (crop == "TabacoA") ans = this.TabacoA;
-            else if (crop == "TabacoB") ans = this.TabacoB;
-            else if (crop == "MaizTradicionalA") ans = this.MaizTradicionalA;
-            else if (crop == "MaizTradicionalB") ans = this.MaizTradicionalB;
+            if (crop == "AlgodonA") ans = this.Algod_n_a;
+            else if (crop == "AlgodonB") ans = this.Algod_n_b;
+            else if (crop == "ArrozA") ans = this.Arroz_a;
+            else if (crop == "ArrozB") ans = this.Arroz;
+            else if (crop == "FrijolA") ans = this.Frijol_a;
+            else if (crop == "FrijolB") ans = this.Frijol_b;
+            else if (crop == "MaizTecnificadoA") ans = this.Ma_z_tecnificado_a;
+            else if (crop == "MaizTecnificadoB") ans = this.Ma_z_tecnificado_b;
+            else if (crop == "SorgoA") ans = this.Sorgo_a;
+            else if (crop == "SorgoB") ans = this.Sorgo_b;
+            else if (crop == "SoyaA") ans = this.Soya_a;
+            else if (crop == "SoyaB") ans = this.Soya_b;
+            else if (crop == "TabacoA") ans = this.Tabaco_a;
+            else if (crop == "TabacoB") ans = this.Tabaco_b;
+            else if (crop == "MaizTradicionalA") ans = this.Ma_z_tradicional_a;
+            else if (crop == "MaizTradicionalB") ans = this.Ma_z_tradicional_b;
             return ans;
 
         }
-        public string Municipality { get => municipality; set => municipality = value; }
-        public int Year { get => year; set => year = value; }
-        public double AlgodonA { get => algodonA; set => algodonA = value; }
-        public double AlgodonB { get => algodonB; set => algodonB = value; }
-        public double ArrozA { get => arrozA; set => arrozA = value; }
-        public double ArrozB { get => arrozB; set => arrozB = value; }
-        public double FrijolA { get => frijolA; set => frijolA = value; }
-        public double FrijolB { get => frijolB; set => frijolB = value; }
-        public double MaizTecnificadoA { get => maizTecnificadoA; set => maizTecnificadoA = value; }
-        public double MaizTecnificadoB { get => maizTecnificadoB; set => maizTecnificadoB = value; }
-        public double SorgoA { get => sorgoA; set => sorgoA = value; }
-        public double SorgoB { get => sorgoB; set => sorgoB = value; }
-        public double SoyaA { get => soyaA; set => soyaA = value; }
-        public double SoyaB { get => soyaB; set => soyaB = value; }
-        public double TabacoA { get => tabacoA; set => tabacoA = value; }
-        public double TabacoB { get => tabacoB; set => tabacoB = value; }
-        public double MaizTradicionalA { get => maizTradicionalA; set => maizTradicionalA = value; }
-        public double MaizTradicionalB { get => maizTradicionalB; set => maizTradicionalB = value; }
+        public string Municipios { get => municipios; set => municipios = value; }
+        public int A_o { get => a_o; set => a_o = value; }
+        public double Algod_n_a { get => algod_n_a; set => algod_n_a = value; }
+        public double Algod_n_b { get => algod_n_b; set => algod_n_b = value; }
+        public double Arroz_a { get => arroz_a; set => arroz_a = value; }
+        public double Arroz { get => arroz; set => arroz = value; }
+        public double Frijol_a { get => frijol_a; set => frijol_a = value; }
+        public double Frijol_b { get => frijol_b; set => frijol_b = value; }
+        public double Ma_z_tecnificado_a { get => ma_z_tecnificado_a; set => ma_z_tecnificado_a = value; }
+        public double Ma_z_tecnificado_b { get => ma_z_tecnificado_b; set => ma_z_tecnificado_b = value; }
+        public double Sorgo_a { get => sorgo_a; set => sorgo_a = value; }
+        public double Sorgo_b { get => sorgo_b; set => sorgo_b = value; }
+        public double Soya_a { get => soya_a; set => soya_a = value; }
+        public double Soya_b { get => soya_b; set => soya_b = value; }
+        public double Tabaco_a { get => tabaco_a; set => tabaco_a = value; }
+        public double Tabaco_b { get => tabaco_b; set => tabaco_b = value; }
+        public double Ma_z_tradicional_a { get => ma_z_tradicional_a; set => ma_z_tradicional_a = value; }
+        public double Ma_z_tradicional_b { get => ma_z_tradicional_b; set => ma_z_tradicional_b = value; }
+
+
     }
 }

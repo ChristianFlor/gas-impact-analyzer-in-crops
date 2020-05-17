@@ -162,10 +162,11 @@ namespace MaterialSkinExample
             int index = 0;
             foreach (var series in sc)
             {
-                List<Measurement> meas = dataManager.getClusterByID(index);
-                foreach (Measurement current in meas)
+                List<Measurement> meas = dataManager.getClusterMeasurementByID(index);
+                List<CropMeasurement> crops = dataManager.getClusterCropsByID(index);
+                for (int i=0; i<crops.Count;i++)
                 {
-                    ObservablePoint p = new ObservablePoint(index, current.Concentration);
+                    ObservablePoint p = new ObservablePoint(meas[i].Concentration, crops[i].getTypeCrop(crop));
                     series.Values.Add(p);
 
 
