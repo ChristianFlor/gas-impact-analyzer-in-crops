@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3222EF5A-7504-4520-ADC9-6717865FE6CD}</ProjectGuid>
+    <ProjectGuid>{03A115D4-F01F-47FE-8BBB-326C19C808FB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>model</RootNamespace>
@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="CropMeasurement.cs" />
     <Compile Include="DataManager.cs" />
+    <Compile Include="Kmeans.cs" />
     <Compile Include="Measurement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

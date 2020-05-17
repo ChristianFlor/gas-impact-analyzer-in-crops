@@ -22,7 +22,9 @@ namespace Prueba_Consulta
         private Dictionary<string, string> mapa;
         private HeatMap hm;
         string url = "";
+#pragma warning disable CS0169 // El campo 'Form1.med' nunca se usa
         Medicion med;
+#pragma warning restore CS0169 // El campo 'Form1.med' nunca se usa
 
         public Form1()
         {
@@ -91,12 +93,8 @@ namespace Prueba_Consulta
 
         }
 
-  
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
 
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -137,6 +135,11 @@ namespace Prueba_Consulta
         {
             hm.PaintHeatMap(heatMap);
             //textBoxValor.Text = $"Current directory is '{Environment.CurrentDirectory}'";
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

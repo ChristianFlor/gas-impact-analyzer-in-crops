@@ -22,8 +22,11 @@ namespace model
         private List<CropMeasurement> harvested;
         private List<CropMeasurement> planted;
         private Dictionary<string, string> columnDeserialize;
+        private Kmeans algorithm;
 
-        public DataManager() { 
+        public DataManager()
+        {
+
             measurements = new List<Measurement>();
             harvested = new List<CropMeasurement>();
             planted = new List<CropMeasurement>();
@@ -41,6 +44,20 @@ namespace model
             values[0] = "PALMIRA"; query(list, values, "measurements");
             values[0] = "YUMBO"; query(list, values, "measurements");
 
+            readInfo(harvestRepository, harvestId);
+            list = new List<String>(); list.Add("Municipios");
+            values[0] = "Cali"; query(list, values, "harvested");
+            values[0] = "Palmira"; query(list, values, "harvested");
+            values[0] = "Candelaria"; query(list, values, "harvested");
+            values[0] = "Buga"; query(list, values, "harvested");
+            values[0] = "Buenaventura"; query(list, values, "harvested");
+            readInfo(plantedRepository, plantedId);
+            list = new List<String>(); list.Add("Municipios");
+            values[0] = "Cali"; query(list, values, "planted");
+            values[0] = "Palmira"; query(list, values, "planted");
+            values[0] = "Candelaria"; query(list, values, "planted");
+            values[0] = "Buga"; query(list, values, "planted");
+            values[0] = "Buenaventura"; query(list, values, "planted");
             /*
             list.Add("Departamento");
             values[0] = "VALLE%20DEL%20CAUCA"; query(list, values, "measurements");
@@ -62,9 +79,36 @@ namespace model
             values[0] = "Buga"; query(list, values, "planted");
             values[0] = "Buenaventura"; query(list, values, "planted");
             */
-        }
 
-        private void readInfo(string repositoryUrl, string datasetId)
+        }
+        public void initializeKmeans(string crop)
+        {
+            
+            double[][] data = new double[harvested.Count][];
+            for (int i = 0; i < harvested.Count; i++)
+            {
+                data[i] = new double[] { measurements[i].Concentration, harvested[i].getTypeCrop(crop)};
+
+            }
+            algorithm = new Kmeans(data, 5);
+        }
+        public void addDataJustToTest_DeleteItAndAdaptTheChartToTheRealSituationAfterSeeingThisWorking()
+        {
+            Random r = new Random();
+            for (int i = 2011; i <= 2017; i++)
+            {
+                for (int j = 1; j <= 12; j++)
+                {
+                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Buenaventura", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
+                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Buga", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
+                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Cali-Cascajal", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
+                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Candelaria", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
+                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Jamundí", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
+                }
+            }
+        }
+            private void readInfo(string repositoryUrl, string datasetId)
+
         {
             columnDeserialize = new Dictionary<string, string>();
             url = repositoryUrl + "/resource/" + datasetId + ".json?";
@@ -96,7 +140,7 @@ namespace model
                 foreach (string r in regs)
                 {
                     string s = r.Replace("\n", "").Replace("\"", "");
-                    Console.WriteLine(s);
+                   // Console.WriteLine(s);
                     if (s.Length > 10)
                     {
                         string[] attrs = s.Substring(1).Split(',');
@@ -129,7 +173,8 @@ namespace model
                     harvested.Add(m);
                 }
             }
-            else {
+            else
+            {
                 JavaScriptSerializer js = new JavaScriptSerializer();
                 CropMeasurement[] data = js.Deserialize<CropMeasurement[]>(rawData);
                 foreach (CropMeasurement m in data)
@@ -138,15 +183,36 @@ namespace model
                 }
             }
         }
+      
+        public List<Measurement> getClusterMeasurementByID(int id)
+        {
+            List<Measurement> cluster = new List<Measurement>();
+            int[] idCluster = algorithm.getClusteringID();
+            for(int i=0;i<idCluster.Length;i++){
+                if (idCluster[i] == id) cluster.Add(measurements[i]);
+            }
+            return cluster;
+        }
+        public List<CropMeasurement> getClusterCropsByID(int id)
+        {
+            List<CropMeasurement> cluster = new List<CropMeasurement>();
+            int[] idCluster = algorithm.getClusteringID();
+            for (int i = 0; i < idCluster.Length; i++)
+            {
+                if (idCluster[i] == id) cluster.Add(harvested[i]);
+            }
+            return cluster;
+        }
 
         public void setUrl(string url)
         {
             this.url = url;
         }
 
-        public List<Measurement> Measurements 
+
+        public List<Measurement> Measurements
         {
-            get 
+            get
             {
                 return measurements;
             }
