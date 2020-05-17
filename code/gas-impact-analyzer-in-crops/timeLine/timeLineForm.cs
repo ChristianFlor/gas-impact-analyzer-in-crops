@@ -46,52 +46,7 @@ namespace timeLine
         private void button1_Click(object sender, EventArgs e)
         {
             dataManager.Measurements.Clear();
-
-            Dictionary<string, string> filtros = new Dictionary<string, string>();
-
-            filtros.Add("Nombre del municipio", "CALI");
-            filtros.Add("Variable", municipalityComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "BUENAVENTURA");
-            filtros.Add("Variable", municipalityComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "GUADALAJARA%20DE%20BUGA");
-            filtros.Add("Variable", municipalityComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "CANDELARIA");
-            filtros.Add("Variable", municipalityComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "JAMUNDÍ");
-            filtros.Add("Variable", municipalityComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "PALMIRA");
-            filtros.Add("Variable", municipalityComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "YUMBO");
-            filtros.Add("Variable", municipalityComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-
+            getDataWithPipes();
 
             cartesianChart1.Series.Clear();
             cartesianChart1.AxisX.Clear();
@@ -137,6 +92,45 @@ namespace timeLine
                 },
             };
             
+        }
+
+        private void getDataWithPipes()
+        {
+            Dictionary<string, string> filtros = new Dictionary<string, string>();
+
+            filtros.Add("Nombre del municipio", municipalityComboBox.Text);
+
+            filtros.Add("Variable", "CO");
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Add("Variable", municipalityComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Add("Variable", municipalityComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Add("Variable", municipalityComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+            filtros.Add("Nombre del municipio", "JAMUNDÍ");
+            filtros.Add("Variable", municipalityComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+            filtros.Add("Nombre del municipio", "PALMIRA");
+            filtros.Add("Variable", municipalityComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+            filtros.Add("Nombre del municipio", "YUMBO");
+            filtros.Add("Variable", municipalityComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
         }
 
         public class MeasurementModel : IComparable<MeasurementModel>
