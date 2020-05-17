@@ -1,8 +1,10 @@
 ﻿using MaterialSkin;
 using MaterialSkin.Controls;
+using model;
 using System;
 using System.Text;
 using System.Windows.Forms;
+using timeLine;
 
 namespace MaterialSkinExample
 {
@@ -35,8 +37,7 @@ namespace MaterialSkinExample
             materialCheckedListBox1.Items.Add("Item5", true);
             materialCheckedListBox1.Items.Add("Item6", false);
             materialCheckedListBox1.Items.Add("Item7", false);
-
-            
+            loadChild(tabTimeline, new TimeLineForm(new DataManager()));
         }
 
         private void seedListView()
@@ -172,6 +173,19 @@ namespace MaterialSkinExample
         private void materialButton5_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
+        }
+
+        private void loadChild(TabPage parent, Form childForm)
+        {
+            if (parent.Controls.Count > 0)
+            {
+                parent.Controls.RemoveAt(0);
+            }
+            childForm.TopLevel = false;
+            //childForm.Dock = DockStyle.Fill;
+            parent.Controls.Add(childForm);
+            parent.Tag = childForm;
+            childForm.Show();
         }
     }
 }
