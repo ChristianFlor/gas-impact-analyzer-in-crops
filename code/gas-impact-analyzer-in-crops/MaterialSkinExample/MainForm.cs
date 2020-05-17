@@ -44,7 +44,9 @@ namespace MaterialSkinExample
             materialCheckedListBox1.Items.Add("Item6", false);
             materialCheckedListBox1.Items.Add("Item7", false);
 
-            loadChild(tabTimeline, new TimeLineForm(new DataManager()));
+            dataManager = new DataManager(); //load it once
+
+            loadChild(tabTimeline, new TimeLineForm(dataManager));
 
         }
 
@@ -120,7 +122,6 @@ namespace MaterialSkinExample
         }
         public void initializeAlgorithm(string crop)
         {
-            dataManager = new DataManager();
             dataManager.initializeKmeans(crop);
             SeriesCollection sc = new SeriesCollection()
             {
@@ -282,7 +283,7 @@ namespace MaterialSkinExample
                 parent.Controls.RemoveAt(0);
             }
             childForm.TopLevel = false;
-            //childForm.Dock = DockStyle.Fill;
+            childForm.Dock = DockStyle.Fill;
             parent.Controls.Add(childForm);
             parent.Tag = childForm;
             childForm.Show();

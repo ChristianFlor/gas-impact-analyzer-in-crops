@@ -133,14 +133,12 @@ namespace model
 
             }
             string rawData = new WebClient().DownloadString(url2);
-            Console.WriteLine(url2);
             if (type.Equals("measurements"))
             {
                 string[] regs = rawData.Substring(1, rawData.Length - 2).Split('}');
                 foreach (string r in regs)
                 {
                     string s = r.Replace("\n", "").Replace("\"", "");
-                   // Console.WriteLine(s);
                     if (s.Length > 10)
                     {
                         string[] attrs = s.Substring(1).Split(',');
