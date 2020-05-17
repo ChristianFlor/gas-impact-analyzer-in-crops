@@ -45,6 +45,54 @@ namespace timeLine
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dataManager.Measurements.Clear();
+
+            Dictionary<string, string> filtros = new Dictionary<string, string>();
+
+            filtros.Add("Nombre del municipio", "CALI");
+            filtros.Add("Variable", gasesComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+            filtros.Add("Nombre del municipio", "BUENAVENTURA");
+            filtros.Add("Variable", gasesComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+            filtros.Add("Nombre del municipio", "GUADALAJARA%20DE%20BUGA");
+            filtros.Add("Variable", gasesComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+            filtros.Add("Nombre del municipio", "CANDELARIA");
+            filtros.Add("Variable", gasesComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+            filtros.Add("Nombre del municipio", "JAMUNDÍ");
+            filtros.Add("Variable", gasesComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+            filtros.Add("Nombre del municipio", "PALMIRA");
+            filtros.Add("Variable", gasesComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+            filtros.Add("Nombre del municipio", "YUMBO");
+            filtros.Add("Variable", gasesComboBox.Text);
+            dataManager.filterDataForAir(filtros);
+
+            filtros.Clear();
+
+
+
             cartesianChart1.Series.Clear();
             cartesianChart1.AxisX.Clear();
             Dictionary<string, List<MeasurementModel>> municipalities = new Dictionary<string, List<MeasurementModel>>();
@@ -53,7 +101,7 @@ namespace timeLine
             foreach (Measurement m in dataManager.Measurements)
             {
                 int year = int.Parse(m.Date.Split('/')[2]);
-                if (year >= initYear && year <= endYear && m.Variable.ToUpper().Equals(gasesComboBox.Text))
+                if (year >= initYear && year <= endYear)
                 {
                     if (!municipalities.ContainsKey(m.Municipality))
                     {

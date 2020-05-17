@@ -30,38 +30,8 @@ namespace model
             measurements = new List<Measurement>();
             harvested = new List<CropMeasurement>();
             planted = new List<CropMeasurement>();
-            readInfo(airQualityRepository, airQualityId);
-            List<string> list = new List<String>
-            {
-                "Nombre del municipio"
-            };
-            string[] values = new string[1];
-            values[0] = "BUENAVENTURA"; query(list, values, "measurements");
-            values[0] = "GUADALAJARA%20DE%20BUGA"; query(list, values, "measurements");
-            values[0] = "CALI"; query(list, values, "measurements");
-            values[0] = "CANDELARIA"; query(list, values, "measurements");
-            values[0] = "JAMUNDÍ"; query(list, values, "measurements");
-            values[0] = "PALMIRA"; query(list, values, "measurements");
-            values[0] = "YUMBO"; query(list, values, "measurements");
-
-            readInfo(harvestRepository, harvestId);
-            list = new List<String>(); list.Add("Municipios");
-            values[0] = "Cali"; query(list, values, "harvested");
-            values[0] = "Palmira"; query(list, values, "harvested");
-            values[0] = "Candelaria"; query(list, values, "harvested");
-            values[0] = "Buga"; query(list, values, "harvested");
-            values[0] = "Buenaventura"; query(list, values, "harvested");
-            readInfo(plantedRepository, plantedId);
-            list = new List<String>(); list.Add("Municipios");
-            values[0] = "Cali"; query(list, values, "planted");
-            values[0] = "Palmira"; query(list, values, "planted");
-            values[0] = "Candelaria"; query(list, values, "planted");
-            values[0] = "Buga"; query(list, values, "planted");
-            values[0] = "Buenaventura"; query(list, values, "planted");
-            /*
-            list.Add("Departamento");
-            values[0] = "VALLE%20DEL%20CAUCA"; query(list, values, "measurements");
-            */
+            
+           
         }
         public void initializeKmeans(string crop)
         {
@@ -209,6 +179,129 @@ namespace model
                 dnum += double.Parse(intDec[1]) / Math.Pow(10, intDec[1].Length);
             }
             return dnum;
+        }
+
+        public void dataForKmeans()
+        {
+
+            measurements.Clear();
+
+            readInfo(airQualityRepository, airQualityId);
+
+            List<string> list = new List<String>
+            {
+                "Nombre del municipio"
+            };
+            string[] values = new string[1];
+            values[0] = "BUENAVENTURA"; query(list, values, "measurements");
+            values[0] = "GUADALAJARA%20DE%20BUGA"; query(list, values, "measurements");
+            values[0] = "CALI"; query(list, values, "measurements");
+            values[0] = "CANDELARIA"; query(list, values, "measurements");
+            values[0] = "JAMUNDÍ"; query(list, values, "measurements");
+            values[0] = "PALMIRA"; query(list, values, "measurements");
+            values[0] = "YUMBO"; query(list, values, "measurements");
+
+            harvested.Clear();
+
+            readInfo(harvestRepository, harvestId);
+            list = new List<String>(); list.Add("Municipios");
+            values[0] = "Cali"; query(list, values, "harvested");
+            values[0] = "Palmira"; query(list, values, "harvested");
+            values[0] = "Candelaria"; query(list, values, "harvested");
+            values[0] = "Buga"; query(list, values, "harvested");
+            values[0] = "Buenaventura"; query(list, values, "harvested");
+
+            planted.Clear();
+
+            readInfo(plantedRepository, plantedId);
+            list = new List<String>(); list.Add("Municipios");
+            values[0] = "Cali"; query(list, values, "planted");
+            values[0] = "Palmira"; query(list, values, "planted");
+            values[0] = "Candelaria"; query(list, values, "planted");
+            values[0] = "Buga"; query(list, values, "planted");
+            values[0] = "Buenaventura"; query(list, values, "planted");
+
+        }
+
+        public void filterDataForAir(Dictionary<string, string> graphicQuery)
+        {
+
+
+            List<string> parametros = new List<string>();
+            List<string> valores = new List<string>();
+
+            foreach (KeyValuePair<string, string> pair in graphicQuery)
+            {
+
+                parametros.Add(pair.Key);
+                valores.Add(pair.Value);
+
+            }
+
+            int m = valores.Count;
+            string[] valores2 = new string[m];
+
+            valores.CopyTo(valores2);
+
+            readInfo(airQualityRepository, airQualityId);
+
+            query(parametros, valores2, "measurements");
+
+
+        }
+
+        public void filterDataForHarvested(Dictionary<string, string> graphicQuery)
+        {
+
+            harvested.Clear();
+            List<string> parametros = new List<string>();
+            List<string> valores = new List<string>();
+
+            foreach (KeyValuePair<string, string> pair in graphicQuery)
+            {
+
+                parametros.Add(pair.Key);
+                valores.Add(pair.Value);
+
+            }
+
+            int m = valores.Count;
+            string[] valores2 = new string[m];
+
+            valores.CopyTo(valores2);
+
+            readInfo(harvestRepository, harvestId);
+
+            query(parametros, valores2, "harvested");
+
+
+        }
+
+        public void filterDataForPlanted(Dictionary<string, string> graphicQuery)
+        {
+
+            planted.Clear();
+            List<string> parametros = new List<string>();
+            List<string> valores = new List<string>();
+
+            foreach (KeyValuePair<string, string> pair in graphicQuery)
+            {
+
+                parametros.Add(pair.Key);
+                valores.Add(pair.Value);
+
+            }
+
+            int m = valores.Count;
+            string[] valores2 = new string[m];
+
+            valores.CopyTo(valores2);
+
+            readInfo(plantedRepository, plantedId);
+
+            query(parametros, valores2, "planted");
+
+
         }
     }
 }
