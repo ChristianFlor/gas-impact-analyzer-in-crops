@@ -30,7 +30,7 @@
         {
             this.cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             this.label1 = new System.Windows.Forms.Label();
-            this.gasesComboBox = new System.Windows.Forms.ComboBox();
+            this.municipalityComboBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.initialDate = new System.Windows.Forms.NumericUpDown();
             this.finalDate = new System.Windows.Forms.NumericUpDown();
@@ -56,21 +56,22 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Choose a gas you want to know its concentration history";
             // 
-            // gasesComboBox
+            // municipalityComboBox
             // 
-            this.gasesComboBox.FormattingEnabled = true;
-            this.gasesComboBox.Items.AddRange(new object[] {
-            "CO",
-            "O3",
-            "NO2",
-            "SO2",
-            "PM10",
-            "PM2.5"});
-            this.gasesComboBox.Location = new System.Drawing.Point(193, 397);
-            this.gasesComboBox.Name = "gasesComboBox";
-            this.gasesComboBox.Size = new System.Drawing.Size(121, 21);
-            this.gasesComboBox.TabIndex = 2;
-            this.gasesComboBox.Text = "CO";
+            this.municipalityComboBox.FormattingEnabled = true;
+            this.municipalityComboBox.Items.AddRange(new object[] {
+            "GUADALAJARA DE BUGA",
+            "JAMUNDÍ",
+            "YUMBO",
+            "CANDELARIA",
+            "PALMIRA",
+            "BUENAVENTURA",
+            "CALI"});
+            this.municipalityComboBox.Location = new System.Drawing.Point(193, 397);
+            this.municipalityComboBox.Name = "municipalityComboBox";
+            this.municipalityComboBox.Size = new System.Drawing.Size(121, 21);
+            this.municipalityComboBox.TabIndex = 2;
+            this.municipalityComboBox.Text = "CALI";
             // 
             // label2
             // 
@@ -145,7 +146,7 @@
             this.Controls.Add(this.finalDate);
             this.Controls.Add(this.initialDate);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.gasesComboBox);
+            this.Controls.Add(this.municipalityComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cartesianChart1);
             this.Name = "TimeLineForm";
@@ -162,7 +163,7 @@
 
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox gasesComboBox;
+        private System.Windows.Forms.ComboBox municipalityComboBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown initialDate;
         private System.Windows.Forms.NumericUpDown finalDate;
