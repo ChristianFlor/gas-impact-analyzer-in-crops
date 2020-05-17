@@ -45,6 +45,7 @@ namespace MaterialSkinExample
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.item3ToolStripMenuItem = new MaterialSkin.Controls.MaterialToolStripMenuItem();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.materialTabSelector1 = new MaterialSkin.Controls.MaterialTabSelector();
             this.materialTabControl2 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabTimeline = new System.Windows.Forms.TabPage();
@@ -88,15 +89,16 @@ namespace MaterialSkinExample
             this.label1 = new System.Windows.Forms.Label();
             this.KmeansChart = new LiveCharts.WinForms.CartesianChart();
             this.materialDivider4 = new MaterialSkin.Controls.MaterialDivider();
-
             this.materialCard2 = new MaterialSkin.Controls.MaterialCard();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-
             this.materialContextMenuStrip1.SuspendLayout();
             this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
             this.tabTimeline.SuspendLayout();
             this.tabPage9.SuspendLayout();
@@ -106,13 +108,7 @@ namespace MaterialSkinExample
             this.tabPage1.SuspendLayout();
             this.TabAlgorithm.SuspendLayout();
             this.tabPage2.SuspendLayout();
-
             this.materialCard2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-
             this.SuspendLayout();
             // 
             // menuIconList
@@ -209,6 +205,25 @@ namespace MaterialSkinExample
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Cards";
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.materialTabSelector1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.materialTabControl2);
+            this.splitContainer1.Size = new System.Drawing.Size(1015, 520);
+            this.splitContainer1.SplitterDistance = 43;
+            this.splitContainer1.TabIndex = 25;
+            // 
             // materialTabSelector1
             // 
             this.materialTabSelector1.BaseTabControl = this.materialTabControl2;
@@ -243,13 +258,12 @@ namespace MaterialSkinExample
             // 
             this.tabTimeline.BackColor = System.Drawing.Color.White;
             this.tabTimeline.Controls.Add(this.materialLabel45);
-            this.tabTimeline.Location = new System.Drawing.Point(4, 22);
+            this.tabTimeline.Location = new System.Drawing.Point(4, 24);
             this.tabTimeline.Name = "tabTimeline";
             this.tabTimeline.Padding = new System.Windows.Forms.Padding(3);
-            this.tabTimeline.Size = new System.Drawing.Size(1007, 447);
+            this.tabTimeline.Size = new System.Drawing.Size(1007, 445);
             this.tabTimeline.TabIndex = 0;
             this.tabTimeline.Text = "Heat map";
-
             // 
             // materialLabel45
             // 
@@ -272,7 +286,7 @@ namespace MaterialSkinExample
             this.tabPage9.Location = new System.Drawing.Point(4, 24);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1011, 292);
+            this.tabPage9.Size = new System.Drawing.Size(1007, 445);
             this.tabPage9.TabIndex = 1;
             this.tabPage9.Text = "Linear";
             // 
@@ -299,7 +313,7 @@ namespace MaterialSkinExample
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1011, 292);
+            this.tabPage3.Size = new System.Drawing.Size(1007, 445);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Bar";
             // 
@@ -326,7 +340,7 @@ namespace MaterialSkinExample
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1011, 292);
+            this.tabPage4.Size = new System.Drawing.Size(1007, 445);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Circular graph";
             // 
@@ -832,7 +846,6 @@ namespace MaterialSkinExample
             this.materialDivider4.TabIndex = 70;
             this.materialDivider4.Text = "materialDivider4";
             // 
-
             // materialCard2
             // 
             this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -896,26 +909,6 @@ namespace MaterialSkinExample
             this.materialLabel2.TabIndex = 0;
             this.materialLabel2.Text = "Cards are also supported!";
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.materialTabSelector1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.materialTabControl2);
-            this.splitContainer1.Size = new System.Drawing.Size(1015, 520);
-            this.splitContainer1.SplitterDistance = 43;
-            this.splitContainer1.TabIndex = 25;
-            // 
-
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -930,8 +923,13 @@ namespace MaterialSkinExample
             this.Name = "MainForm";
             this.Padding = new System.Windows.Forms.Padding(3, 64, 3, 3);
             this.Text = "GIAC-Valle del Cauca";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.materialContextMenuStrip1.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.materialTabControl2.ResumeLayout(false);
             this.tabTimeline.ResumeLayout(false);
             this.tabTimeline.PerformLayout();
@@ -947,16 +945,9 @@ namespace MaterialSkinExample
             this.tabPage1.PerformLayout();
             this.TabAlgorithm.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-
+            this.tabPage2.PerformLayout();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-
-            this.tabPage2.PerformLayout();
-
             this.ResumeLayout(false);
 
         }

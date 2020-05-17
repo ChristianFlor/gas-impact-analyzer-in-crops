@@ -62,24 +62,6 @@ namespace model
             list.Add("Departamento");
             values[0] = "VALLE%20DEL%20CAUCA"; query(list, values, "measurements");
             */
-
-            /*
-            readInfo(harvestRepository, harvestId);
-            list = new List<String>(); list.Add("municipios");
-            values[0] = "Cali"; query(list, values, "harvested");
-            values[0] = "Palmira"; query(list, values, "harvested");
-            values[0] = "Candelaria"; query(list, values, "harvested");
-            values[0] = "Buga"; query(list, values, "harvested");
-            values[0] = "Buenaventura"; query(list, values, "harvested");
-            readInfo(plantedRepository, plantedId);
-            list = new List<String>(); list.Add("municipios");
-            values[0] = "Cali"; query(list, values, "planted");
-            values[0] = "Palmira"; query(list, values, "planted");
-            values[0] = "Candelaria"; query(list, values, "planted");
-            values[0] = "Buga"; query(list, values, "planted");
-            values[0] = "Buenaventura"; query(list, values, "planted");
-            */
-
         }
         public void initializeKmeans(string crop)
         {
@@ -92,21 +74,7 @@ namespace model
             }
             algorithm = new Kmeans(data, 5);
         }
-        public void addDataJustToTest_DeleteItAndAdaptTheChartToTheRealSituationAfterSeeingThisWorking()
-        {
-            Random r = new Random();
-            for (int i = 2011; i <= 2017; i++)
-            {
-                for (int j = 1; j <= 12; j++)
-                {
-                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Buenaventura", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
-                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Buga", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
-                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Cali-Cascajal", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
-                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Candelaria", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
-                    measurements.Add(new Measurement(r.Next(28) + "/" + j + "/" + i, "autoridad", "station" + i, "tech" + i, 1, 2, "123", "VALLE DEL CAUCA", "mucicipiocode", "Jamundí", "tipo", 123, "CO2", "unit", r.NextDouble() * (100.0 * Math.PI)));
-                }
-            }
-        }
+        
             private void readInfo(string repositoryUrl, string datasetId)
 
         {
