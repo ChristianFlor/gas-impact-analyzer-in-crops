@@ -1,5 +1,7 @@
 
+
 <h1 align="center">Gas impact analyzer on crops in the Valle del Cauca</h1>
+
 
 Gas impact analyzer on crops in the Valle del Cauca, It is a software whose purpose is to determine if the concentration of various pollutants in the atmosphere is related to the difference between the hectares planted and the hectares cultivated with different typical crops of the department.
 
@@ -19,12 +21,15 @@ The stages of develop of this project are distributed in the follow deliveries:
 4. [Final Delvery](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/tree/master/docs/final-delivery). Development and application of an information analysis algorithm. Evaluation and conclusions.
 
 
+<<<<<<< HEAD
 ## Dependencies
 There is a set of NuGet packages you will need to run the project, they are:
 * [LiveCharts](https://www.nuget.org/packages/LiveCharts.WinForms)
 * [MaterialSkin.2](https://www.nuget.org/packages/MaterialSkin.2)
 * [CSM.SodaDotNet](https://www.nuget.org/packages/CSM.SodaDotNet)
 * [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json)
+=======
+>>>>>>> development
 
 
 ## Made by
