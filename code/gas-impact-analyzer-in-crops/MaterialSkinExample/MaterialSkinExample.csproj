@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MaterialSkinExample</RootNamespace>
     <AssemblyName>MaterialSkinExample</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -126,6 +126,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\baseline_favorite_border_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\model\model.csproj">
+      <Project>{3222ef5a-7504-4520-adc9-6717865fe6cd}</Project>
+      <Name>model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\timeLine\timeLine.csproj">
+      <Project>{d737966b-c89a-49cf-b94a-321460843f18}</Project>
+      <Name>timeLine</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
