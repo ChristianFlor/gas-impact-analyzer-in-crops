@@ -50,8 +50,6 @@ namespace MaterialSkinExample
             this.materialTabControl2 = new MaterialSkin.Controls.MaterialTabControl();
             this.tabTimeline = new System.Windows.Forms.TabPage();
             this.materialLabel45 = new MaterialSkin.Controls.MaterialLabel();
-            this.tabPage9 = new System.Windows.Forms.TabPage();
-            this.materialLabel10 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -97,7 +95,6 @@ namespace MaterialSkinExample
             this.splitContainer1.SuspendLayout();
             this.materialTabControl2.SuspendLayout();
             this.tabTimeline.SuspendLayout();
-            this.tabPage9.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage7.SuspendLayout();
@@ -188,13 +185,13 @@ namespace MaterialSkinExample
             // 
             this.tabPage6.BackColor = System.Drawing.Color.White;
             this.tabPage6.Controls.Add(this.splitContainer1);
-            this.tabPage6.ImageKey = "round_bookmark_white_24dp.png";
+            this.tabPage6.ImageKey = "round_assessment_white_24dp.png";
             this.tabPage6.Location = new System.Drawing.Point(4, 31);
             this.tabPage6.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(1015, 520);
             this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Cards";
+            this.tabPage6.Text = "Dashboard";
             // 
             // splitContainer1
             // 
@@ -232,7 +229,6 @@ namespace MaterialSkinExample
             // materialTabControl2
             // 
             this.materialTabControl2.Controls.Add(this.tabTimeline);
-            this.materialTabControl2.Controls.Add(this.tabPage9);
             this.materialTabControl2.Controls.Add(this.tabPage3);
             this.materialTabControl2.Controls.Add(this.tabPage4);
             this.materialTabControl2.Depth = 0;
@@ -254,7 +250,7 @@ namespace MaterialSkinExample
             this.tabTimeline.Padding = new System.Windows.Forms.Padding(3);
             this.tabTimeline.Size = new System.Drawing.Size(1007, 445);
             this.tabTimeline.TabIndex = 0;
-            this.tabTimeline.Text = "Heat map";
+            this.tabTimeline.Text = "TimeLine";
             // 
             // materialLabel45
             // 
@@ -269,33 +265,6 @@ namespace MaterialSkinExample
             this.materialLabel45.Size = new System.Drawing.Size(174, 24);
             this.materialLabel45.TabIndex = 4;
             this.materialLabel45.Text = "Tabs are supported";
-            // 
-            // tabPage9
-            // 
-            this.tabPage9.BackColor = System.Drawing.Color.White;
-            this.tabPage9.Controls.Add(this.materialLabel10);
-            this.tabPage9.Location = new System.Drawing.Point(4, 24);
-            this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(1007, 445);
-            this.tabPage9.TabIndex = 1;
-            this.tabPage9.Text = "Linear";
-            // 
-            // materialLabel10
-            // 
-            this.materialLabel10.AutoSize = true;
-            this.materialLabel10.Depth = 0;
-            this.materialLabel10.Font = new System.Drawing.Font("Roboto", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel10.FontType = MaterialSkin.MaterialSkinManager.fontType.H3;
-            this.materialLabel10.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (180)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
-            this.materialLabel10.HighEmphasis = true;
-            this.materialLabel10.Location = new System.Drawing.Point(6, 7);
-            this.materialLabel10.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel10.Name = "materialLabel10";
-            this.materialLabel10.Size = new System.Drawing.Size(475, 58);
-            this.materialLabel10.TabIndex = 1;
-            this.materialLabel10.Text = "Everything is possible!";
-            this.materialLabel10.UseAccent = true;
             // 
             // tabPage3
             // 
@@ -699,13 +668,13 @@ namespace MaterialSkinExample
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.KmeansChart);
             this.tabPage2.Controls.Add(this.materialDivider4);
-            this.tabPage2.ImageKey = "round_assessment_white_24dp.png";
+            this.tabPage2.ImageKey = "round_bookmark_white_24dp.png";
             this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(0);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Size = new System.Drawing.Size(1015, 520);
             this.tabPage2.TabIndex = 7;
-            this.tabPage2.Text = "Dashboard";
+            this.tabPage2.Text = "Kmeans";
             // 
             // materialLabel6
             // 
@@ -859,8 +828,6 @@ namespace MaterialSkinExample
             this.materialTabControl2.ResumeLayout(false);
             this.tabTimeline.ResumeLayout(false);
             this.tabTimeline.PerformLayout();
-            this.tabPage9.ResumeLayout(false);
-            this.tabPage9.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
@@ -897,7 +864,6 @@ namespace MaterialSkinExample
         private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
         private MaterialSkin.Controls.MaterialDivider materialDivider4;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialLabel materialLabel10;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialLabel materialLabel24;
         private MaterialSkin.Controls.MaterialLabel materialLabel25;
@@ -927,7 +893,6 @@ namespace MaterialSkinExample
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
-        private System.Windows.Forms.TabPage tabPage9;
         private System.Windows.Forms.TabPage tabTimeline;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
