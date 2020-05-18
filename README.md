@@ -20,16 +20,12 @@ The stages of develop of this project are distributed in the follow deliveries:
 3. [Third Delivery](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/tree/master/docs/delivery-3). Development interesting reports: charts and tables.
 4. [Final Delvery](https://github.com/ChristianFlor/gas-impact-analyzer-in-crops/tree/master/docs/final-delivery). Development and application of an information analysis algorithm. Evaluation and conclusions.
 
-
-<<<<<<< HEAD
 ## Dependencies
 There is a set of NuGet packages you will need to run the project, they are:
 * [LiveCharts](https://www.nuget.org/packages/LiveCharts.WinForms)
 * [MaterialSkin.2](https://www.nuget.org/packages/MaterialSkin.2)
 * [CSM.SodaDotNet](https://www.nuget.org/packages/CSM.SodaDotNet)
 * [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json)
-=======
->>>>>>> development
 
 
 ## Made by
