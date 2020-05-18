@@ -87,6 +87,7 @@
     <Compile Include="DataManager.cs" />
     <Compile Include="Kmeans.cs" />
     <Compile Include="Measurement.cs" />
+    <Compile Include="Medicion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

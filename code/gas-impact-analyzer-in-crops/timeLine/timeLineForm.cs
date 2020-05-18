@@ -50,7 +50,7 @@ namespace timeLine
 
             cartesianChart1.Series.Clear();
             cartesianChart1.AxisX.Clear();
-            Dictionary<string, List<MeasurementModel>> municipalities = new Dictionary<string, List<MeasurementModel>>();
+            Dictionary<string, List<MeasurementModel>> gases = new Dictionary<string, List<MeasurementModel>>();
             var initYear = initialDate.Value;
             var endYear = finalDate.Value;
             foreach (Measurement m in dataManager.Measurements)
@@ -58,13 +58,13 @@ namespace timeLine
                 int year = int.Parse(m.Date.Split('/')[2]);
                 if (year >= initYear && year <= endYear)
                 {
-                    if (!municipalities.ContainsKey(m.Municipality))
+                    if (!gases.ContainsKey(m.Variable))
                     {
-                        municipalities.Add(m.Municipality, new List<MeasurementModel>());
+                        gases.Add(m.Variable, new List<MeasurementModel>());
                     }
 
                     string[] date = m.Date.Split('/');
-                    municipalities[m.Municipality].Add(new MeasurementModel(new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0])), m.Concentration));
+                    gases[m.Variable].Add(new MeasurementModel(new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0])), m.Concentration));
                 }
 
             }
@@ -75,9 +75,9 @@ namespace timeLine
 
             SeriesCollection sc = new SeriesCollection(dateConfig);
 
-            foreach (string v in municipalities.Keys)
+            foreach (string v in gases.Keys)
             {
-                sc.Add(new LineSeries() { Title = v, Values = new ChartValues<MeasurementModel>(municipalities[v]) });
+                sc.Add(new LineSeries() { Title = v, Values = new ChartValues<MeasurementModel>(gases[v]) });
             }
             cartesianChart1.Series = sc;
             DateTime maxi = new DateTime((int)finalDate.Value, 12, 31);
@@ -103,34 +103,20 @@ namespace timeLine
             filtros.Add("Variable", "CO");
             dataManager.filterDataForAir(filtros);
 
-            filtros.Add("Variable", municipalityComboBox.Text);
+            filtros["Variable"] = "O3";
             dataManager.filterDataForAir(filtros);
 
-            filtros.Add("Variable", municipalityComboBox.Text);
+            filtros["Variable"] = "NO2";
             dataManager.filterDataForAir(filtros);
 
-            filtros.Add("Variable", municipalityComboBox.Text);
+            filtros["Variable"] = "SO2";
             dataManager.filterDataForAir(filtros);
 
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "JAMUNDÍ");
-            filtros.Add("Variable", municipalityComboBox.Text);
+            filtros["Variable"] = "PM10";
             dataManager.filterDataForAir(filtros);
 
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "PALMIRA");
-            filtros.Add("Variable", municipalityComboBox.Text);
+            filtros["Variable"] = "PM2.5";
             dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "YUMBO");
-            filtros.Add("Variable", municipalityComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
         }
 
         public class MeasurementModel : IComparable<MeasurementModel>

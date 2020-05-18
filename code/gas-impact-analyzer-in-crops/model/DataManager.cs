@@ -21,15 +21,16 @@ namespace model
         private List<Measurement> measurements;
         private List<CropMeasurement> harvested;
         private List<CropMeasurement> planted;
+        private List<Medicion> mediciones;
         private Dictionary<string, string> columnDeserialize;
         private Kmeans algorithm;
 
         public DataManager()
         {
-
-            measurements = new List<Measurement>();
-            harvested = new List<CropMeasurement>();
-            planted = new List<CropMeasurement>();
+            mediciones = new List<Medicion>();
+            measurements = new List<Measurement>(1400000);
+            harvested = new List<CropMeasurement>(1400000);
+            planted = new List<CropMeasurement>(1400000);
             
            
         }
@@ -70,10 +71,24 @@ namespace model
                 url2 += str;
 
             }
+            url2 += "$limit=250000";
             string rawData = new WebClient().DownloadString(url2);
             if (type.Equals("measurements"))
             {
-                string[] regs = rawData.Substring(1, rawData.Length - 2).Split('}');
+                JavaScriptSerializer js = new JavaScriptSerializer();
+                js.MaxJsonLength = Int32.MaxValue;
+                Medicion[] data = js.Deserialize<Medicion[]>(rawData);
+                Console.WriteLine("datos "+data.Count());
+                foreach (Medicion m in data)
+                {
+                    mediciones.Add(m);
+                }
+                Console.WriteLine("Enm mediciones hay " + mediciones.Count() + " elementos");
+               /* rawData = new WebClient().DownloadString(url2+);
+                int offset = 0;
+
+                while()
+                string[] regs = rawData.Substring(1, rawData.Length - 2).Split('}');Console.WriteLine("~~~{}~~~"+regs.Count());
                 foreach (string r in regs)
                 {
                     string s = r.Replace("\n", "").Replace("\"", "");
@@ -98,7 +113,7 @@ namespace model
                         Measurement m = new Measurement(date, authority, stationName, technology, latitude, longitude, departmentCode, department, municipalityCode, municipality, stationType, exhibitionTime, variable, unit, concentration);
                         measurements.Add(m);
                     }
-                }
+                }*/
             }
             else if (type.Equals("harvested"))
             {
@@ -225,8 +240,7 @@ namespace model
 
         public void filterDataForAir(Dictionary<string, string> graphicQuery)
         {
-
-
+            Console.WriteLine(mediciones.Count()+"***");
             List<string> parametros = new List<string>();
             List<string> valores = new List<string>();
 
