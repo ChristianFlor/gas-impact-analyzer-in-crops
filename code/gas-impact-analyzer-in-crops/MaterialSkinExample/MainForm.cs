@@ -11,12 +11,17 @@ using timeLine;
 using System.Linq;
 using System.Windows.Media;
 using System.Collections.Generic;
+using System.Net;
+using System.Web.Script.Serialization;
+using SODA;
+
 namespace MaterialSkinExample
 {
     public partial class MainForm : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
         private DataManager dataManager;
+        string url = "";
         public MainForm()
         {
 
@@ -34,41 +39,12 @@ namespace MaterialSkinExample
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
 
-            // Add dummy data to the listview
-            seedListView();
-            materialCheckedListBox1.Items.Add("Item1", false);
-            materialCheckedListBox1.Items.Add("Item2", true);
-            materialCheckedListBox1.Items.Add("Item3", true);
-            materialCheckedListBox1.Items.Add("Item4", false);
-            materialCheckedListBox1.Items.Add("Item5", true);
-            materialCheckedListBox1.Items.Add("Item6", false);
-            materialCheckedListBox1.Items.Add("Item7", false);
-
             dataManager = new DataManager(); //load it once
 
             loadChild(tabTimeline, new TimeLineForm(dataManager));
 
         }
 
-        private void seedListView()
-        {
-            //Define
-            var data = new[]
-            {
-                new []{"Lollipop", "392", "0.2", "0"},
-                new []{"KitKat", "518", "26.0", "7"},
-                new []{"Ice cream sandwich", "237", "9.0", "4.3"},
-                new []{"Jelly Bean", "375", "0.0", "0.0"},
-                new []{"Honeycomb", "408", "3.2", "6.5"}
-            };
-
-            //Add
-            foreach (string[] version in data)
-            {
-                var item = new ListViewItem(version);
-                materialListView1.Items.Add(item);
-            }
-        }
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
@@ -168,7 +144,7 @@ namespace MaterialSkinExample
                 List<CropMeasurement> crops = dataManager.getClusterCropsByID(index);
                 for (int i=0; i<crops.Count;i++)
                 {
-                    ObservablePoint p = new ObservablePoint(meas[i].Concentration, crops[i].getTypeCrop(crop));
+                    ObservablePoint p = new ObservablePoint(meas[i].concentration, crops[i].getTypeCrop(crop));
                     series.Values.Add(p);
 
 
@@ -267,14 +243,48 @@ namespace MaterialSkinExample
 
         private void materialButton2_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            dataGridView1.Rows.Clear();
+
+            string url2 = url;
+            string[] valores = valueTB.Text.Split(',');
+            var list = checkedListBox1.CheckedItems;
+
+            string datosCrudos = new WebClient().DownloadString(url2);
+
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            Measurement[] mediciones = js.Deserialize<Measurement[]>(datosCrudos);
+            
+            foreach (Measurement m in mediciones) {
+
+                dataGridView1.Rows.Add(m.date, m.authority, m.stationName, m.technology, m.latitude, m.longitude,
+                    m.departmentCode, m.department, m.municipalityCode, m.municipality, m.stationType, m.exhibitionTime,
+                    m.variable, m.unit, m.concentration);
+
+            }
         }
 
         private void materialButton5_Click(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            readInfo();
         }
+        
+        public void readInfo()
+        {
+            dataGridView1.Columns.Clear();
+            checkedListBox1.Items.Clear();
 
+            string repository = repositoryURL.Text;
+            string id = datasetID.Text;
+            url = repository + "/resource/" + id + ".json?";
+            var client = new SodaClient(repository, "zzanGqreT6bAIRPuvhwn9yso3");
+            var dataset = client.GetResource<Object>(id);
+            foreach (var c in dataset.Columns)
+            {
+                checkedListBox1.Items.Add(c.Name, false);
+                //mapa.Add(c.Name, c.SodaFieldName);
+                dataGridView1.Columns.Add(c.SodaFieldName, c.Name);
+            }
+        }
 
         private void loadChild(TabPage parent, Form childForm)
         {
@@ -283,9 +293,11 @@ namespace MaterialSkinExample
                 parent.Controls.RemoveAt(0);
             }
             childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
             parent.Controls.Add(childForm);
             parent.Tag = childForm;
+            childForm.BringToFront();
             childForm.Show();
         }
 
@@ -293,9 +305,10 @@ namespace MaterialSkinExample
 
             string item = cropsItems.SelectedItem.ToString();
             if(item!=""){
-                 Console.WriteLine(item);
+                Console.WriteLine(item);
                 initializeAlgorithm(item);
             }
         }
+        
     }
 }

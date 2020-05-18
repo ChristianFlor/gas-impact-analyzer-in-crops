@@ -39,7 +39,7 @@ namespace model
             double[][] data = new double[harvested.Count][];
             for (int i = 0; i < harvested.Count; i++)
             {
-                data[i] = new double[] { measurements[i].Concentration, harvested[i].getTypeCrop(crop)};
+                data[i] = new double[] { measurements[i].concentration, harvested[i].getTypeCrop(crop)};
 
             }
             algorithm = new Kmeans(data, 5);

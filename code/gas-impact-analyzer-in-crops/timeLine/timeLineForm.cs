@@ -100,16 +100,16 @@ namespace timeLine
             var endYear = finalDate.Value;
             foreach (Measurement m in dataManager.Measurements)
             {
-                int year = int.Parse(m.Date.Split('/')[2]);
+                int year = int.Parse(m.date.Split('/')[2]);
                 if (year >= initYear && year <= endYear)
                 {
-                    if (!municipalities.ContainsKey(m.Municipality))
+                    if (!municipalities.ContainsKey(m.municipality))
                     {
-                        municipalities.Add(m.Municipality, new List<MeasurementModel>());
+                        municipalities.Add(m.municipality, new List<MeasurementModel>());
                     }
 
-                    string[] date = m.Date.Split('/');
-                    municipalities[m.Municipality].Add(new MeasurementModel(new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0])), m.Concentration));
+                    string[] date = m.date.Split('/');
+                    municipalities[m.municipality].Add(new MeasurementModel(new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0])), m.concentration));
                 }
 
             }
