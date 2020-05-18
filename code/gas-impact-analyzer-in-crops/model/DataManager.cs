@@ -21,18 +21,36 @@ namespace model
         private List<Measurement> measurements;
         private List<CropMeasurement> harvested;
         private List<CropMeasurement> planted;
-        private List<Medicion> mediciones;
         private Dictionary<string, string> columnDeserialize;
         private Kmeans algorithm;
 
         public DataManager()
         {
-            mediciones = new List<Medicion>();
             measurements = new List<Measurement>(1400000);
             harvested = new List<CropMeasurement>(1400000);
             planted = new List<CropMeasurement>(1400000);
-            
-           
+
+            Dictionary<string, string> filtros = new Dictionary<string, string>();
+
+            filtros.Add("Nombre del municipio", "CALI");
+
+            filtros.Add("Variable", "CO");
+            filterDataForAir(filtros);
+
+            filtros["Variable"] = "O3";
+            filterDataForAir(filtros);
+
+            filtros["Variable"] = "NO2";
+            filterDataForAir(filtros);
+
+            filtros["Variable"] = "SO2";
+            filterDataForAir(filtros);
+
+            filtros["Variable"] = "PM10";
+            filterDataForAir(filtros);
+
+            filtros["Variable"] = "PM2.5";
+            filterDataForAir(filtros);
         }
         public void initializeKmeans(string crop)
         {
@@ -75,45 +93,42 @@ namespace model
             string rawData = new WebClient().DownloadString(url2);
             if (type.Equals("measurements"))
             {
-                JavaScriptSerializer js = new JavaScriptSerializer();
+                /*JavaScriptSerializer js = new JavaScriptSerializer();
                 js.MaxJsonLength = Int32.MaxValue;
                 Medicion[] data = js.Deserialize<Medicion[]>(rawData);
                 Console.WriteLine("datos "+data.Count());
                 foreach (Medicion m in data)
                 {
                     mediciones.Add(m);
-                }
-                Console.WriteLine("Enm mediciones hay " + mediciones.Count() + " elementos");
-               /* rawData = new WebClient().DownloadString(url2+);
-                int offset = 0;
-
-                while()
-                string[] regs = rawData.Substring(1, rawData.Length - 2).Split('}');Console.WriteLine("~~~{}~~~"+regs.Count());
-                foreach (string r in regs)
-                {
-                    string s = r.Replace("\n", "").Replace("\"", "");
-                    if (s.Length > 10)
-                    {
-                        string[] attrs = s.Substring(1).Split(',');
-                        string date = attrs[0].Split(' ')[0].Split(':')[1];
-                        string authority = attrs[1].Split(':')[1];
-                        string stationName = attrs[2].Split(':')[1];
-                        string technology = attrs[3].Split(':')[1];
-                        double latitude = ParseDouble(attrs[4].Split(':')[1]);
-                        double longitude = ParseDouble(attrs[5].Split(':')[1]); ;
-                        string departmentCode = attrs[6].Split(':')[1];
-                        string department = attrs[7].Split(':')[1];
-                        string municipalityCode = attrs[8].Split(':')[1];
-                        string municipality = attrs[9].Split(':')[1];
-                        string stationType = attrs[10].Split(':')[1];
-                        double exhibitionTime = ParseDouble(attrs[11].Split(':')[1]);
-                        string variable = attrs[12].Split(':')[1];
-                        string unit = attrs[13].Split(':')[1];
-                        double concentration = ParseDouble(attrs[14].Split(':')[1]);
-                        Measurement m = new Measurement(date, authority, stationName, technology, latitude, longitude, departmentCode, department, municipalityCode, municipality, stationType, exhibitionTime, variable, unit, concentration);
-                        measurements.Add(m);
-                    }
                 }*/
+                 
+                 string[] regs = rawData.Substring(1, rawData.Length - 2).Split('}');
+                 foreach (string r in regs)
+                 {
+                     string s = r.Replace("\n", "").Replace("\"", "");
+                     if (s.Length > 10)
+                     {
+                         string[] attrs = s.Substring(1).Split(',');
+                         string date = attrs[0].Split(' ')[0].Split(':')[1];
+                         string authority = attrs[1].Split(':')[1];
+                         string stationName = attrs[2].Split(':')[1];
+                         string technology = attrs[3].Split(':')[1];
+                         double latitude = ParseDouble(attrs[4].Split(':')[1]);
+                         double longitude = ParseDouble(attrs[5].Split(':')[1]); ;
+                         string departmentCode = attrs[6].Split(':')[1];
+                         string department = attrs[7].Split(':')[1];
+                         string municipalityCode = attrs[8].Split(':')[1];
+                         string municipality = attrs[9].Split(':')[1];
+                         string stationType = attrs[10].Split(':')[1];
+                         double exhibitionTime = ParseDouble(attrs[11].Split(':')[1]);
+                         string variable = attrs[12].Split(':')[1];
+                         string unit = attrs[13].Split(':')[1];
+                         double concentration = ParseDouble(attrs[14].Split(':')[1]);
+                         Measurement m = new Measurement(date, authority, stationName, technology, latitude, longitude, departmentCode, department, municipalityCode, municipality, stationType, exhibitionTime, variable, unit, concentration);
+                         measurements.Add(m);
+                     }
+                 }
+                Console.WriteLine("Measurements has " + measurements.Count() + " elements");
             }
             else if (type.Equals("harvested"))
             {
@@ -240,7 +255,7 @@ namespace model
 
         public void filterDataForAir(Dictionary<string, string> graphicQuery)
         {
-            Console.WriteLine(mediciones.Count()+"***");
+            Console.WriteLine(measurements.Count()+"***");
             List<string> parametros = new List<string>();
             List<string> valores = new List<string>();
 

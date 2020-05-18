@@ -45,9 +45,6 @@ namespace timeLine
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataManager.Measurements.Clear();
-            getDataWithPipes();
-
             cartesianChart1.Series.Clear();
             cartesianChart1.AxisX.Clear();
             Dictionary<string, List<MeasurementModel>> gases = new Dictionary<string, List<MeasurementModel>>();
@@ -92,31 +89,6 @@ namespace timeLine
                 },
             };
             
-        }
-
-        private void getDataWithPipes()
-        {
-            Dictionary<string, string> filtros = new Dictionary<string, string>();
-
-            filtros.Add("Nombre del municipio", municipalityComboBox.Text);
-
-            filtros.Add("Variable", "CO");
-            dataManager.filterDataForAir(filtros);
-
-            filtros["Variable"] = "O3";
-            dataManager.filterDataForAir(filtros);
-
-            filtros["Variable"] = "NO2";
-            dataManager.filterDataForAir(filtros);
-
-            filtros["Variable"] = "SO2";
-            dataManager.filterDataForAir(filtros);
-
-            filtros["Variable"] = "PM10";
-            dataManager.filterDataForAir(filtros);
-
-            filtros["Variable"] = "PM2.5";
-            dataManager.filterDataForAir(filtros);
         }
 
         public class MeasurementModel : IComparable<MeasurementModel>
