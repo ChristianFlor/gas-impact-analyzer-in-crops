@@ -49,91 +49,49 @@ namespace timeLine
 
             Dictionary<string, string> filtros = new Dictionary<string, string>();
 
-            filtros.Add("Nombre del municipio", "CALI");
-            filtros.Add("Variable", gasesComboBox.Text);
+            filtros.Add("Nombre del municipio", municipalityComboBox.Text);
+            filtros.Add("Tecnología", "Automática");
+            string month = "" + (int)monthSelector.Value;
+            if (month.Length == 1) {
+                month = "0" + month;
+            }
+            filtros.Add("$where", "contains(Fecha,%27" + month + "/" + (int)yearSelector.Value + "%27)");
+            filtros.Add("Variable", gasComboBox.Text);
             dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "BUENAVENTURA");
-            filtros.Add("Variable", gasesComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "GUADALAJARA%20DE%20BUGA");
-            filtros.Add("Variable", gasesComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "CANDELARIA");
-            filtros.Add("Variable", gasesComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "JAMUNDÍ");
-            filtros.Add("Variable", gasesComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "PALMIRA");
-            filtros.Add("Variable", gasesComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-            filtros.Add("Nombre del municipio", "YUMBO");
-            filtros.Add("Variable", gasesComboBox.Text);
-            dataManager.filterDataForAir(filtros);
-
-            filtros.Clear();
-
-
 
             cartesianChart1.Series.Clear();
             cartesianChart1.AxisX.Clear();
-            Dictionary<string, List<MeasurementModel>> municipalities = new Dictionary<string, List<MeasurementModel>>();
-            var initYear = initialDate.Value;
-            var endYear = finalDate.Value;
+            List<MeasurementModel> mm = new List<MeasurementModel>();
             foreach (Measurement m in dataManager.Measurements)
             {
-                int year = int.Parse(m.date.Split('/')[2]);
-                if (year >= initYear && year <= endYear)
+                string[] splt = m.Date.Split(' ');
+                string[] date = splt[0].Split('/');
+                string[] time = splt[1].Split(' ');
+                string[] hour = time[0].Split(':');
+                if (splt[2].Equals("p.") && !hour[0].Equals("12"))
                 {
-                    if (!municipalities.ContainsKey(m.municipality))
-                    {
-                        municipalities.Add(m.municipality, new List<MeasurementModel>());
-                    }
-
-                    string[] date = m.date.Split('/');
-                    municipalities[m.municipality].Add(new MeasurementModel(new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0])), m.concentration));
+                    hour[0] = (Convert.ToInt32(hour[0]) + 12) + "";
                 }
-
+                mm.Add(new MeasurementModel(new DateTime(Convert.ToInt32(date[2]), Convert.ToInt32(date[1]), Convert.ToInt32(date[0]), Convert.ToInt32(hour[0]), Convert.ToInt32(hour[1]), 0), m.Concentration));
             }
 
             var dateConfig = Mappers.Xy<MeasurementModel>()
                            .X(dayModel => dayModel.Date.Ticks)
                            .Y(dayModel => dayModel.Concentration);
-
+            mm.Sort();
             SeriesCollection sc = new SeriesCollection(dateConfig);
-
-            foreach (string v in municipalities.Keys)
-            {
-                sc.Add(new LineSeries() { Title = v, Values = new ChartValues<MeasurementModel>(municipalities[v]) });
-            }
+            sc.Add(new LineSeries() { Title = gasComboBox.Text, Values = new ChartValues<MeasurementModel>(mm) });
             cartesianChart1.Series = sc;
-            DateTime maxi = new DateTime((int)finalDate.Value, 12, 31);
-            DateTime mini = new DateTime((int)initialDate.Value, 1, 1);
-            TimeSpan ts = new TimeSpan(maxi.Ticks - mini.Ticks);
            
             cartesianChart1.AxisX = new AxesCollection
             {
                 new Axis {
                 Title = "Date",
-                LabelFormatter = value => new DateTime((long)value).ToShortDateString()
+                LabelFormatter = (value) => 
+                {
+                    DateTime dt = new DateTime((long)value);
+                    return dt.Day +"/"+ dt.Month +"/"+ dt.Year +" "+ dt.Hour + ":" + dt.Minute;
+                }
                 },
             };
             

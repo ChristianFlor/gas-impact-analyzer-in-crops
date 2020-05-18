@@ -144,7 +144,7 @@ namespace MaterialSkinExample
                 List<CropMeasurement> crops = dataManager.getClusterCropsByID(index);
                 for (int i=0; i<crops.Count;i++)
                 {
-                    ObservablePoint p = new ObservablePoint(meas[i].concentration, crops[i].getTypeCrop(crop));
+                    ObservablePoint p = new ObservablePoint(meas[i].Concentration, crops[i].getTypeCrop(crop));
                     series.Values.Add(p);
 
 
@@ -255,11 +255,9 @@ namespace MaterialSkinExample
             Measurement[] mediciones = js.Deserialize<Measurement[]>(datosCrudos);
             
             foreach (Measurement m in mediciones) {
-
-                dataGridView1.Rows.Add(m.date, m.authority, m.stationName, m.technology, m.latitude, m.longitude,
-                    m.departmentCode, m.department, m.municipalityCode, m.municipality, m.stationType, m.exhibitionTime,
-                    m.variable, m.unit, m.concentration);
-
+                dataGridView1.Rows.Add(m.Date, m.Authority, m.StationName, m.Technology, m.Latitude, m.Longitude,
+                    m.DepartmentCode, m.Department, m.MunicipalityCode, m.Municipality, m.StationType, m.ExhibitionTime,
+                    m.Variable, m.Unit, m.Concentration);
             }
         }
 

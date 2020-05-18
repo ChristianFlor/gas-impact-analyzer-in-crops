@@ -11,11 +11,11 @@ namespace model
 {   
     public class DataManager
     {
-        private const string airQualityRepository = "https://www.datos.gov.co";
+        private const string airQualityRepository = "https://www.Datos.gov.Co";
         private const string airQualityId = "ysq6-ri4e";
-        private const string harvestRepository = "https://www.datos.gov.co";
+        private const string harvestRepository = "https://www.Datos.gov.Co";
         private const string harvestId = "3d2z-wkgw";
-        private const string plantedRepository = "https://www.datos.gov.co";
+        private const string plantedRepository = "https://www.Datos.gov.Co";
         private const string plantedId = "vs5v-e66i";
         private string url;
         private List<Measurement> measurements;
@@ -26,20 +26,18 @@ namespace model
 
         public DataManager()
         {
-
-            measurements = new List<Measurement>();
-            harvested = new List<CropMeasurement>();
-            planted = new List<CropMeasurement>();
-            
-           
+            measurements = new List<Measurement>(1400000);
+            harvested = new List<CropMeasurement>(1400000);
+            planted = new List<CropMeasurement>(1400000);
         }
+
         public void initializeKmeans(string crop)
         {
             
             double[][] data = new double[harvested.Count][];
             for (int i = 0; i < harvested.Count; i++)
             {
-                data[i] = new double[] { measurements[i].concentration, harvested[i].getTypeCrop(crop)};
+                data[i] = new double[] { measurements[i].Concentration, harvested[i].getTypeCrop(crop)};
 
             }
             algorithm = new Kmeans(data, 5);
@@ -62,43 +60,53 @@ namespace model
         {
             string url2 = url;
             string str;
-
+            int year = -1;
             for (int i = 0; i < list.Count; i++)
             {
-
-                str = columnDeserialize[list[i].ToString()] + "=" + values[i] + "&";
-                url2 += str;
-
+                if (!list[i].Contains("$"))
+                {
+                    str = columnDeserialize[list[i]] + "=" + values[i] + "&";
+                    url2 += str;
+                }
+                else {
+                    year = i;
+                }
+            }
+            url2 += "$limit=250000&";
+            if (year > -1) {
+                url2 += list[year] + "=" + values[year];
             }
             string rawData = new WebClient().DownloadString(url2);
+            Console.WriteLine(url2);
             if (type.Equals("measurements"))
             {
-                string[] regs = rawData.Substring(1, rawData.Length - 2).Split('}');
-                foreach (string r in regs)
-                {
-                    string s = r.Replace("\n", "").Replace("\"", "");
-                    if (s.Length > 10)
-                    {
-                        string[] attrs = s.Substring(1).Split(',');
-                        string date = attrs[0].Split(' ')[0].Split(':')[1];
-                        string authority = attrs[1].Split(':')[1];
-                        string stationName = attrs[2].Split(':')[1];
-                        string technology = attrs[3].Split(':')[1];
-                        double latitude = ParseDouble(attrs[4].Split(':')[1]);
-                        double longitude = ParseDouble(attrs[5].Split(':')[1]); ;
-                        string departmentCode = attrs[6].Split(':')[1];
-                        string department = attrs[7].Split(':')[1];
-                        string municipalityCode = attrs[8].Split(':')[1];
-                        string municipality = attrs[9].Split(':')[1];
-                        string stationType = attrs[10].Split(':')[1];
-                        double exhibitionTime = ParseDouble(attrs[11].Split(':')[1]);
-                        string variable = attrs[12].Split(':')[1];
-                        string unit = attrs[13].Split(':')[1];
-                        double concentration = ParseDouble(attrs[14].Split(':')[1]);
-                        Measurement m = new Measurement(date, authority, stationName, technology, latitude, longitude, departmentCode, department, municipalityCode, municipality, stationType, exhibitionTime, variable, unit, concentration);
-                        measurements.Add(m);
-                    }
-                }
+                 string[] regs = rawData.Substring(1, rawData.Length - 2).Split('}');
+                 foreach (string r in regs)
+                 {
+                     string s = r.Replace("\n", "").Replace("\"", "");
+                     if (s.Length > 10)
+                     {
+                         string[] attrs = s.Substring(1).Split(',');
+                         string date = attrs[0].Substring(7);
+                         string authority = attrs[1].Split(':')[1];
+                         string stationName = attrs[2].Split(':')[1];
+                         string technology = attrs[3].Split(':')[1];
+                         double latitude = ParseDouble(attrs[4].Split(':')[1]);
+                         double longitude = ParseDouble(attrs[5].Split(':')[1]); ;
+                         string departmentCode = attrs[6].Split(':')[1];
+                         string department = attrs[7].Split(':')[1];
+                         string municipalityCode = attrs[8].Split(':')[1];
+                         string municipality = attrs[9].Split(':')[1];
+                         string stationType = attrs[10].Split(':')[1];
+                         double exhibitionTime = ParseDouble(attrs[11].Split(':')[1]);
+                         string variable = attrs[12].Split(':')[1];
+                         string unit = attrs[13].Split(':')[1];
+                         double concentration = ParseDouble(attrs[14].Split(':')[1]);
+                         Measurement m = new Measurement(date, authority, stationName, technology, latitude, longitude, departmentCode, department, municipalityCode, municipality, stationType, exhibitionTime, variable, unit, concentration);
+                         measurements.Add(m);
+                     }
+                 }
+                Console.WriteLine("Measurements has " + measurements.Count() + " elements");
             }
             else if (type.Equals("harvested"))
             {
@@ -225,8 +233,7 @@ namespace model
 
         public void filterDataForAir(Dictionary<string, string> graphicQuery)
         {
-
-
+            Console.WriteLine(measurements.Count()+"***");
             List<string> parametros = new List<string>();
             List<string> valores = new List<string>();
 
