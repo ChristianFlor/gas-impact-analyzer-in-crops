@@ -30,7 +30,7 @@ namespace model
             harvested = new List<CropMeasurement>(1400000);
             planted = new List<CropMeasurement>(1400000);
 
-            Dictionary<string, string> filtros = new Dictionary<string, string>();
+            /*Dictionary<string, string> filtros = new Dictionary<string, string>();
 
             filtros.Add("Nombre del municipio", "CALI");
 
@@ -50,7 +50,7 @@ namespace model
             filterDataForAir(filtros);
 
             filtros["Variable"] = "PM2.5";
-            filterDataForAir(filtros);
+            filterDataForAir(filtros);*/
         }
         public void initializeKmeans(string crop)
         {
@@ -81,16 +81,24 @@ namespace model
         {
             string url2 = url;
             string str;
-
+            int year = -1;
             for (int i = 0; i < list.Count; i++)
             {
-
-                str = columnDeserialize[list[i].ToString()] + "=" + values[i] + "&";
-                url2 += str;
-
+                if (!list[i].Contains("$"))
+                {
+                    str = columnDeserialize[list[i]] + "=" + values[i] + "&";
+                    url2 += str;
+                }
+                else {
+                    year = i;
+                }
             }
-            url2 += "$limit=250000";
+            url2 += "$limit=250000&";
+            if (year > -1) {
+                url2 += list[year] + "=" + values[year];
+            }
             string rawData = new WebClient().DownloadString(url2);
+            Console.WriteLine(url2);
             if (type.Equals("measurements"))
             {
                 /*JavaScriptSerializer js = new JavaScriptSerializer();
@@ -109,7 +117,7 @@ namespace model
                      if (s.Length > 10)
                      {
                          string[] attrs = s.Substring(1).Split(',');
-                         string date = attrs[0].Split(' ')[0].Split(':')[1];
+                         string date = attrs[0].Substring(7);
                          string authority = attrs[1].Split(':')[1];
                          string stationName = attrs[2].Split(':')[1];
                          string technology = attrs[3].Split(':')[1];
