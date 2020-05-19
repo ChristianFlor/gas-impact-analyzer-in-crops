@@ -50,7 +50,7 @@ Global
 		{47409AA5-62AE-4189-8E83-C471502DF5E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47409AA5-62AE-4189-8E83-C471502DF5E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47409AA5-62AE-4189-8E83-C471502DF5E9}.Release|Any CPU.Build.0 = Release|Any CPU
-<<<<<<< HEAD
+
 
 		{778EFB4A-5F2D-45FA-90D9-84872EEF6FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{778EFB4A-5F2D-45FA-90D9-84872EEF6FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
@@ -62,12 +62,11 @@ Global
 		{72B49E1D-D631-46A7-A659-8C134F612C7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72B49E1D-D631-46A7-A659-8C134F612C7A}.Release|Any CPU.Build.0 = Release|Any CPU
 
-=======
 		{EF4F1055-1679-4C27-A95D-8C78BB855EE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF4F1055-1679-4C27-A95D-8C78BB855EE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF4F1055-1679-4C27-A95D-8C78BB855EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF4F1055-1679-4C27-A95D-8C78BB855EE9}.Release|Any CPU.Build.0 = Release|Any CPU
->>>>>>> feature-stakedAreaGraphic
+
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

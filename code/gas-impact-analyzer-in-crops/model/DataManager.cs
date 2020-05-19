@@ -87,24 +87,35 @@ namespace model
                      string s = r.Replace("\n", "").Replace("\"", "");
                      if (s.Length > 10)
                      {
-                         string[] attrs = s.Substring(1).Split(',');
-                         string date = attrs[0].Substring(7);
-                         string authority = attrs[1].Split(':')[1];
-                         string stationName = attrs[2].Split(':')[1];
-                         string technology = attrs[3].Split(':')[1];
-                         double latitude = ParseDouble(attrs[4].Split(':')[1]);
-                         double longitude = ParseDouble(attrs[5].Split(':')[1]); ;
-                         string departmentCode = attrs[6].Split(':')[1];
-                         string department = attrs[7].Split(':')[1];
-                         string municipalityCode = attrs[8].Split(':')[1];
-                         string municipality = attrs[9].Split(':')[1];
-                         string stationType = attrs[10].Split(':')[1];
-                         double exhibitionTime = ParseDouble(attrs[11].Split(':')[1]);
-                         string variable = attrs[12].Split(':')[1];
-                         string unit = attrs[13].Split(':')[1];
-                         double concentration = ParseDouble(attrs[14].Split(':')[1]);
-                         Measurement m = new Measurement(date, authority, stationName, technology, latitude, longitude, departmentCode, department, municipalityCode, municipality, stationType, exhibitionTime, variable, unit, concentration);
-                         measurements.Add(m);
+                         try
+                         {
+                             string[] attrs = s.Substring(1).Split(',');
+                             string date = attrs[0].Substring(7);
+                             string authority = attrs[1].Split(':')[1];
+                             string stationName = attrs[2].Split(':')[1];
+                             string technology = attrs[3].Split(':')[1];
+                             double latitude = ParseDouble(attrs[4].Split(':')[1]);
+                             double longitude = ParseDouble(attrs[5].Split(':')[1]);
+                             ;
+                             string departmentCode = attrs[6].Split(':')[1];
+                             string department = attrs[7].Split(':')[1];
+                             string municipalityCode = attrs[8].Split(':')[1];
+                             string municipality = attrs[9].Split(':')[1];
+                             string stationType = attrs[10].Split(':')[1];
+                             double exhibitionTime = ParseDouble(attrs[11].Split(':')[1]);
+                             string variable = attrs[12].Split(':')[1];
+                             string unit = attrs[13].Split(':')[1];
+                             double concentration = ParseDouble(attrs[14].Split(':')[1]);
+                             Measurement m = new Measurement(date, authority, stationName, technology, latitude,
+                                 longitude,
+                                 departmentCode, department, municipalityCode, municipality, stationType,
+                                 exhibitionTime,
+                                 variable, unit, concentration);
+                             measurements.Add(m);
+                         }
+                         catch {
+
+                         }
                      }
                  }
                 Console.WriteLine("Measurements has " + measurements.Count() + " elements");

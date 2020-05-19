@@ -23,8 +23,8 @@
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -36,6 +36,7 @@
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.cartesianChart1.Location = new System.Drawing.Point(12, 12);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(782, 347);
@@ -45,15 +46,8 @@
             // citiesComboBox
             // 
             this.citiesComboBox.FormattingEnabled = true;
-            this.citiesComboBox.Items.AddRange(new object[] {
-            "BUENAVENTURA",
-            "GUADALAJARA DE BUGA",
-            "CALI",
-            "CANDELARIA",
-            "JAMUNDÍ",
-            "PALMIRA",
-            "YUMBO"});
-            this.citiesComboBox.Location = new System.Drawing.Point(101, 393);
+            this.citiesComboBox.Items.AddRange(new object[] {"BUENAVENTURA", "GUADALAJARA DE BUGA", "CALI", "CANDELARIA", "JAMUNDÍ", "PALMIRA", "YUMBO"});
+            this.citiesComboBox.Location = new System.Drawing.Point(112, 408);
             this.citiesComboBox.Name = "citiesComboBox";
             this.citiesComboBox.Size = new System.Drawing.Size(121, 21);
             this.citiesComboBox.TabIndex = 1;
@@ -61,7 +55,7 @@
             // 
             // showButton
             // 
-            this.showButton.Location = new System.Drawing.Point(434, 393);
+            this.showButton.Location = new System.Drawing.Point(476, 408);
             this.showButton.Name = "showButton";
             this.showButton.Size = new System.Drawing.Size(75, 23);
             this.showButton.TabIndex = 3;
@@ -72,15 +66,8 @@
             // yearComboBox
             // 
             this.yearComboBox.FormattingEnabled = true;
-            this.yearComboBox.Items.AddRange(new object[] {
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017"});
-            this.yearComboBox.Location = new System.Drawing.Point(270, 393);
+            this.yearComboBox.Items.AddRange(new object[] {"2011", "2012", "2013", "2014", "2015", "2016", "2017"});
+            this.yearComboBox.Location = new System.Drawing.Point(282, 408);
             this.yearComboBox.Name = "yearComboBox";
             this.yearComboBox.Size = new System.Drawing.Size(121, 21);
             this.yearComboBox.TabIndex = 2;
@@ -98,15 +85,14 @@
             this.Name = "BarGraph";
             this.Text = "BarGraphic";
             this.ResumeLayout(false);
-
         }
-
-        #endregion
 
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.ComboBox citiesComboBox;
         private System.Windows.Forms.Button showButton;
         private System.Windows.Forms.ComboBox yearComboBox;
+
+        #endregion
     }
 }
 
