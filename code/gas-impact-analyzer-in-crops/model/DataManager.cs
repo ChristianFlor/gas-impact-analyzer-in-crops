@@ -30,39 +30,11 @@ namespace model
             harvested = new List<CropMeasurement>(1400000);
             planted = new List<CropMeasurement>(1400000);
 
-            List<string> list = new List<String>
-            {
-                "Nombre del municipio"
-            };
-            readInfo(airQualityRepository, airQualityId);
-            string[] values = new string[1];
-            values[0] = "BUENAVENTURA"; query2(list, values, "measurements");
-            values[0] = "GUADALAJARA%20DE%20BUGA"; query2(list, values, "measurements");
-            values[0] = "CALI"; query2(list, values, "measurements");
-            values[0] = "CANDELARIA"; query2(list, values, "measurements");
-            values[0] = "JAMUNDÍ"; query2(list, values, "measurements");
-            values[0] = "PALMIRA"; query2(list, values, "measurements");
-            values[0] = "YUMBO"; query2(list, values, "measurements");
-
-            readInfo(harvestRepository, harvestId);
-            list = new List<String>(); list.Add("Municipios");
-            values[0] = "Cali"; query2(list, values, "harvested");
-            values[0] = "Palmira"; query2(list, values, "harvested");
-            values[0] = "Candelaria"; query2(list, values, "harvested");
-            values[0] = "Buga"; query2(list, values, "harvested");
-            values[0] = "Buenaventura"; query2(list, values, "harvested");
-            readInfo(plantedRepository, plantedId);
-            list = new List<String>(); list.Add("Municipios");
-            values[0] = "Cali"; query2(list, values, "planted");
-            values[0] = "Palmira"; query2(list, values, "planted");
-            values[0] = "Candelaria"; query2(list, values, "planted");
-            values[0] = "Buga"; query2(list, values, "planted");
-            values[0] = "Buenaventura"; query2(list, values, "planted");
         }
 
         public void initializeKmeans(string crop)
         {
-            
+            dataForKmeans();
             double[][] data = new double[harvested.Count][];
             for (int i = 0; i < harvested.Count; i++)
             {
@@ -230,33 +202,33 @@ namespace model
                 "Nombre del municipio"
             };
             string[] values = new string[1];
-            values[0] = "BUENAVENTURA"; query(list, values, "measurements");
-            values[0] = "GUADALAJARA%20DE%20BUGA"; query(list, values, "measurements");
-            values[0] = "CALI"; query(list, values, "measurements");
-            values[0] = "CANDELARIA"; query(list, values, "measurements");
-            values[0] = "JAMUNDÍ"; query(list, values, "measurements");
-            values[0] = "PALMIRA"; query(list, values, "measurements");
-            values[0] = "YUMBO"; query(list, values, "measurements");
+            values[0] = "BUENAVENTURA"; query2(list, values, "measurements");
+            values[0] = "GUADALAJARA%20DE%20BUGA"; query2(list, values, "measurements");
+            values[0] = "CALI"; query2(list, values, "measurements");
+            values[0] = "CANDELARIA"; query2(list, values, "measurements");
+            values[0] = "JAMUNDÍ"; query2(list, values, "measurements");
+            values[0] = "PALMIRA"; query2(list, values, "measurements");
+            values[0] = "YUMBO"; query2(list, values, "measurements");
 
             harvested.Clear();
 
             readInfo(harvestRepository, harvestId);
             list = new List<String>(); list.Add("Municipios");
-            values[0] = "Cali"; query(list, values, "harvested");
-            values[0] = "Palmira"; query(list, values, "harvested");
-            values[0] = "Candelaria"; query(list, values, "harvested");
-            values[0] = "Buga"; query(list, values, "harvested");
-            values[0] = "Buenaventura"; query(list, values, "harvested");
+            values[0] = "Cali"; query2(list, values, "harvested");
+            values[0] = "Palmira"; query2(list, values, "harvested");
+            values[0] = "Candelaria"; query2(list, values, "harvested");
+            values[0] = "Buga"; query2(list, values, "harvested");
+            values[0] = "Buenaventura"; query2(list, values, "harvested");
 
             planted.Clear();
 
             readInfo(plantedRepository, plantedId);
             list = new List<String>(); list.Add("Municipios");
-            values[0] = "Cali"; query(list, values, "planted");
-            values[0] = "Palmira"; query(list, values, "planted");
-            values[0] = "Candelaria"; query(list, values, "planted");
-            values[0] = "Buga"; query(list, values, "planted");
-            values[0] = "Buenaventura"; query(list, values, "planted");
+            values[0] = "Cali"; query2(list, values, "planted");
+            values[0] = "Palmira"; query2(list, values, "planted");
+            values[0] = "Candelaria"; query2(list, values, "planted");
+            values[0] = "Buga"; query2(list, values, "planted");
+            values[0] = "Buenaventura"; query2(list, values, "planted");
 
         }
 
