@@ -23,8 +23,8 @@
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -36,6 +36,7 @@
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.cartesianChart1.Location = new System.Drawing.Point(2, 12);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(795, 346);
@@ -45,13 +46,8 @@
             // citiesComboBox
             // 
             this.citiesComboBox.FormattingEnabled = true;
-            this.citiesComboBox.Items.AddRange(new object[] {
-            "Cali",
-            "Palmira",
-            "Candelaria",
-            "Buga",
-            "Buenaventura"});
-            this.citiesComboBox.Location = new System.Drawing.Point(158, 383);
+            this.citiesComboBox.Items.AddRange(new object[] {"Cali", "Palmira", "Candelaria", "Buga", "Buenaventura"});
+            this.citiesComboBox.Location = new System.Drawing.Point(160, 406);
             this.citiesComboBox.Name = "citiesComboBox";
             this.citiesComboBox.Size = new System.Drawing.Size(121, 21);
             this.citiesComboBox.TabIndex = 1;
@@ -60,24 +56,8 @@
             // cropCombobox
             // 
             this.cropCombobox.FormattingEnabled = true;
-            this.cropCombobox.Items.AddRange(new object[] {
-            "AlgodonA",
-            "AlgodonB",
-            "ArrozA",
-            "ArrozB",
-            "FrijolA",
-            "FrijolB",
-            "MaizTecnificadoA",
-            "MaizTecnificadoB",
-            "SorgoA",
-            "SorgoB",
-            "SoyaA",
-            "SoyaB",
-            "TabacoA",
-            "TabacoB",
-            "MaizTradicionalA",
-            "MaizTradicionalB"});
-            this.cropCombobox.Location = new System.Drawing.Point(339, 383);
+            this.cropCombobox.Items.AddRange(new object[] {"AlgodonA", "AlgodonB", "ArrozA", "ArrozB", "FrijolA", "FrijolB", "MaizTecnificadoA", "MaizTecnificadoB", "SorgoA", "SorgoB", "SoyaA", "SoyaB", "TabacoA", "TabacoB", "MaizTradicionalA", "MaizTradicionalB"});
+            this.cropCombobox.Location = new System.Drawing.Point(340, 406);
             this.cropCombobox.Name = "cropCombobox";
             this.cropCombobox.Size = new System.Drawing.Size(121, 21);
             this.cropCombobox.TabIndex = 2;
@@ -85,7 +65,7 @@
             // 
             // difference
             // 
-            this.difference.Location = new System.Drawing.Point(527, 383);
+            this.difference.Location = new System.Drawing.Point(527, 404);
             this.difference.Name = "difference";
             this.difference.Size = new System.Drawing.Size(105, 23);
             this.difference.TabIndex = 3;
@@ -105,15 +85,14 @@
             this.Name = "StackedArea";
             this.Text = "Stacked Area";
             this.ResumeLayout(false);
-
         }
-
-        #endregion
 
         private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.ComboBox citiesComboBox;
         private System.Windows.Forms.ComboBox cropCombobox;
         private System.Windows.Forms.Button difference;
+
+        #endregion
     }
 }
 

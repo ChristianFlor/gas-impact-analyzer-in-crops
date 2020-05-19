@@ -23,8 +23,8 @@
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -40,12 +40,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.yearSelector)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthSelector)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.yearSelector)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.monthSelector)).BeginInit();
             this.SuspendLayout();
             // 
             // cartesianChart1
             // 
+            this.cartesianChart1.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.cartesianChart1.Location = new System.Drawing.Point(12, 12);
             this.cartesianChart1.Name = "cartesianChart1";
             this.cartesianChart1.Size = new System.Drawing.Size(946, 356);
@@ -64,14 +65,7 @@
             // municipalityComboBox
             // 
             this.municipalityComboBox.FormattingEnabled = true;
-            this.municipalityComboBox.Items.AddRange(new object[] {
-            "GUADALAJARA DE BUGA",
-            "JAMUNDÍ",
-            "YUMBO",
-            "CANDELARIA",
-            "PALMIRA",
-            "BUENAVENTURA",
-            "CALI"});
+            this.municipalityComboBox.Items.AddRange(new object[] {"GUADALAJARA DE BUGA", "JAMUNDÍ", "YUMBO", "CANDELARIA", "PALMIRA", "BUENAVENTURA", "CALI"});
             this.municipalityComboBox.Location = new System.Drawing.Point(122, 397);
             this.municipalityComboBox.Name = "municipalityComboBox";
             this.municipalityComboBox.Size = new System.Drawing.Size(121, 21);
@@ -90,46 +84,22 @@
             // yearSelector
             // 
             this.yearSelector.Location = new System.Drawing.Point(494, 398);
-            this.yearSelector.Maximum = new decimal(new int[] {
-            2017,
-            0,
-            0,
-            0});
-            this.yearSelector.Minimum = new decimal(new int[] {
-            2011,
-            0,
-            0,
-            0});
+            this.yearSelector.Maximum = new decimal(new int[] {2017, 0, 0, 0});
+            this.yearSelector.Minimum = new decimal(new int[] {2011, 0, 0, 0});
             this.yearSelector.Name = "yearSelector";
             this.yearSelector.Size = new System.Drawing.Size(49, 20);
             this.yearSelector.TabIndex = 4;
-            this.yearSelector.Value = new decimal(new int[] {
-            2011,
-            0,
-            0,
-            0});
+            this.yearSelector.Value = new decimal(new int[] {2011, 0, 0, 0});
             // 
             // monthSelector
             // 
             this.monthSelector.Location = new System.Drawing.Point(603, 398);
-            this.monthSelector.Maximum = new decimal(new int[] {
-            12,
-            0,
-            0,
-            0});
-            this.monthSelector.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.monthSelector.Maximum = new decimal(new int[] {12, 0, 0, 0});
+            this.monthSelector.Minimum = new decimal(new int[] {1, 0, 0, 0});
             this.monthSelector.Name = "monthSelector";
             this.monthSelector.Size = new System.Drawing.Size(48, 20);
             this.monthSelector.TabIndex = 5;
-            this.monthSelector.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.monthSelector.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // button1
             // 
@@ -144,13 +114,7 @@
             // gasComboBox
             // 
             this.gasComboBox.FormattingEnabled = true;
-            this.gasComboBox.Items.AddRange(new object[] {
-            "CO",
-            "O3",
-            "NO2",
-            "SO2",
-            "PM10",
-            "PM2.5"});
+            this.gasComboBox.Items.AddRange(new object[] {"CO", "O3", "NO2", "SO2", "PM10", "PM2.5"});
             this.gasComboBox.Location = new System.Drawing.Point(311, 397);
             this.gasComboBox.Name = "gasComboBox";
             this.gasComboBox.Size = new System.Drawing.Size(121, 21);
@@ -214,27 +178,26 @@
             this.Name = "TimeLineForm";
             this.Text = "Gas concentration timeline";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.yearSelector)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.monthSelector)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.yearSelector)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.monthSelector)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
-        #endregion
-
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox municipalityComboBox;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown yearSelector;
-        private System.Windows.Forms.NumericUpDown monthSelector;
         private System.Windows.Forms.Button button1;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
         private System.Windows.Forms.ComboBox gasComboBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown monthSelector;
+        private System.Windows.Forms.ComboBox municipalityComboBox;
+        private System.Windows.Forms.NumericUpDown yearSelector;
+
+        #endregion
     }
 }
 

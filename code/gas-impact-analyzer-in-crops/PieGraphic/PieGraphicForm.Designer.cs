@@ -23,8 +23,8 @@
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -36,6 +36,7 @@
             // 
             // pieHarvested
             // 
+            this.pieHarvested.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.pieHarvested.Location = new System.Drawing.Point(157, 41);
             this.pieHarvested.Name = "pieHarvested";
             this.pieHarvested.Size = new System.Drawing.Size(467, 263);
@@ -45,13 +46,8 @@
             // citiesComboBox
             // 
             this.citiesComboBox.FormattingEnabled = true;
-            this.citiesComboBox.Items.AddRange(new object[] {
-            "Cali",
-            "Palmira",
-            "Candelaria",
-            "Buga",
-            "Buenaventura"});
-            this.citiesComboBox.Location = new System.Drawing.Point(287, 336);
+            this.citiesComboBox.Items.AddRange(new object[] {"Cali", "Palmira", "Candelaria", "Buga", "Buenaventura"});
+            this.citiesComboBox.Location = new System.Drawing.Point(287, 375);
             this.citiesComboBox.Name = "citiesComboBox";
             this.citiesComboBox.Size = new System.Drawing.Size(121, 21);
             this.citiesComboBox.TabIndex = 2;
@@ -60,15 +56,8 @@
             // yearComboBox
             // 
             this.yearComboBox.FormattingEnabled = true;
-            this.yearComboBox.Items.AddRange(new object[] {
-            "2011",
-            "2012",
-            "2013",
-            "2014",
-            "2015",
-            "2016",
-            "2017"});
-            this.yearComboBox.Location = new System.Drawing.Point(287, 379);
+            this.yearComboBox.Items.AddRange(new object[] {"2011", "2012", "2013", "2014", "2015", "2016", "2017"});
+            this.yearComboBox.Location = new System.Drawing.Point(287, 417);
             this.yearComboBox.Name = "yearComboBox";
             this.yearComboBox.Size = new System.Drawing.Size(121, 21);
             this.yearComboBox.TabIndex = 3;
@@ -76,7 +65,7 @@
             // 
             // ShowButton
             // 
-            this.ShowButton.Location = new System.Drawing.Point(522, 336);
+            this.ShowButton.Location = new System.Drawing.Point(492, 394);
             this.ShowButton.Name = "ShowButton";
             this.ShowButton.Size = new System.Drawing.Size(75, 23);
             this.ShowButton.TabIndex = 4;
@@ -84,7 +73,7 @@
             this.ShowButton.UseVisualStyleBackColor = true;
             this.ShowButton.Click += new System.EventHandler(this.ShowButton_Click);
             // 
-            // PieGraphic
+            // PieGraphicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -93,17 +82,17 @@
             this.Controls.Add(this.yearComboBox);
             this.Controls.Add(this.citiesComboBox);
             this.Controls.Add(this.pieHarvested);
-            this.Name = "PieGraphic";
+            this.Name = "PieGraphicForm";
             this.Text = "Pie Graphic";
             this.ResumeLayout(false);
-
         }
 
-        #endregion
-        private LiveCharts.WinForms.PieChart pieHarvested;
         private System.Windows.Forms.ComboBox citiesComboBox;
-        private System.Windows.Forms.ComboBox yearComboBox;
+        private LiveCharts.WinForms.PieChart pieHarvested;
         private System.Windows.Forms.Button ShowButton;
+        private System.Windows.Forms.ComboBox yearComboBox;
+
+        #endregion
     }
 }
 
