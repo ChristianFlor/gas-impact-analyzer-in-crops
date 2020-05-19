@@ -89,7 +89,7 @@ namespace MaterialSkinExample
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.materialContextMenuStrip1.SuspendLayout();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -98,9 +98,9 @@ namespace MaterialSkinExample
             this.PieChartWithCropsTab.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.TabAlgorithm.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.materialCard2.SuspendLayout();
@@ -108,7 +108,7 @@ namespace MaterialSkinExample
             // 
             // menuIconList
             // 
-            this.menuIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("menuIconList.ImageStream")));
+            this.menuIconList.ImageStream = ((System.Windows.Forms.ImageListStreamer) (resources.GetObject("menuIconList.ImageStream")));
             this.menuIconList.TransparentColor = System.Drawing.Color.Transparent;
             this.menuIconList.Images.SetKeyName(0, "round_assessment_white_24dp.png");
             this.menuIconList.Images.SetKeyName(1, "round_backup_white_24dp.png");
@@ -126,12 +126,7 @@ namespace MaterialSkinExample
             this.materialContextMenuStrip1.Depth = 0;
             this.materialContextMenuStrip1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.materialContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.item1ToolStripMenuItem,
-            this.disabledItemToolStripMenuItem,
-            this.item2ToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.item3ToolStripMenuItem});
+            this.materialContextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.item1ToolStripMenuItem, this.disabledItemToolStripMenuItem, this.item2ToolStripMenuItem, this.toolStripSeparator1, this.item3ToolStripMenuItem});
             this.materialContextMenuStrip1.Margin = new System.Windows.Forms.Padding(16, 8, 16, 8);
             this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
@@ -140,9 +135,7 @@ namespace MaterialSkinExample
             // item1ToolStripMenuItem
             // 
             this.item1ToolStripMenuItem.AutoSize = false;
-            this.item1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.subItem1ToolStripMenuItem,
-            this.subItem2ToolStripMenuItem});
+            this.item1ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.subItem1ToolStripMenuItem, this.subItem2ToolStripMenuItem});
             this.item1ToolStripMenuItem.Name = "item1ToolStripMenuItem";
             this.item1ToolStripMenuItem.Size = new System.Drawing.Size(170, 30);
             this.item1ToolStripMenuItem.Text = "Item 1";
@@ -290,7 +283,7 @@ namespace MaterialSkinExample
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel3.FontType = MaterialSkin.MaterialSkinManager.fontType.H3;
-            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (180)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.materialLabel3.HighEmphasis = true;
             this.materialLabel3.Location = new System.Drawing.Point(6, 7);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
@@ -317,7 +310,7 @@ namespace MaterialSkinExample
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel4.FontType = MaterialSkin.MaterialSkinManager.fontType.H3;
-            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel4.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (180)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.materialLabel4.HighEmphasis = true;
             this.materialLabel4.Location = new System.Drawing.Point(6, 7);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -349,9 +342,7 @@ namespace MaterialSkinExample
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(29, 272);
             this.dataGridView1.Name = "dataGridView1";
@@ -419,8 +410,8 @@ namespace MaterialSkinExample
             this.valueTB.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.valueTB.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.valueTB.Depth = 0;
-            this.valueTB.Font = new System.Drawing.Font("Roboto", 12F);
-            this.valueTB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.valueTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.valueTB.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (180)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.valueTB.Hint = "Value to consult";
             this.valueTB.Location = new System.Drawing.Point(67, 174);
             this.valueTB.MaxLength = 50;
@@ -436,8 +427,8 @@ namespace MaterialSkinExample
             this.datasetID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datasetID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.datasetID.Depth = 0;
-            this.datasetID.Font = new System.Drawing.Font("Roboto", 12F);
-            this.datasetID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.datasetID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.datasetID.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (180)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.datasetID.Hint = "ID dataset";
             this.datasetID.Location = new System.Drawing.Point(376, 95);
             this.datasetID.MaxLength = 50;
@@ -453,8 +444,8 @@ namespace MaterialSkinExample
             this.repositoryURL.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.repositoryURL.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.repositoryURL.Depth = 0;
-            this.repositoryURL.Font = new System.Drawing.Font("Roboto", 12F);
-            this.repositoryURL.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.repositoryURL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.repositoryURL.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (180)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.repositoryURL.Hint = "URL Repository";
             this.repositoryURL.Location = new System.Drawing.Point(67, 95);
             this.repositoryURL.MaxLength = 50;
@@ -499,10 +490,8 @@ namespace MaterialSkinExample
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(381, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(613, 436);
@@ -512,8 +501,7 @@ namespace MaterialSkinExample
             // 
             // materialSwitch8
             // 
-            this.materialSwitch8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialSwitch8.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.materialSwitch8.AutoSize = true;
             this.materialSwitch8.Checked = true;
             this.materialSwitch8.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -546,8 +534,7 @@ namespace MaterialSkinExample
             // 
             // materialSwitch6
             // 
-            this.materialSwitch6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialSwitch6.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.materialSwitch6.AutoSize = true;
             this.materialSwitch6.Depth = 0;
             this.materialSwitch6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -565,8 +552,7 @@ namespace MaterialSkinExample
             // 
             // materialButton7
             // 
-            this.materialButton7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialButton7.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.materialButton7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton7.Depth = 0;
             this.materialButton7.DrawShadows = true;
@@ -586,8 +572,7 @@ namespace MaterialSkinExample
             // 
             // MaterialButton4
             // 
-            this.MaterialButton4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.MaterialButton4.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.MaterialButton4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.MaterialButton4.Depth = 0;
             this.MaterialButton4.DrawShadows = true;
@@ -607,8 +592,7 @@ namespace MaterialSkinExample
             // 
             // materialSwitch5
             // 
-            this.materialSwitch5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialSwitch5.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.materialSwitch5.AutoSize = true;
             this.materialSwitch5.Checked = true;
             this.materialSwitch5.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -628,11 +612,10 @@ namespace MaterialSkinExample
             // 
             // materialLabel9
             // 
-            this.materialLabel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialLabel9.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.materialLabel9.Depth = 0;
             this.materialLabel9.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel9.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (180)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.materialLabel9.Location = new System.Drawing.Point(21, 115);
             this.materialLabel9.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel9.Name = "materialLabel9";
@@ -642,8 +625,7 @@ namespace MaterialSkinExample
             // 
             // materialSwitch4
             // 
-            this.materialSwitch4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.materialSwitch4.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.materialSwitch4.AutoSize = true;
             this.materialSwitch4.Depth = 0;
             this.materialSwitch4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -667,7 +649,7 @@ namespace MaterialSkinExample
             this.TabAlgorithm.Controls.Add(this.tabPage2);
             this.TabAlgorithm.Depth = 0;
             this.TabAlgorithm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TabAlgorithm.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TabAlgorithm.Font = new System.Drawing.Font("Microsoft New Tai Lue", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.TabAlgorithm.ImageList = this.menuIconList;
             this.TabAlgorithm.Location = new System.Drawing.Point(3, 64);
             this.TabAlgorithm.MouseState = MaterialSkin.MouseState.HOVER;
@@ -718,23 +700,7 @@ namespace MaterialSkinExample
             // cropsItems
             // 
             this.cropsItems.FormattingEnabled = true;
-            this.cropsItems.Items.AddRange(new object[] {
-            "AlgodonA",
-            "AlgodonB",
-            "ArrozA",
-            "ArrozB",
-            "FrijolA",
-            "FrijolB",
-            "MaizTecnificadoA",
-            "MaizTecnificadoB",
-            "SorgoA",
-            "SorgoB",
-            "SoyaA",
-            "SoyaB",
-            "TabacoA",
-            "TabacoB",
-            "MaizTradicionalA",
-            "MaizTradicionalB"});
+            this.cropsItems.Items.AddRange(new object[] {"AlgodonA", "AlgodonB", "ArrozA", "ArrozB", "FrijolA", "FrijolB", "MaizTecnificadoA", "MaizTecnificadoB", "SorgoA", "SorgoB", "SoyaA", "SoyaB", "TabacoA", "TabacoB", "MaizTradicionalA", "MaizTradicionalB"});
             this.cropsItems.Location = new System.Drawing.Point(460, 34);
             this.cropsItems.Name = "cropsItems";
             this.cropsItems.Size = new System.Drawing.Size(121, 23);
@@ -758,9 +724,7 @@ namespace MaterialSkinExample
             // 
             // KmeansChart
             // 
-            this.KmeansChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.KmeansChart.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.KmeansChart.Location = new System.Drawing.Point(40, 139);
             this.KmeansChart.Name = "KmeansChart";
             this.KmeansChart.Size = new System.Drawing.Size(918, 350);
@@ -770,7 +734,7 @@ namespace MaterialSkinExample
             // 
             // materialDivider4
             // 
-            this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider4.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (30)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.materialDivider4.Depth = 0;
             this.materialDivider4.Location = new System.Drawing.Point(40, 417);
             this.materialDivider4.MouseState = MaterialSkin.MouseState.HOVER;
@@ -781,12 +745,12 @@ namespace MaterialSkinExample
             // 
             // materialCard2
             // 
-            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (255)))), ((int) (((byte) (255)))));
             this.materialCard2.Controls.Add(this.materialLabel1);
             this.materialCard2.Controls.Add(this.materialButton6);
             this.materialCard2.Controls.Add(this.materialLabel2);
             this.materialCard2.Depth = 0;
-            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialCard2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (222)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))), ((int) (((byte) (0)))));
             this.materialCard2.Location = new System.Drawing.Point(17, 16);
             this.materialCard2.Margin = new System.Windows.Forms.Padding(7);
             this.materialCard2.MouseState = MaterialSkin.MouseState.HOVER;
@@ -797,9 +761,7 @@ namespace MaterialSkinExample
             // 
             // materialLabel1
             // 
-            this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialLabel1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.materialLabel1.Location = new System.Drawing.Point(17, 57);
@@ -811,7 +773,7 @@ namespace MaterialSkinExample
             // 
             // materialButton6
             // 
-            this.materialButton6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.materialButton6.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButton6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton6.Depth = 0;
             this.materialButton6.DrawShadows = true;
@@ -861,7 +823,7 @@ namespace MaterialSkinExample
             this.tabPage6.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.dashBoardTabs.ResumeLayout(false);
             this.tabTimeline.ResumeLayout(false);
@@ -872,21 +834,21 @@ namespace MaterialSkinExample
             this.tabPage4.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.TabAlgorithm.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.materialCard2.ResumeLayout(false);
             this.materialCard2.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.ComboBox cropsItems;
+        private MaterialSkin.Controls.MaterialTabControl dashBoardTabs;
         private System.Windows.Forms.DataGridView dataGridView1;
         private MaterialSkin.Controls.MaterialTextBox datasetID;
         private System.Windows.Forms.ToolStripMenuItem disabledItemToolStripMenuItem;
@@ -915,10 +877,10 @@ namespace MaterialSkinExample
         private MaterialSkin.Controls.MaterialSwitch materialSwitch5;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch6;
         private MaterialSkin.Controls.MaterialSwitch materialSwitch8;
-        private MaterialSkin.Controls.MaterialTabControl dashBoardTabs;
         private MaterialSkin.Controls.MaterialTabSelector materialTabSelector1;
         private System.Windows.Forms.ImageList menuIconList;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TabPage PieChartWithCropsTab;
         private MaterialSkin.Controls.MaterialButton read;
         private MaterialSkin.Controls.MaterialTextBox repositoryURL;
         private MaterialSkin.Controls.MaterialButton search;
@@ -928,7 +890,6 @@ namespace MaterialSkinExample
         private MaterialSkin.Controls.MaterialTabControl TabAlgorithm;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage PieChartWithCropsTab;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
