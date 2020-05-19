@@ -60,6 +60,23 @@
             // cropCombobox
             // 
             this.cropCombobox.FormattingEnabled = true;
+            this.cropCombobox.Items.AddRange(new object[] {
+            "AlgodonA",
+            "AlgodonB",
+            "ArrozA",
+            "ArrozB",
+            "FrijolA",
+            "FrijolB",
+            "MaizTecnificadoA",
+            "MaizTecnificadoB",
+            "SorgoA",
+            "SorgoB",
+            "SoyaA",
+            "SoyaB",
+            "TabacoA",
+            "TabacoB",
+            "MaizTradicionalA",
+            "MaizTradicionalB"});
             this.cropCombobox.Location = new System.Drawing.Point(339, 383);
             this.cropCombobox.Name = "cropCombobox";
             this.cropCombobox.Size = new System.Drawing.Size(121, 21);

@@ -27,8 +27,6 @@ namespace StackedAreaGraphic
             InitializeComponent();
             dm = new DataManager();
             
-
-            
         }
 
       
@@ -67,7 +65,7 @@ namespace StackedAreaGraphic
 
                
 
-                    pair = new ScatterPoint(cm.A_o, cm.Ma_z_tecnificado_a);
+                    pair = new ScatterPoint(cm.A_o, cm.getTypeCrop(cropCombobox.Text));
                     cvalues.Add(pair);
 
                 }
@@ -88,7 +86,7 @@ namespace StackedAreaGraphic
                 if (cm.A_o >= 2011 && cm.A_o <= 2017)
                 {
 
-                    pair2 = new ScatterPoint(cm.A_o, cm.Ma_z_tecnificado_a);
+                    pair2 = new ScatterPoint(cm.A_o, cm.getTypeCrop(cropCombobox.Text));
                     cvalues2.Add(pair2);
 
                 }
@@ -98,16 +96,20 @@ namespace StackedAreaGraphic
             pSerie.LineSmoothness = 0;
 
 
-
-
             harvestedSerie.Add(hSerie);
             harvestedSerie.Add(pSerie);
 
 
             cartesianChart1.Series = harvestedSerie;
 
-            
-            
+            cartesianChart1.AxisX = new AxesCollection
+            {
+                new Axis {
+                Title = "Date",
+                //LabelFormatter = value => new DateTime((long)value).ToShortDateString()
+                },
+            };
+
 
         }
     }
