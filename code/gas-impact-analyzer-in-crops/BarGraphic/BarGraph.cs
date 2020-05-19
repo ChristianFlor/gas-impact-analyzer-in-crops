@@ -50,7 +50,12 @@ namespace BarGraphic
 
         private void showButton_Click(object sender, EventArgs e)
         {
-            getAverageConcentration();
+            getAverageConcentration("CO");
+            getAverageConcentration("O3");
+            getAverageConcentration("NO2");
+            getAverageConcentration("SO2");
+            getAverageConcentration("PM10");
+            getAverageConcentration("PM25");
 
             cartesianChart1.Series.Clear();
 
@@ -73,7 +78,7 @@ namespace BarGraphic
 
         }
 
-        private void getAverageConcentration() 
+        private void getAverageConcentration(string gas) 
         {
 
             dataManager.Measurements.Clear();
@@ -81,7 +86,7 @@ namespace BarGraphic
             Dictionary<string, string> dictionay = new Dictionary<string, string>();
 
             dictionay.Add("Nombre del municipio", citiesComboBox.Text);
-            dictionay.Add("Variable", "CO");
+            dictionay.Add("Variable", gas);
 
             dataManager.filterDataForAir(dictionay);
             double sum = 0;
@@ -92,7 +97,6 @@ namespace BarGraphic
 
                 if (m.Date.Contains(yearComboBox.Text))
                 {
-
                     sum += m.Concentration;
                     cont++;
                 
@@ -102,151 +106,22 @@ namespace BarGraphic
 
             //Console.WriteLine(sum + " " + cont);
 
-            if(sum > 0)
-                CO = sum/cont;
-
-
-            //-----------------------------------------------------------
+            if (sum > 0)
+            {
+                if(gas=="CO")
+                    CO = sum / cont;
+                else if (gas == "O3")
+                    O3 = sum / cont;
+                else if (gas == "NO2")
+                    NO2 = sum / cont;
+                else if (gas == "SO2")
+                    SO2 = sum / cont;
+                else if (gas == "PM10")
+                    PM10 = sum / cont;
+                else
+                    PM25 = sum / cont;
+            }
             
-            dataManager.Measurements.Clear();
-            dictionay.Clear();
-
-            dictionay.Add("Nombre del municipio", citiesComboBox.Text);
-            dictionay.Add("Variable", "O3");
-
-            dataManager.filterDataForAir(dictionay);
-            sum = 0;
-            cont = 0;
-
-            foreach (Measurement m in dataManager.Measurements)
-            {
-
-                if (m.Date.Contains(yearComboBox.Text))
-                {
-
-                    sum += m.Concentration;
-                    cont++;
-
-                }
-
-            }
-            //Console.WriteLine(sum + " " + cont);
-            if (sum > 0)
-                O3 = sum / cont;
-
-            //-----------------------------------------------------------
-
-            dataManager.Measurements.Clear();
-            dictionay.Clear();
-
-            dictionay.Add("Nombre del municipio", citiesComboBox.Text);
-            dictionay.Add("Variable", "NO2");
-
-            dataManager.filterDataForAir(dictionay);
-            sum = 0;
-            cont = 0;
-
-            foreach (Measurement m in dataManager.Measurements)
-            {
-
-                if (m.Date.Contains(yearComboBox.Text))
-                {
-
-                    sum += m.Concentration;
-                    cont++;
-
-                }
-
-            }
-            //Console.WriteLine(sum + " " + cont);
-            if (sum > 0)
-                NO2 = sum / cont;
-
-            //-----------------------------------------------------------
-
-            dataManager.Measurements.Clear();
-            dictionay.Clear();
-
-            dictionay.Add("Nombre del municipio", citiesComboBox.Text);
-            dictionay.Add("Variable", "SO2");
-
-            dataManager.filterDataForAir(dictionay);
-            sum = 0;
-            cont = 0;
-
-            foreach (Measurement m in dataManager.Measurements)
-            {
-
-                if (m.Date.Contains(yearComboBox.Text))
-                {
-
-                    sum += m.Concentration;
-                    cont++;
-
-                }
-
-            }
-            //Console.WriteLine(sum + " " + cont);
-            if (sum > 0)
-                SO2 = sum / cont;
-
-            //-----------------------------------------------------------
-
-            dataManager.Measurements.Clear();
-            dictionay.Clear();
-
-            dictionay.Add("Nombre del municipio", citiesComboBox.Text);
-            dictionay.Add("Variable", "PM10");
-
-            dataManager.filterDataForAir(dictionay);
-            sum = 0;
-            cont = 0;
-
-            foreach (Measurement m in dataManager.Measurements)
-            {
-
-                if (m.Date.Contains(yearComboBox.Text))
-                {
-
-                    sum += m.Concentration;
-                    cont++;
-
-                }
-
-            }
-            //Console.WriteLine(sum + " " + cont);
-            if (sum > 0)
-                PM10 = sum / cont;
-
-            //-----------------------------------------------------------
-
-            dataManager.Measurements.Clear();
-            dictionay.Clear();
-
-            dictionay.Add("Nombre del municipio", citiesComboBox.Text);
-            dictionay.Add("Variable", "PM2.5");
-
-            dataManager.filterDataForAir(dictionay);
-            sum = 0;
-            cont = 0;
-
-            foreach (Measurement m in dataManager.Measurements)
-            {
-
-                if (m.Date.Contains(yearComboBox.Text))
-                {
-
-                    sum += m.Concentration;
-                    cont++;
-
-                }
-
-            }
-            //Console.WriteLine(sum + " " + cont);
-            if (sum > 0)
-                PM25 = sum / cont;
-
-            //Console.WriteLine("listo");
 
         }
 
