@@ -57,8 +57,14 @@
   <ItemGroup>
     <Compile Include="MedicionTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CropMeasurementTest.cs" />
+    <Compile Include="MeasurementTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\model\model.csproj">
+      <Project>{03A115D4-F01F-47FE-8BBB-326C19C808FB}</Project>
+      <Name>model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Prueba_Consulta\Prueba_Consulta.csproj">
       <Project>{9AA27984-2098-4626-88A1-E05A36FFC741}</Project>
       <Name>Prueba_Consulta</Name>

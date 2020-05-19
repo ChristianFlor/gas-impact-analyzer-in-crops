@@ -11,12 +11,21 @@ using timeLine;
 using System.Linq;
 using System.Windows.Media;
 using System.Collections.Generic;
+using System.Net;
+using System.Web.Script.Serialization;
+using SODA;
+using PieGraphic;
+using Prueba_Consulta;
+using BarGraphic;
+using StackedAreaGraphic;
+
 namespace MaterialSkinExample
 {
     public partial class MainForm : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager;
         private DataManager dataManager;
+        string url = "";
         public MainForm()
         {
 
@@ -34,39 +43,15 @@ namespace MaterialSkinExample
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
 
-            // Add dummy data to the listview
-            seedListView();
-            materialCheckedListBox1.Items.Add("Item1", false);
-            materialCheckedListBox1.Items.Add("Item2", true);
-            materialCheckedListBox1.Items.Add("Item3", true);
-            materialCheckedListBox1.Items.Add("Item4", false);
-            materialCheckedListBox1.Items.Add("Item5", true);
-            materialCheckedListBox1.Items.Add("Item6", false);
-            materialCheckedListBox1.Items.Add("Item7", false);
+            dataManager = new DataManager(); //load it once
 
-            loadChild(tabTimeline, new TimeLineForm(new DataManager()));
-
+            loadChild(tabTimeline, new TimeLineForm(dataManager));
+            loadChild(PieChartWithCropsTab, new PieGraphicForm());
+            loadChild(consultTab, new Form1());
+            loadChild(cropsStackedtab, new StackedArea());
+            loadChild(barsTab, new BarGraph());
         }
 
-        private void seedListView()
-        {
-            //Define
-            var data = new[]
-            {
-                new []{"Lollipop", "392", "0.2", "0"},
-                new []{"KitKat", "518", "26.0", "7"},
-                new []{"Ice cream sandwich", "237", "9.0", "4.3"},
-                new []{"Jelly Bean", "375", "0.0", "0.0"},
-                new []{"Honeycomb", "408", "3.2", "6.5"}
-            };
-
-            //Add
-            foreach (string[] version in data)
-            {
-                var item = new ListViewItem(version);
-                materialListView1.Items.Add(item);
-            }
-        }
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
@@ -120,7 +105,6 @@ namespace MaterialSkinExample
         }
         public void initializeAlgorithm(string crop)
         {
-            dataManager = new DataManager();
             dataManager.initializeKmeans(crop);
             SeriesCollection sc = new SeriesCollection()
             {
@@ -264,17 +248,6 @@ namespace MaterialSkinExample
             throw new System.NotImplementedException();
         }
 
-        private void materialButton2_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        private void materialButton5_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
-
-
         private void loadChild(TabPage parent, Form childForm)
         {
             if (parent.Controls.Count > 0)
@@ -282,9 +255,11 @@ namespace MaterialSkinExample
                 parent.Controls.RemoveAt(0);
             }
             childForm.TopLevel = false;
-            //childForm.Dock = DockStyle.Fill;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
             parent.Controls.Add(childForm);
             parent.Tag = childForm;
+            childForm.BringToFront();
             childForm.Show();
         }
 
@@ -292,9 +267,10 @@ namespace MaterialSkinExample
 
             string item = cropsItems.SelectedItem.ToString();
             if(item!=""){
-                 Console.WriteLine(item);
+                Console.WriteLine(item);
                 initializeAlgorithm(item);
             }
         }
+        
     }
 }

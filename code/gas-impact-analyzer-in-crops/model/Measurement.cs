@@ -24,25 +24,27 @@ namespace model
         private string unit;
         private double concentration;
 
+        public Measurement() {
+        
+        }
         public Measurement(string date, string authority, string stationName, string technology, double latitude, double longitude, string departmentCode, string department, string municipalityCode, string municipality, string stationType, double exhibitionTime, string variable, string unit, double concentration)
         {
-            this.Date = date;
-            this.Authority = authority;
-            this.StationName = stationName;
-            this.Technology = technology;
-            this.Latitude = latitude;
-            this.Longitude = longitude;
-            this.DepartmentCode = departmentCode;
-            this.Department = department;
-            this.MunicipalityCode = municipalityCode;
-            this.Municipality = municipality;
-            this.StationType = stationType;
-            this.ExhibitionTime = exhibitionTime;
-            this.Variable = variable;
-            this.Unit = unit;
-            this.Concentration = concentration;
+            this.date = date;
+            this.authority = authority;
+            this.stationName = stationName;
+            this.technology = technology;
+            this.latitude = latitude;
+            this.longitude = longitude;
+            this.departmentCode = departmentCode;
+            this.department = department;
+            this.municipalityCode = municipalityCode;
+            this.municipality = municipality;
+            this.stationType = stationType;
+            this.exhibitionTime = exhibitionTime;
+            this.variable = variable;
+            this.unit = unit;
+            this.concentration = concentration;
         }
-
         public string Date { get => date; set => date = value; }
         public string Authority { get => authority; set => authority = value; }
         public string StationName { get => stationName; set => stationName = value; }

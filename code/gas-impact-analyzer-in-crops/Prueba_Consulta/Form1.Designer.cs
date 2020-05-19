@@ -23,206 +23,158 @@
         #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
-        /// Método necesario para admitir el Diseñador. No se puede modificar
-        /// el contenido de este método con el editor de código.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxValor = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.repositoryUrl = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.datasetId = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.heatMap = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heatMap)).BeginInit();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
+            this.repositoryUrl = new MaterialSkin.Controls.MaterialTextBox();
+            this.datasetId = new MaterialSkin.Controls.MaterialTextBox();
+            this.texBoxValor = new MaterialSkin.Controls.MaterialTextBox();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(257, 36);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Location = new System.Drawing.Point(262, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 24);
+            this.label1.Size = new System.Drawing.Size(168, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Consulta en Base de Datos";
+            this.label1.Text = "Query in data base";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(40, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Valor a consultar";
-            // 
-            // textBoxValor
-            // 
-            this.textBoxValor.Location = new System.Drawing.Point(155, 149);
-            this.textBoxValor.Name = "textBoxValor";
-            this.textBoxValor.Size = new System.Drawing.Size(131, 20);
-            this.textBoxValor.TabIndex = 5;
-            this.textBoxValor.TextChanged += new System.EventHandler(this.textBoxValor_TextChanged);
-            // 
-            // label4
-            // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(58, 261);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 13);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Resultado";
+            this.label4.Text = "Result";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(325, 146);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dataGridView1
-            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 299);
+            this.dataGridView1.Location = new System.Drawing.Point(28, 299);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(868, 307);
+            this.dataGridView1.Size = new System.Drawing.Size(985, 307);
             this.dataGridView1.TabIndex = 9;
-         
-            // 
-            // checkedListBox1
-            // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(543, 104);
+            this.checkedListBox1.Location = new System.Drawing.Point(794, 54);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(225, 139);
+            this.checkedListBox1.Size = new System.Drawing.Size(210, 169);
             this.checkedListBox1.TabIndex = 11;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "url Repositorio:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // repositoryUrl
-            // 
-            this.repositoryUrl.Location = new System.Drawing.Point(155, 86);
-            this.repositoryUrl.Name = "repositoryUrl";
-            this.repositoryUrl.Size = new System.Drawing.Size(131, 20);
-            this.repositoryUrl.TabIndex = 14;
-            this.repositoryUrl.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(49, 114);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 15;
-            this.label5.Text = "id Dataset";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // datasetId
-            // 
-            this.datasetId.Location = new System.Drawing.Point(155, 114);
-            this.datasetId.Name = "datasetId";
-            this.datasetId.Size = new System.Drawing.Size(131, 20);
-            this.datasetId.TabIndex = 16;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(325, 104);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Read";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(351, 213);
+            this.textBox1.Location = new System.Drawing.Point(497, 175);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(186, 61);
             this.textBox1.TabIndex = 18;
-            this.textBox1.Text = "url repo:   https://www.datos.gov.co\r\nid dataset:   ysq6-ri4e\r\n\r\n";
-            // 
-            // heatMap
-            // 
-            this.heatMap.BackColor = System.Drawing.Color.Transparent;
-            this.heatMap.Location = new System.Drawing.Point(785, 36);
-            this.heatMap.Name = "heatMap";
-            this.heatMap.Size = new System.Drawing.Size(232, 257);
-            this.heatMap.TabIndex = 19;
-            this.heatMap.TabStop = false;
-            this.heatMap.Click += new System.EventHandler(this.heatMap_Click);
-            // 
-            // Form1
-            // 
+            this.textBox1.Text = "url repo:   \r\nhttps://www.datos.gov.co\r\nid dataset:   \r\nysq6-ri4e\r\n\r\n";
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.DrawShadows = true;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(497, 91);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.Size = new System.Drawing.Size(58, 36);
+            this.materialButton1.TabIndex = 20;
+            this.materialButton1.Text = "Read";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton2.Depth = 0;
+            this.materialButton2.DrawShadows = true;
+            this.materialButton2.HighEmphasis = true;
+            this.materialButton2.Icon = null;
+            this.materialButton2.Location = new System.Drawing.Point(299, 166);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton2.Name = "materialButton2";
+            this.materialButton2.Size = new System.Drawing.Size(78, 36);
+            this.materialButton2.TabIndex = 21;
+            this.materialButton2.Text = "Search";
+            this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton2.UseAccentColor = false;
+            this.materialButton2.UseVisualStyleBackColor = true;
+            this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
+            this.repositoryUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.repositoryUrl.Depth = 0;
+            this.repositoryUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.repositoryUrl.Hint = "URL repository";
+            this.repositoryUrl.Location = new System.Drawing.Point(44, 77);
+            this.repositoryUrl.MaxLength = 50;
+            this.repositoryUrl.MouseState = MaterialSkin.MouseState.OUT;
+            this.repositoryUrl.Multiline = false;
+            this.repositoryUrl.Name = "repositoryUrl";
+            this.repositoryUrl.Size = new System.Drawing.Size(206, 50);
+            this.repositoryUrl.TabIndex = 22;
+            this.repositoryUrl.Text = "";
+            this.datasetId.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.datasetId.Depth = 0;
+            this.datasetId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.datasetId.Hint = "ID dataset";
+            this.datasetId.Location = new System.Drawing.Point(299, 77);
+            this.datasetId.MaxLength = 50;
+            this.datasetId.MouseState = MaterialSkin.MouseState.OUT;
+            this.datasetId.Multiline = false;
+            this.datasetId.Name = "datasetId";
+            this.datasetId.Size = new System.Drawing.Size(139, 50);
+            this.datasetId.TabIndex = 23;
+            this.datasetId.Text = "";
+            this.texBoxValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.texBoxValor.Depth = 0;
+            this.texBoxValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.texBoxValor.Hint = "Value to consult";
+            this.texBoxValor.Location = new System.Drawing.Point(44, 152);
+            this.texBoxValor.MaxLength = 50;
+            this.texBoxValor.MouseState = MaterialSkin.MouseState.OUT;
+            this.texBoxValor.Multiline = false;
+            this.texBoxValor.Name = "texBoxValor";
+            this.texBoxValor.Size = new System.Drawing.Size(152, 50);
+            this.texBoxValor.TabIndex = 24;
+            this.texBoxValor.Text = "";
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 618);
-            this.Controls.Add(this.heatMap);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.texBoxValor);
             this.Controls.Add(this.datasetId);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.repositoryUrl);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.materialButton2);
+            this.Controls.Add(this.materialButton1);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBoxValor);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heatMap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxValor;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox repositoryUrl;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox datasetId;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private MaterialSkin.Controls.MaterialTextBox datasetId;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialButton materialButton2;
+        private MaterialSkin.Controls.MaterialTextBox repositoryUrl;
+        private MaterialSkin.Controls.MaterialTextBox texBoxValor;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.PictureBox heatMap;
+
+        #endregion
     }
 }
 
