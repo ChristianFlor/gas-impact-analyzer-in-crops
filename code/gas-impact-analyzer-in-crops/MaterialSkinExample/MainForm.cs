@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Web.Script.Serialization;
 using SODA;
+using PieGraphic;
 
 namespace MaterialSkinExample
 {
@@ -42,7 +43,7 @@ namespace MaterialSkinExample
             dataManager = new DataManager(); //load it once
 
             loadChild(tabTimeline, new TimeLineForm(dataManager));
-
+            loadChild(PieChartWithCropsTab, new PieGraphicForm());
         }
 
 

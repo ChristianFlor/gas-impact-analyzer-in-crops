@@ -14,11 +14,11 @@ using model;
 
 namespace PieGraphic
 {
-    public partial class PieGraphic : Form
+    public partial class PieGraphicForm : Form
     {
         private DataManager dm;
 
-        public PieGraphic()
+        public PieGraphicForm()
         {
             InitializeComponent();
             dm = new DataManager();

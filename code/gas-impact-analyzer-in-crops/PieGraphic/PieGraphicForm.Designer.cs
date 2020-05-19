@@ -1,6 +1,6 @@
 ﻿namespace PieGraphic
 {
-    partial class PieGraphic
+    partial class PieGraphicForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
