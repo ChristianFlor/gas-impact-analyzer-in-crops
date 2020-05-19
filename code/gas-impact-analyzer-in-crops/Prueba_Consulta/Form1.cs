@@ -23,6 +23,7 @@ namespace Prueba_Consulta
 #pragma warning disable CS0169 // El campo 'Form1.med' nunca se usa
         Medicion med;
 #pragma warning restore CS0169 // El campo 'Form1.med' nunca se usa
+        private Dictionary<string, string> mapa;
 
         public Form1()
         {
@@ -31,7 +32,7 @@ namespace Prueba_Consulta
 
         public void readInfo()
         {
-            
+            mapa = new Dictionary<string, string>();
             dataGridView1.Columns.Clear();
             checkedListBox1.Items.Clear();
 
@@ -43,7 +44,7 @@ namespace Prueba_Consulta
             foreach(var c in dataset.Columns)
             {
                 checkedListBox1.Items.Add(c.Name, false);
-                
+                mapa.Add(c.Name, c.SodaFieldName);
                 dataGridView1.Columns.Add(c.SodaFieldName, c.Name);
             }
             
@@ -104,6 +105,13 @@ namespace Prueba_Consulta
             string[] valores = texBoxValor.Text.Split(',');
             var list = checkedListBox1.CheckedItems;
 
+            for (int i = 0; i < list.Count; i++)
+            {
+
+                cadena = mapa[list[i].ToString()] + "=" + valores[i] + "&";
+                url2 += cadena;
+
+            }
 
             string datosCrudos = new WebClient().DownloadString(url2);
 
@@ -120,6 +128,9 @@ namespace Prueba_Consulta
             }
         }
 
-    
+        private void texBoxValor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

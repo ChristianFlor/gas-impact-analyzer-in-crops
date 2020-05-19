@@ -38,16 +38,22 @@
             this.repositoryUrl = new MaterialSkin.Controls.MaterialTextBox();
             this.datasetId = new MaterialSkin.Controls.MaterialTextBox();
             this.texBoxValor = new MaterialSkin.Controls.MaterialTextBox();
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(262, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Query in data base";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(58, 261);
             this.label4.Name = "label4";
@@ -55,18 +61,29 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Result";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(28, 299);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(985, 307);
             this.dataGridView1.TabIndex = 9;
+            // 
+            // checkedListBox1
+            // 
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(794, 54);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(210, 169);
             this.checkedListBox1.TabIndex = 11;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
+            // 
+            // textBox1
+            // 
             this.textBox1.Location = new System.Drawing.Point(497, 175);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
@@ -74,6 +91,9 @@
             this.textBox1.Size = new System.Drawing.Size(186, 61);
             this.textBox1.TabIndex = 18;
             this.textBox1.Text = "url repo:   \r\nhttps://www.datos.gov.co\r\nid dataset:   \r\nysq6-ri4e\r\n\r\n";
+            // 
+            // materialButton1
+            // 
             this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton1.Depth = 0;
             this.materialButton1.DrawShadows = true;
@@ -90,6 +110,9 @@
             this.materialButton1.UseAccentColor = false;
             this.materialButton1.UseVisualStyleBackColor = true;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click);
+            // 
+            // materialButton2
+            // 
             this.materialButton2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButton2.Depth = 0;
             this.materialButton2.DrawShadows = true;
@@ -106,9 +129,12 @@
             this.materialButton2.UseAccentColor = false;
             this.materialButton2.UseVisualStyleBackColor = true;
             this.materialButton2.Click += new System.EventHandler(this.materialButton2_Click);
+            // 
+            // repositoryUrl
+            // 
             this.repositoryUrl.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.repositoryUrl.Depth = 0;
-            this.repositoryUrl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.repositoryUrl.Font = new System.Drawing.Font("Roboto", 12F);
             this.repositoryUrl.Hint = "URL repository";
             this.repositoryUrl.Location = new System.Drawing.Point(44, 77);
             this.repositoryUrl.MaxLength = 50;
@@ -118,9 +144,12 @@
             this.repositoryUrl.Size = new System.Drawing.Size(206, 50);
             this.repositoryUrl.TabIndex = 22;
             this.repositoryUrl.Text = "";
+            // 
+            // datasetId
+            // 
             this.datasetId.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datasetId.Depth = 0;
-            this.datasetId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.datasetId.Font = new System.Drawing.Font("Roboto", 12F);
             this.datasetId.Hint = "ID dataset";
             this.datasetId.Location = new System.Drawing.Point(299, 77);
             this.datasetId.MaxLength = 50;
@@ -130,9 +159,12 @@
             this.datasetId.Size = new System.Drawing.Size(139, 50);
             this.datasetId.TabIndex = 23;
             this.datasetId.Text = "";
+            // 
+            // texBoxValor
+            // 
             this.texBoxValor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.texBoxValor.Depth = 0;
-            this.texBoxValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.texBoxValor.Font = new System.Drawing.Font("Roboto", 12F);
             this.texBoxValor.Hint = "Value to consult";
             this.texBoxValor.Location = new System.Drawing.Point(44, 152);
             this.texBoxValor.MaxLength = 50;
@@ -142,6 +174,10 @@
             this.texBoxValor.Size = new System.Drawing.Size(152, 50);
             this.texBoxValor.TabIndex = 24;
             this.texBoxValor.Text = "";
+            this.texBoxValor.TextChanged += new System.EventHandler(this.texBoxValor_TextChanged);
+            // 
+            // Form1
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 618);
@@ -158,9 +194,10 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize) (this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.CheckedListBox checkedListBox1;

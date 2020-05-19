@@ -204,6 +204,10 @@
       <Project>{9AA27984-2098-4626-88A1-E05A36FFC741}</Project>
       <Name>Prueba_Consulta</Name>
     </ProjectReference>
+    <ProjectReference Include="..\StackedAreaGraphic\StackedAreaGraphic.csproj">
+      <Project>{ef4f1055-1679-4c27-a95d-8c78bb855ee9}</Project>
+      <Name>StackedAreaGraphic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\timeLine\timeLine.csproj">
       <Project>{d737966b-c89a-49cf-b94a-321460843f18}</Project>
       <Name>timeLine</Name>
