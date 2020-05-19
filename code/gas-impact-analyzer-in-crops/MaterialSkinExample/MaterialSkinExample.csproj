@@ -196,6 +196,10 @@
       <Project>{778EFB4A-5F2D-45FA-90D9-84872EEF6FA9}</Project>
       <Name>PieGraphic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Prueba_Consulta\Prueba_Consulta.csproj">
+      <Project>{9AA27984-2098-4626-88A1-E05A36FFC741}</Project>
+      <Name>Prueba_Consulta</Name>
+    </ProjectReference>
     <ProjectReference Include="..\timeLine\timeLine.csproj">
       <Project>{d737966b-c89a-49cf-b94a-321460843f18}</Project>
       <Name>timeLine</Name>

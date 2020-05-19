@@ -15,6 +15,7 @@ using System.Net;
 using System.Web.Script.Serialization;
 using SODA;
 using PieGraphic;
+using Prueba_Consulta;
 
 namespace MaterialSkinExample
 {
@@ -44,6 +45,7 @@ namespace MaterialSkinExample
 
             loadChild(tabTimeline, new TimeLineForm(dataManager));
             loadChild(PieChartWithCropsTab, new PieGraphicForm());
+            loadChild(consultTab, new Form1());
         }
 
 
@@ -240,49 +242,6 @@ namespace MaterialSkinExample
         private void materialButton9_Click(object sender, EventArgs e)
         {
             throw new System.NotImplementedException();
-        }
-
-        private void materialButton2_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
-
-            string url2 = url;
-            string[] valores = valueTB.Text.Split(',');
-            var list = checkedListBox1.CheckedItems;
-
-            string datosCrudos = new WebClient().DownloadString(url2);
-
-            JavaScriptSerializer js = new JavaScriptSerializer();
-            Measurement[] mediciones = js.Deserialize<Measurement[]>(datosCrudos);
-            
-            foreach (Measurement m in mediciones) {
-                dataGridView1.Rows.Add(m.Date, m.Authority, m.StationName, m.Technology, m.Latitude, m.Longitude,
-                    m.DepartmentCode, m.Department, m.MunicipalityCode, m.Municipality, m.StationType, m.ExhibitionTime,
-                    m.Variable, m.Unit, m.Concentration);
-            }
-        }
-
-        private void materialButton5_Click(object sender, EventArgs e)
-        {
-            readInfo();
-        }
-        
-        public void readInfo()
-        {
-            dataGridView1.Columns.Clear();
-            checkedListBox1.Items.Clear();
-
-            string repository = repositoryURL.Text;
-            string id = datasetID.Text;
-            url = repository + "/resource/" + id + ".json?";
-            var client = new SodaClient(repository, "zzanGqreT6bAIRPuvhwn9yso3");
-            var dataset = client.GetResource<Object>(id);
-            foreach (var c in dataset.Columns)
-            {
-                checkedListBox1.Items.Add(c.Name, false);
-                //mapa.Add(c.Name, c.SodaFieldName);
-                dataGridView1.Columns.Add(c.SodaFieldName, c.Name);
-            }
         }
 
         private void loadChild(TabPage parent, Form childForm)
