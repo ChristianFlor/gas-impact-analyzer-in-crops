@@ -188,6 +188,10 @@
     <None Include="Resources\baseline_favorite_border_black_24dp.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BarGraphic\BarGraphic.csproj">
+      <Project>{72B49E1D-D631-46A7-A659-8C134F612C7A}</Project>
+      <Name>BarGraphic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\model\model.csproj">
       <Project>{3222ef5a-7504-4520-adc9-6717865fe6cd}</Project>
       <Name>model</Name>

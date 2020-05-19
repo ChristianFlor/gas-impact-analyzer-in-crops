@@ -52,7 +52,7 @@ namespace MaterialSkinExample
             this.materialLabel45 = new MaterialSkin.Controls.MaterialLabel();
             this.PieChartWithCropsTab = new System.Windows.Forms.TabPage();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.cropsStackedtab = new System.Windows.Forms.TabPage();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.consultTab = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -78,6 +78,7 @@ namespace MaterialSkinExample
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialButton6 = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
+            this.barsTab = new System.Windows.Forms.TabPage();
             this.materialContextMenuStrip1.SuspendLayout();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -87,7 +88,7 @@ namespace MaterialSkinExample
             this.dashBoardTabs.SuspendLayout();
             this.tabTimeline.SuspendLayout();
             this.PieChartWithCropsTab.SuspendLayout();
-            this.tabPage4.SuspendLayout();
+            this.cropsStackedtab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TabAlgorithm.SuspendLayout();
@@ -226,7 +227,8 @@ namespace MaterialSkinExample
             // 
             this.dashBoardTabs.Controls.Add(this.tabTimeline);
             this.dashBoardTabs.Controls.Add(this.PieChartWithCropsTab);
-            this.dashBoardTabs.Controls.Add(this.tabPage4);
+            this.dashBoardTabs.Controls.Add(this.cropsStackedtab);
+            this.dashBoardTabs.Controls.Add(this.barsTab);
             this.dashBoardTabs.Depth = 0;
             this.dashBoardTabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dashBoardTabs.Location = new System.Drawing.Point(0, 0);
@@ -289,16 +291,16 @@ namespace MaterialSkinExample
             this.materialLabel3.Text = "Everything is possible!";
             this.materialLabel3.UseAccent = true;
             // 
-            // tabPage4
+            // cropsStackedtab
             // 
-            this.tabPage4.BackColor = System.Drawing.Color.White;
-            this.tabPage4.Controls.Add(this.materialLabel4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1007, 445);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Circular graph";
+            this.cropsStackedtab.BackColor = System.Drawing.Color.White;
+            this.cropsStackedtab.Controls.Add(this.materialLabel4);
+            this.cropsStackedtab.Location = new System.Drawing.Point(4, 24);
+            this.cropsStackedtab.Name = "cropsStackedtab";
+            this.cropsStackedtab.Padding = new System.Windows.Forms.Padding(3);
+            this.cropsStackedtab.Size = new System.Drawing.Size(1007, 445);
+            this.cropsStackedtab.TabIndex = 3;
+            this.cropsStackedtab.Text = "Harvested vs planted";
             // 
             // materialLabel4
             // 
@@ -691,6 +693,15 @@ namespace MaterialSkinExample
             this.materialLabel2.TabIndex = 0;
             this.materialLabel2.Text = "Cards are also supported!";
             // 
+            // barsTab
+            // 
+            this.barsTab.Location = new System.Drawing.Point(4, 24);
+            this.barsTab.Name = "barsTab";
+            this.barsTab.Size = new System.Drawing.Size(1007, 445);
+            this.barsTab.TabIndex = 4;
+            this.barsTab.Text = "Bars";
+            this.barsTab.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -717,8 +728,8 @@ namespace MaterialSkinExample
             this.tabTimeline.PerformLayout();
             this.PieChartWithCropsTab.ResumeLayout(false);
             this.PieChartWithCropsTab.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
+            this.cropsStackedtab.ResumeLayout(false);
+            this.cropsStackedtab.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -767,7 +778,7 @@ namespace MaterialSkinExample
         private MaterialSkin.Controls.MaterialTabControl TabAlgorithm;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage cropsStackedtab;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage consultTab;
         private System.Windows.Forms.TabPage tabTimeline;
@@ -775,5 +786,7 @@ namespace MaterialSkinExample
         private System.Windows.Forms.Button viewClusters;
 
         #endregion
+
+        private TabPage barsTab;
     }
 }

@@ -16,6 +16,8 @@ using System.Web.Script.Serialization;
 using SODA;
 using PieGraphic;
 using Prueba_Consulta;
+using BarGraphic;
+using StackedAreaGraphic;
 
 namespace MaterialSkinExample
 {
@@ -46,6 +48,8 @@ namespace MaterialSkinExample
             loadChild(tabTimeline, new TimeLineForm(dataManager));
             loadChild(PieChartWithCropsTab, new PieGraphicForm());
             loadChild(consultTab, new Form1());
+            loadChild(cropsStackedtab, new StackedArea());
+            loadChild(barsTab, new BarGraph());
         }
 
 
